@@ -98,6 +98,7 @@ Desktop:
 - Document important technical decisions before implementing them, and update the relevant doc(s) as part of the same change — a change isn't done until its documentation matches it.
 - Keep modules independent.
 - Keep `docs/11-development-tracking.md` in sync with actual progress — check off subtasks as they're completed, and reflect a fully-completed phase's status back in `docs/00-development-roadmap.md`.
+- When writing or rewriting a module/screen in `docs/05-product-map.md`, always ask the user for that screen's specifications first (what it shows, its filters, its actions/navigation, what's out of scope) — don't draft it unprompted from the product vision alone.
 - After finishing any piece of work, re-review `docs/` for decisions that changed along the way (even ones not planned up front) — update the affected doc(s) and, if an accepted ADR's decision changed, add a new ADR rather than editing the old one, in the same change.
 
 ## Product Principles

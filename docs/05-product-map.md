@@ -149,3 +149,55 @@ The Overview must **not** include:
 Those features belong to dedicated modules.
 
 ---
+
+## Live Session
+
+### Purpose
+
+The Live Session module shows the player how their **current** session is going while they are still playing.
+
+It should answer the following question:
+
+> **"How is my current session going?"**
+
+Unlike the Overview (historical, read in under 30 seconds), this module is only relevant while a session is actively in progress. Once the session ends, it is saved into a session history.
+
+---
+
+### Information Displayed
+
+#### Current Session Stats
+
+- P&L (Profit & Loss)
+- All-in Adjusted P&L (EV)
+- Hands played
+- VPIP % (hands played)
+- PFR % (hands opened)
+- 3-Bet %
+
+> Further breakdowns (e.g. profit/loss by position) are being considered for a later iteration of this module — not part of its initial definition.
+
+---
+
+### Filters
+
+- **Active table filter** — when the player is running multiple tables at once, the view can be filtered down to a single active table.
+
+---
+
+### Navigation
+
+- Reachable from the sidebar menu.
+- On session end, the session is saved into a session history for later review.
+
+---
+
+### Out of Scope
+
+The Live Session module must **not** include:
+
+- The real-time table overlay (opponent stats rendered on top of the poker room's own window) — stays out of scope until its legality is studied (see the ToS risk already tracked in `11-development-tracking.md`).
+- Hand replay (belongs to Hands)
+- Historical trends / long-term analysis (belongs to Overview / Statistics)
+
+---

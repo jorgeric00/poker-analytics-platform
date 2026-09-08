@@ -63,12 +63,12 @@ Status legend:
 
 ---
 
-# Phase 3 — Product Design — ⬜ Not Started
+# Phase 3 — Product Design — 🚧 In Progress
 
 ## 3.1 Product Map (`05-product-map.md`)
 
 - [x] Overview module
-- [ ] Live Session module
+- [x] Live Session module
 - [ ] Hands module
 - [ ] Players module
 - [ ] Statistics module
@@ -152,5 +152,7 @@ Items raised during review that don't block the current phase but should be reso
 ---
 
 # Last Updated
+
+2026-09-09 — Phase 3 started: Live Session module defined in `05-product-map.md` (in-app live dashboard half of the Live HUD goal; the real-time overlay stays out of scope for this module, tracked separately). Remaining Phase 3.1 modules (Hands, Players, Statistics, Reports) and all of 3.2 (screen design) still open.
 
 2026-09-08 — Product vision clarified: commercial ambition, MVP rooms/formats (PokerStars + Winamax, cash/MTT/Spin&Go), Live HUD goal added (in-app dashboards + real-time overlay) with its ToS and technical-feasibility risks tracked as follow-ups.
