@@ -156,6 +156,22 @@ Possible updates include:
 - API documentation
 - ADRs
 - Development guides
+- `docs/11-development-tracking.md` — check off the subtask(s) this change completes
+
+---
+
+# Progress Tracking
+
+The roadmap (`00-development-roadmap.md`) defines phases and freezes them once accepted. It is not meant to change often, so it cannot answer "what's left to do this week" on its own.
+
+`docs/11-development-tracking.md` exists for that: it breaks every phase into concrete subtasks and tracks which are done, in progress, or not started.
+
+Rules:
+
+- Every Pull Request that completes a subtask updates `11-development-tracking.md` in the same PR (part of Phase 6 above).
+- When every subtask of a phase is checked, update that phase's `Status` in `00-development-roadmap.md` to reflect it.
+- Unplanned exploratory work (spikes) is still logged there, marked 🧪, so it's clear it is not the frozen implementation for that phase.
+- Before starting work, check this file first to see current status and avoid duplicating or contradicting work in progress.
 
 ---
 

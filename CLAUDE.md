@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The project is in the design phase described by `docs/00-development-roadmap.md` (currently Phase 3 — Product Design). `backend/` and `frontend/` currently hold only base scaffolding (bootstrap app, no domain code) created ahead of schedule as a technical spike; they are not yet organized around the modules described in `docs/05-product-map.md` because that doc is still incomplete. Treat any code here as scaffolding, not an implementation to extend, until the Phase 4-8 docs exist.
 
+**Before starting any task, read `docs/11-development-tracking.md`** — it is the up-to-date, task-level checklist of what's done, in progress, or pending within each roadmap phase (the roadmap itself only tracks whole-phase status and changes rarely). After completing work, update it in the same change: check off the subtask(s) finished, and add any new follow-up items discovered along the way.
+
 ## Commands
 
 ### Backend (`backend/`, Java 17 + Spring Boot, Maven)
@@ -42,6 +44,7 @@ The docs form a top-down dependency chain (`docs/01-documentation-structure.md`)
 5. `docs/04-architecture.md` — how the system is built (components, data flow, database strategy)
 6. `docs/05-product-map.md` — what the app does, module by module (currently only the "Overview" module is defined; the rest are still to be written)
 7. `docs/decisions/` — ADRs; never delete or edit an accepted ADR, write a new one if a decision changes
+8. `docs/11-development-tracking.md` — current task-level status; not part of the dependency chain, updated continuously (see "Repository Status" above)
 
 Docs not yet written (per the roadmap, phases 4–8): `06-query-catalog.md`, `07-analytics-engine.md`, `08-storage-strategy.md`, `09-data-model.md`, `10-api-design.md`.
 
@@ -91,6 +94,7 @@ Desktop:
 - Prefer maintainable solutions over quick hacks.
 - Document important technical decisions before implementing them, and update the relevant doc(s) as part of the same change — a change isn't done until its documentation matches it.
 - Keep modules independent.
+- Keep `docs/11-development-tracking.md` in sync with actual progress — check off subtasks as they're completed, and reflect a fully-completed phase's status back in `docs/00-development-roadmap.md`.
 
 ## Product Principles
 

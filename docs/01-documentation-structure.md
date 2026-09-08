@@ -44,6 +44,7 @@ docs/
 08-storage-strategy.md
 09-data-model.md
 10-api-design.md
+11-development-tracking.md
 
 decisions/
 
@@ -166,6 +167,16 @@ Question answered:
 
 ---
 
+## 11-development-tracking.md
+
+Breaks each roadmap phase into concrete subtasks and tracks their status (done / in progress / not started). Unlike the other documents, it is not frozen once written — it is expected to change on every Pull Request that completes a piece of work.
+
+Question answered:
+
+> What is the current status of the project, task by task?
+
+---
+
 # Architectural Decision Records
 
 The `decisions/` folder contains Architecture Decision Records (ADRs).
@@ -274,6 +285,8 @@ Implementation
 Each document depends on the previous one.
 
 Implementation should always follow the documented design.
+
+`11-development-tracking.md` sits outside this chain: it is a cross-cutting document, updated continuously alongside every other phase rather than produced once and frozen.
 
 ---
 
