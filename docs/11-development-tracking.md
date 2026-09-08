@@ -91,6 +91,7 @@ Status legend:
 # Phase 5 — Analytics Engine — ⬜ Not Started
 
 - [ ] `07-analytics-engine.md` written (facts, opportunities, events, metrics, aggregations)
+- [ ] Must cover both cash game stats (BB/100, etc.) and tournament stats (ICM, bubble factor, ROI) from the start — MVP scope now explicitly includes MTTs and Spin&Go/Expresso, not just cash (see `03-product-vision.md`)
 
 ---
 
@@ -116,16 +117,17 @@ Status legend:
 
 - [x] 🧪 Backend scaffold: Spring Boot 3.3.4 + Java 17 skeleton in `backend/` (builds, one passing test)
 - [x] 🧪 Frontend scaffold: Tauri + React + TypeScript in `frontend/` (generated via `create-tauri-app`, `npm install` works)
-- [ ] Hand history parser spike (validate feasibility against 1-2 real poker rooms before Phases 4-8 are frozen)
+- [ ] Hand history parser spike (validate feasibility against PokerStars and Winamax — cash, MTT and Spin&Go/Expresso formats — before Phases 4-8 are frozen)
 - [ ] Backend project (real, following the frozen architecture/data model)
 - [ ] Database setup
-- [ ] Parser
+- [ ] Parser (PokerStars + Winamax, cash + MTT + Spin&Go/Expresso)
 - [ ] Import engine
-- [ ] Analytics engine
+- [ ] Analytics engine (cash and tournament stats)
 - [ ] REST API
 - [ ] Frontend (real screens, following the product map)
 - [ ] Replay
-- [ ] HUD
+- [ ] HUD — in-app live dashboards
+- [ ] HUD — real-time table overlay (blocked on the ToS review and overlay feasibility spike above)
 - [ ] Testing
 - [ ] Packaging
 
@@ -140,7 +142,9 @@ Items raised during review that don't block the current phase but should be reso
 - [x] ~~Write missing ADRs: Modular Monolith + DDD, SQLite/ClickHouse split, backend architecture (see Phase 2)~~ — done: `ADR-002-modular-monolith.md`, `ADR-003-local-analytics-storage.md`, `ADR-004-backend-packaging.md`
 - [x] ~~Fix naming drift between `01-documentation-structure.md`'s expected ADR filenames and the actual `ADR-001-stack-selection.md`~~ — done, structure doc now lists the real filenames
 - [x] ~~Decide ClickHouse vs. DuckDB for local-first analytics storage before Phase 6 is written~~ — decided: DuckDB locally (`ADR-003-local-analytics-storage.md`); ClickHouse deferred to a future cloud-platform ADR, see below
-- [ ] Legal/ToS review for opponent-data aggregation ("Community Intelligence") and real-time HUD features described in `03-product-vision.md`
+- [ ] Legal/ToS review for the real-time table overlay HUD specifically against **PokerStars** and **Winamax**'s current Terms of Service before building it (Winamax has historically banned real-time HUD/datamining tools under French ANJ regulation; PokerStars restricts live overlays in several jurisdictions) — also covers opponent-data aggregation ("Community Intelligence") described in `03-product-vision.md`
+- [ ] Technical spike: cross-platform feasibility of a real-time overlay rendered on top of another application's window (Windows/macOS/Linux each need different native APIs — this is outside what Tauri provides for its own window) — needed before committing to the overlay's implementation approach
+- [ ] Define the monetization/pricing model — ambition is now explicitly a commercial product (see `03-product-vision.md`), but the business model itself (license, subscription, freemium cloud tier...) is still undecided
 - [ ] Upgrade local Node.js to `^20.19` or `>=22.12` (`frontend/` currently fails `npm run build` on Node 18.17.1)
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
@@ -149,4 +153,4 @@ Items raised during review that don't block the current phase but should be reso
 
 # Last Updated
 
-2026-09-08 — Phase 2 closed out: ADR-002/003/004 written, ClickHouse replaced by DuckDB for local storage, naming drift in `01-documentation-structure.md` fixed.
+2026-09-08 — Product vision clarified: commercial ambition, MVP rooms/formats (PokerStars + Winamax, cash/MTT/Spin&Go), Live HUD goal added (in-app dashboards + real-time overlay) with its ToS and technical-feasibility risks tracked as follow-ups.

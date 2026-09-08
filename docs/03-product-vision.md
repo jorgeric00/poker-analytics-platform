@@ -42,6 +42,12 @@ Characteristics:
 - Understand poker statistics.
 - Are willing to pay for tools that provide an advantage.
 
+## Business Ambition
+
+This is intended to become a real commercial product, not a personal tool or a portfolio project — the explicit goal is to compete with PokerTracker and Hand2Note in the market.
+
+The specific monetization model (one-time license, subscription, freemium with a paid cloud tier, etc.) is not yet defined and needs its own decision before launch.
+
 ---
 
 # 4. Product Goals
@@ -84,7 +90,22 @@ Allow players to:
 
 ---
 
-### 4. AI-powered coaching
+### 4. Live HUD & Real-Time Assistance
+
+Give players relevant information while they are actually playing, not only after the session.
+
+Two complementary pieces:
+
+- **In-app live dashboards**: dedicated screens inside the desktop app showing live session stats, separate from the poker room's own window.
+- **Real-time table overlay**: opponent statistics displayed directly on top of the poker room's table window while playing, in the style of traditional HUDs (PokerTracker/Hand2Note).
+
+> ⚠️ Known risk: several poker rooms restrict or prohibit real-time HUD overlays in their Terms of Service. Winamax in particular has historically banned real-time HUD/datamining tools (French ANJ regulation); PokerStars has also restricted live overlays in multiple jurisdictions. This is tracked as an open risk to validate against each target room's current ToS before building the overlay (see `11-development-tracking.md`) — it does not block earlier phases, but it can constrain or reshape this goal once investigated.
+>
+> The overlay is also a distinct technical problem from the rest of the app: it renders on top of a *different* application's window, which requires OS-native APIs (transparent/always-on-top windows on Windows, Accessibility API + NSWindow overlays on macOS, X11/Wayland on Linux) rather than what Tauri provides out of the box for its own window.
+
+---
+
+### 5. AI-powered coaching
 
 Transform raw statistics into actionable information.
 
@@ -97,7 +118,7 @@ Examples:
 
 ---
 
-### 5. Community intelligence
+### 6. Community intelligence
 
 Create a system where aggregated anonymous data can provide better opponent insights.
 
@@ -157,14 +178,22 @@ The system should support:
 
 The first version should focus on replacing the core functionality of existing trackers.
 
+## Target Poker Rooms & Formats (MVP)
+
+- **Rooms**: PokerStars and Winamax.
+- **Formats**: Cash games, MTTs (tournaments), and Spin&Go / Expresso.
+
+This is a broad MVP surface (2 rooms × 3 formats) — the parser and analytics engine both need to handle all of it from the start, including tournament-specific analytics (ICM, bubble factor), not just cash game stats.
+
 ## Included
 
 - Import hand histories.
 - Store hands locally.
-- Basic statistics.
+- Basic statistics (cash and tournament).
 - Graphs.
 - Filters.
 - Hand replay.
+- Live HUD: in-app live dashboards, and a real-time table overlay (see Product Goal 4 — the overlay carries an open ToS risk being tracked, not yet a blocker).
 
 ## Not included initially
 
