@@ -13,9 +13,10 @@ The project is in the design phase described by `docs/00-development-roadmap.md`
 ### Backend (`backend/`, Java 17 + Spring Boot, Maven)
 
 ```
-mvn compile          # compile
-mvn test             # run tests
-mvn spring-boot:run  # run the app locally (port 8080)
+mvn compile                     # compile
+mvn test                        # run tests
+mvn test -Dtest=ClassName       # run a single test class (e.g. PokerAnalyticsApplicationTests)
+mvn spring-boot:run             # run the app locally (port 8080)
 ```
 
 If `mvn` fails with a `JAVA_HOME` error, this machine has multiple JDKs installed (Zulu 8/17/21) and no default `JAVA_HOME` — prefix commands with `JAVA_HOME="/c/Program Files/Zulu/zulu-17" mvn ...` or set `JAVA_HOME` in the shell profile.
@@ -93,7 +94,7 @@ Desktop:
 
 - Do not make architectural changes without discussion; large decisions get a new ADR in `docs/decisions/` (never edit or delete an existing one).
 - Git: never commit directly to `main` or `develop` — all work happens in `feature/*` branches merged via Pull Request.
-- Prefer maintainable solutions over quick hacks.
+- Prefer maintainable solutions to quick hacks.
 - Document important technical decisions before implementing them, and update the relevant doc(s) as part of the same change — a change isn't done until its documentation matches it.
 - Keep modules independent.
 - Keep `docs/11-development-tracking.md` in sync with actual progress — check off subtasks as they're completed, and reflect a fully-completed phase's status back in `docs/00-development-roadmap.md`.
