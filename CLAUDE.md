@@ -62,14 +62,16 @@ The product should provide:
 - AI-assisted insights
 - Future cloud features
 
-## Technology Stack (`docs/decisions/ADR-001-stack-selection.md`)
+## Technology Stack (`docs/decisions/ADR-001-stack-selection.md`, superseded in part by ADR-003)
 
 Backend:
-- Java
+- Java 17
 - Spring Boot
+- Packaged as an executable JAR on a bundled JRE, run as a Tauri sidecar process, talking to the frontend over local HTTP (`docs/decisions/ADR-004-backend-packaging.md`). GraalVM native-image is a deliberately deferred fallback, not the current plan.
+- Internally organized as a **modular monolith** (one package per bounded module, e.g. `com.pokeranalytics.importing`, `.hands`, `.analytics`; modules only call each other through a small application-service API) following **pragmatic DDD** — no CQRS/event sourcing (`docs/decisions/ADR-002-modular-monolith.md`).
 
 Database:
-- ClickHouse (analytical data: hands, actions, sessions, aggregated stats)
+- DuckDB (analytical data: hands, actions, sessions, aggregated stats) — embedded, single-file, no server process. ADR-001 originally picked ClickHouse for this role; `docs/decisions/ADR-003-local-analytics-storage.md` replaced it with DuckDB because the actual scale is single-player/local, not multi-tenant. Don't reintroduce ClickHouse references for the local desktop path — it's still a candidate for a possible future cloud/community platform, but that's an explicitly out-of-scope, separate decision.
 - SQLite (application data: preferences, config, UI state, import history)
 
 Frontend:
