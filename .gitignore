@@ -1,0 +1,25 @@
+# Repository-wide ignores.
+# Project-specific build artifacts are ignored by backend/.gitignore,
+# frontend/.gitignore and frontend/src-tauri/.gitignore instead.
+
+## IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+!.vscode/extensions.json
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Environment / secrets
+.env
+.env.local
+.env.*.local
+
+## Logs
+*.log
+logs/
