@@ -69,7 +69,7 @@ Status legend:
 
 - [x] Overview module
 - [x] Live Session module
-- [ ] Hands module
+- [x] Hands module
 - [ ] Players module
 - [ ] Statistics module
 - [ ] Reports module
@@ -152,6 +152,8 @@ Items raised during review that don't block the current phase but should be reso
 ---
 
 # Last Updated
+
+2026-09-09 — Hands module defined in `05-product-map.md`: hands table (basic data + game context columns), Replay/Detail row actions, result/situation/global filters, tagging, and out-of-scope boundaries against Statistics, Players, Live Session and hand editing.
 
 2026-09-09 — Relaxed Git workflow: direct commits to `develop` are now allowed and `feature/*` branches are optional (`main` stays PR-protected); added the rule that every commit logs a dated entry here explaining what it did. Updated in `CLAUDE.md`, `02-development-workflow.md` and `01-documentation-structure.md`.
 

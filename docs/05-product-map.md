@@ -201,3 +201,64 @@ The Live Session module must **not** include:
 - Historical trends / long-term analysis (belongs to Overview / Statistics)
 
 ---
+
+## Hands
+
+### Purpose
+
+The Hands module lets the player review specific hands they've played.
+
+It should answer the following question:
+
+> **"I want to review specific hands."**
+
+---
+
+### Information Displayed
+
+#### Hands Table
+
+A table listing hands, one row per hand, with:
+
+- Basic data: date/time, poker room, format, stakes, result (won/lost), amount won/lost
+- Game context: hero position, hero cards, number of players in the hand, hand type (e.g. 3-bet pot, limped pot)
+
+#### Row Actions
+
+Each row has two buttons:
+
+- **Replay** — opens the hand replayed visually, street by street
+- **Detail** — opens a more detailed view of the hand (e.g. the street-by-street action summary and other data that doesn't fit the table)
+
+> The exact contents of the Detail view will be refined later — not part of this initial definition.
+
+---
+
+### Filters
+
+- **Result & size** — won/lost, all-in or not, above a given pot/profit-loss size
+- **Situation** — position, 3-bet pot, street the hand ended on
+- **Global filters** — Poker Room, Stakes, Game Type, Date Range, applied to the hand list
+
+> No filter by opponent player yet — that connects to the future Players module, not this one.
+
+---
+
+### Navigation
+
+- Open **Replay** for a hand
+- Open **Detail** for a hand
+- Tag / mark a hand, to come back to it later
+
+---
+
+### Out of Scope
+
+The Hands module must **not** include:
+
+- Aggregated analytics (belongs to Statistics)
+- Player/opponent profiles (belongs to Players)
+- Hands from the session currently in progress (belongs to Live Session)
+- Editing imported hands — raw hand histories are the immutable source of truth (see Architecture Principles in `CLAUDE.md`)
+
+---
