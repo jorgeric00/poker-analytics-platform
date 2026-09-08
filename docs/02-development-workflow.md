@@ -168,7 +168,8 @@ The roadmap (`00-development-roadmap.md`) defines phases and freezes them once a
 
 Rules:
 
-- Every Pull Request that completes a subtask updates `11-development-tracking.md` in the same PR (part of Phase 6 above).
+- Every commit that completes a subtask updates `11-development-tracking.md` in the same commit (part of Phase 6 above) — this applies whether the commit lands via a Pull Request or directly on `develop`.
+- Every commit adds a new dated entry to the "Last Updated" section explaining what that commit did, regardless of whether it also touches a subtask checkbox.
 - When every subtask of a phase is checked, update that phase's `Status` in `00-development-roadmap.md` to reflect it.
 - Unplanned exploratory work (spikes) is still logged there, marked 🧪, so it's clear it is not the frozen implementation for that phase.
 - Before starting work, check this file first to see current status and avoid duplicating or contradicting work in progress.
@@ -177,7 +178,7 @@ Rules:
 
 # Git Workflow
 
-The project follows a Git Flow inspired strategy.
+The project follows a simplified Git Flow strategy.
 
 ```
 main
@@ -185,18 +186,14 @@ main
 ↑
 
 develop
-
-↑
-
-feature/*
 ```
 
 Rules:
 
 - Never commit directly to `main`.
-- Never commit directly to `develop`.
-- All work is performed in `feature/*` branches.
-- Every merge requires a Pull Request.
+- Direct commits to `develop` are allowed.
+- `feature/*` branches are optional — use one to isolate a larger or riskier change, not required for every commit.
+- Merging into `main` requires a Pull Request.
 
 ---
 

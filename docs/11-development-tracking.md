@@ -153,6 +153,8 @@ Items raised during review that don't block the current phase but should be reso
 
 # Last Updated
 
+2026-09-09 — Relaxed Git workflow: direct commits to `develop` are now allowed and `feature/*` branches are optional (`main` stays PR-protected); added the rule that every commit logs a dated entry here explaining what it did. Updated in `CLAUDE.md`, `02-development-workflow.md` and `01-documentation-structure.md`.
+
 2026-09-09 — Phase 3 started: Live Session module defined in `05-product-map.md` (in-app live dashboard half of the Live HUD goal; the real-time overlay stays out of scope for this module, tracked separately). Remaining Phase 3.1 modules (Hands, Players, Statistics, Reports) and all of 3.2 (screen design) still open.
 
 2026-09-08 — Product vision clarified: commercial ambition, MVP rooms/formats (PokerStars + Winamax, cash/MTT/Spin&Go), Live HUD goal added (in-app dashboards + real-time overlay) with its ToS and technical-feasibility risks tracked as follow-ups.

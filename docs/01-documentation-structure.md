@@ -170,7 +170,7 @@ Question answered:
 
 ## 11-development-tracking.md
 
-Breaks each roadmap phase into concrete subtasks and tracks their status (done / in progress / not started). Unlike the other documents, it is not frozen once written — it is expected to change on every Pull Request that completes a piece of work.
+Breaks each roadmap phase into concrete subtasks and tracks their status (done / in progress / not started). Unlike the other documents, it is not frozen once written — it is expected to change on every commit that completes a piece of work, whether that commit lands via a Pull Request or directly on `develop`.
 
 Question answered:
 
