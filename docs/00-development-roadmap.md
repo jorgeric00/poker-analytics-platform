@@ -88,7 +88,7 @@ Define the complete technical architecture.
 - React
 - TypeScript
 - Tauri
-- ClickHouse
+- DuckDB
 - SQLite
 - Modular Monolith
 - Pragmatic Domain-Driven Design (DDD)
@@ -214,7 +214,7 @@ Topics:
 - Aggregates
 - Caching
 - Denormalization
-- ClickHouse optimization
+- DuckDB optimization
 - Update strategy
 
 Questions answered:

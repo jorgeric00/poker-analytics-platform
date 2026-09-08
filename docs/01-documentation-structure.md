@@ -48,9 +48,10 @@ docs/
 
 decisions/
 
-ADR-001-local-first.md
-ADR-002-sqlite-clickhouse.md
-ADR-003-backend-architecture.md
+ADR-001-stack-selection.md
+ADR-002-modular-monolith.md
+ADR-003-local-analytics-storage.md
+ADR-004-backend-packaging.md
 ```
 
 ---

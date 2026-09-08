@@ -44,7 +44,7 @@ Java + Spring Boot"]
         SQLite["SQLite
 Application Data"]
 
-        ClickHouse["ClickHouse
+        DuckDB["DuckDB
 Poker Analytics"]
 
     end
@@ -63,7 +63,7 @@ Poker Analytics"]
 
     Backend <--> SQLite
 
-    Backend <--> ClickHouse
+    Backend <--> DuckDB
 
     Backend -. Optional Synchronization .-> CloudAPI
 
@@ -121,7 +121,7 @@ The backend acts as the central application layer.
 
 Technology:
 
-- ClickHouse
+- DuckDB
 
 Purpose:
 
@@ -135,7 +135,7 @@ Examples include:
 - Sessions
 - Aggregated statistics
 
-The database is optimized for analytical queries over very large datasets.
+The database is embedded (no server process) and optimized for fast analytical queries over the scale of a single player's data. See `decisions/ADR-003-local-analytics-storage.md`.
 
 ---
 
@@ -291,9 +291,9 @@ Stores:
 
 ---
 
-## ClickHouse
+## DuckDB
 
-Optimized for analytical poker data.
+Embedded, columnar, optimized for analytical poker data at single-player scale — no server process to install or manage.
 
 Stores:
 
@@ -303,7 +303,7 @@ Stores:
 - Analytical information
 - Aggregated metrics
 
-Each database is used according to its strengths.
+Each database is used according to its strengths. See `decisions/ADR-003-local-analytics-storage.md` for the rationale, including why a distributed engine like ClickHouse was not used here.
 
 ---
 

@@ -55,17 +55,15 @@ Status legend:
 - [x] Technology stack decision (`decisions/ADR-001-stack-selection.md`)
 - [x] Backend architecture (high-level, `04-architecture.md`)
 - [x] Frontend architecture (high-level, `04-architecture.md`)
-- [x] Database strategy (SQLite + ClickHouse split, `04-architecture.md`)
+- [x] Database strategy (SQLite + DuckDB split, `04-architecture.md`)
 - [x] High-level diagrams
-- [ ] ADR for "Modular Monolith + Pragmatic DDD" (decision is listed in the roadmap but has no ADR yet)
-- [ ] `ADR-002-sqlite-clickhouse.md` (referenced in `01-documentation-structure.md`, not yet written)
-- [ ] `ADR-003-backend-architecture.md` (referenced in `01-documentation-structure.md`, not yet written)
-
-> Phase is marked Completed in the roadmap, but the three missing ADRs above are tracked as follow-up debt — see "Follow-ups" below.
+- [x] ADR for "Modular Monolith + Pragmatic DDD" (`decisions/ADR-002-modular-monolith.md`)
+- [x] ADR for local analytics storage engine (`decisions/ADR-003-local-analytics-storage.md`) — also revisits ADR-001's original ClickHouse choice, replacing it with DuckDB for the local desktop store
+- [x] ADR for backend packaging/startup (`decisions/ADR-004-backend-packaging.md`)
 
 ---
 
-# Phase 3 — Product Design — 🚧 In Progress
+# Phase 3 — Product Design — ⬜ Not Started
 
 ## 3.1 Product Map (`05-product-map.md`)
 
@@ -98,8 +96,7 @@ Status legend:
 
 # Phase 6 — Storage Strategy — ⬜ Not Started
 
-- [ ] `08-storage-strategy.md` written
-- [ ] Re-evaluate ClickHouse vs. DuckDB for the embedded/local analytics store (raised during architecture review, not yet decided)
+- [ ] `08-storage-strategy.md` written (engine already decided: DuckDB, see `decisions/ADR-003-local-analytics-storage.md`; this phase covers the detailed strategy on top of it — raw vs. derived data, caching, denormalization)
 
 ---
 
@@ -140,15 +137,16 @@ Status legend:
 
 Items raised during review that don't block the current phase but should be resolved before relying on them:
 
-- [ ] Write missing ADRs: Modular Monolith + DDD, SQLite/ClickHouse split, backend architecture (see Phase 2)
-- [ ] Fix naming drift between `01-documentation-structure.md`'s expected ADR filenames and the actual `ADR-001-stack-selection.md`
-- [ ] Decide ClickHouse vs. DuckDB for local-first analytics storage before Phase 6 is written
+- [x] ~~Write missing ADRs: Modular Monolith + DDD, SQLite/ClickHouse split, backend architecture (see Phase 2)~~ — done: `ADR-002-modular-monolith.md`, `ADR-003-local-analytics-storage.md`, `ADR-004-backend-packaging.md`
+- [x] ~~Fix naming drift between `01-documentation-structure.md`'s expected ADR filenames and the actual `ADR-001-stack-selection.md`~~ — done, structure doc now lists the real filenames
+- [x] ~~Decide ClickHouse vs. DuckDB for local-first analytics storage before Phase 6 is written~~ — decided: DuckDB locally (`ADR-003-local-analytics-storage.md`); ClickHouse deferred to a future cloud-platform ADR, see below
 - [ ] Legal/ToS review for opponent-data aggregation ("Community Intelligence") and real-time HUD features described in `03-product-vision.md`
 - [ ] Upgrade local Node.js to `^20.19` or `>=22.12` (`frontend/` currently fails `npm run build` on Node 18.17.1)
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
+- [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 
 ---
 
 # Last Updated
 
-2026-09-08 — Initial version, created alongside the `backend/`/`frontend/` scaffold spike.
+2026-09-08 — Phase 2 closed out: ADR-002/003/004 written, ClickHouse replaced by DuckDB for local storage, naming drift in `01-documentation-structure.md` fixed.
