@@ -66,7 +66,7 @@ class PokerStarsParserReferenceFixturesTest {
     void parsesSidePotsAndMainPotBreakdown() throws IOException {
         List<ParsedHand> hands = PokerStarsParser.parseFile(
                 FIXTURES_DIR.resolve("RunItTwiceTests/RunItTwice1.txt"));
-        ParsedHand hand = hands.get(0);
+        ParsedHand hand = hands.getFirst();
 
         assertTrue(hand.runItTwice);
         assertEquals(2, hand.boards.size());
@@ -89,7 +89,7 @@ class PokerStarsParserReferenceFixturesTest {
     void parsesPlayerNameContainingAColonCorrectly() throws IOException {
         List<ParsedHand> hands = PokerStarsParser.parseFile(
                 FIXTURES_DIR.resolve("ExtraHands/PlayerWithColon.txt"));
-        ParsedHand hand = hands.get(0);
+        ParsedHand hand = hands.getFirst();
 
         boolean sawColonPlayerAction = hand.actions.stream()
                 .anyMatch(a -> a.rawLine().startsWith("wo_olly :D"));
@@ -102,14 +102,14 @@ class PokerStarsParserReferenceFixturesTest {
 
     @Test
     void parsesAnteAndMultiCurrencyTables() throws IOException {
-        ParsedHand anteHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/AnteTable.txt")).get(0);
+        ParsedHand anteHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/AnteTable.txt")).getFirst();
         boolean sawAnte = anteHand.actions.stream().anyMatch(a -> a.type() == HandActionType.POST_ANTE);
         assertTrue(sawAnte, "Expected an ante posting action");
 
-        ParsedHand euroHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/EuroTable.txt")).get(0);
+        ParsedHand euroHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/EuroTable.txt")).getFirst();
         assertEquals("€", euroHand.currency);
 
-        ParsedHand gbpHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/GbpTable.txt")).get(0);
+        ParsedHand gbpHand = PokerStarsParser.parseFile(FIXTURES_DIR.resolve("Limits/GbpTable.txt")).getFirst();
         assertEquals("£", gbpHand.currency);
     }
 }

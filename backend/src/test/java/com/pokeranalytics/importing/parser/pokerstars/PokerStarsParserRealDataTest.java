@@ -103,7 +103,7 @@ class PokerStarsParserRealDataTest {
         ParsedHand hand = findHand(hands, "262026560699");
 
         assertEquals(1, hand.boards.size());
-        assertEquals(List.of("Ts", "5d", "4h", "Ad", "Td"), hand.boards.get(0));
+        assertEquals(List.of("Ts", "5d", "4h", "Ad", "Td"), hand.boards.getFirst());
         assertEquals(new BigDecimal("4.61"), hand.totalPot);
         assertEquals(new BigDecimal("0.23"), hand.rake);
 
