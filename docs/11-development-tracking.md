@@ -70,7 +70,7 @@ Status legend:
 - [x] Overview module
 - [x] Live Session module
 - [x] Hands module
-- [ ] Players module
+- [x] Players module
 - [ ] Statistics module
 - [ ] Reports module
 
@@ -148,10 +148,13 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Upgrade local Node.js to `^20.19` or `>=22.12` (`frontend/` currently fails `npm run build` on Node 18.17.1)
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
+- [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
 
 ---
 
 # Last Updated
+
+2026-09-09 — Players module defined in `05-product-map.md`: opponents-only scope, nickname-only player identity (aggregated across rooms), profile with stats vs. Hero + linked hands list + predefined tags/free notes, searchable player list, global filters plus a minimum-sample-size filter, and out-of-scope boundaries against Live Session, AI-assisted insights, hand editing and Hero's own stats.
 
 2026-09-09 — Hands module defined in `05-product-map.md`: hands table (basic data + game context columns), Replay/Detail row actions, result/situation/global filters, tagging, and out-of-scope boundaries against Statistics, Players, Live Session and hand editing.
 

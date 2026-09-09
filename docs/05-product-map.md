@@ -262,3 +262,69 @@ The Hands module must **not** include:
 - Editing imported hands — raw hand histories are the immutable source of truth (see Architecture Principles in `CLAUDE.md`)
 
 ---
+
+## Players
+
+### Purpose
+
+The Players module lets the player analyze **opponents** they've played against.
+
+It should answer the following question:
+
+> **"I want to analyze a player."**
+
+This module is scoped to opponents only. Hero's own performance is not part of it — that belongs to Overview and Statistics.
+
+---
+
+### Information Displayed
+
+#### Player List
+
+A searchable, sortable list of every opponent Hero has hands against.
+
+- A player is identified by **nickname only** — hands played under the same nickname are aggregated into a single profile, regardless of which poker room they were played on (no per-room split).
+- Columns: nickname, hands played (vs. Hero), and at least one quick reference stat.
+
+> The exact set of list columns will be refined later — not part of this initial definition.
+
+#### Player Profile
+
+Opening a player from the list shows their full profile:
+
+- **Stats vs. Hero** — aggregated tendencies such as VPIP, PFR, 3-Bet %, Fold to 3-Bet, C-Bet, WTSD.
+
+  > The exact stat set will be refined later — not part of this initial definition.
+
+- **Hands** — the list of hands played against this player, linking into the Hands module (Replay/Detail).
+- **Notes** — predefined quick tags (e.g. Nit, Maniac, Calling Station, Regular) plus free-text notes.
+
+  > The exact predefined tag set will be refined later — not part of this initial definition.
+
+---
+
+### Filters
+
+- **Minimum sample size** — a minimum-hands-played threshold, to hide players with too small a sample to be reliable.
+- **Global filters** — Poker Room, Stakes, Game Type, Date Range, applied to both the player list and the stats/hands shown in a profile.
+
+---
+
+### Navigation
+
+- Reachable from the sidebar menu, opening the searchable player list.
+- Selecting a player in the list opens their profile.
+- From a player's profile, opening a hand goes to that hand's Replay/Detail in the Hands module.
+
+---
+
+### Out of Scope
+
+The Players module must **not** include:
+
+- The real-time table overlay / HUD (belongs to Live Session).
+- AI-assisted exploit suggestions (deferred to a future phase, see "AI-assisted insights" in `03-product-vision.md`).
+- Editing imported hands — raw hand histories are the immutable source of truth (see Architecture Principles in `CLAUDE.md`).
+- Hero's own stats/profile (belongs to Overview / Statistics).
+
+---
