@@ -46,7 +46,16 @@ Characteristics:
 
 This is intended to become a real commercial product, not a personal tool or a portfolio project — the explicit goal is to compete with PokerTracker and Hand2Note in the market.
 
-The specific monetization model (one-time license, subscription, freemium with a paid cloud tier, etc.) is not yet defined and needs its own decision before launch.
+### Monetization Model
+
+Subscription-only, billed monthly — no permanent free tier.
+
+- **Basic**: full core tracking/analytics across every supported room (see "Target Poker Rooms & Formats" below) — stats, reports, replay. Limited by hand-import volume and by history retention window (exact caps for both still TBD).
+- **Pro**: everything in Basic without those limits, plus AI-assisted game analysis and further capabilities to be defined over time as the product matures.
+
+The subscription is validated periodically online (e.g. on app start), with an offline grace period in between checks, so day-to-day use (importing, analyzing, playing) keeps working without an active internet connection — consistent with the Local First principle in `04-architecture.md`. The exact validation cadence, grace-period length, and the licensing/entitlement mechanism itself still need their own technical design, before Phase 8 (API Design) and the Future Cloud Platform work.
+
+Exact price points for each tier are not yet decided.
 
 ---
 
