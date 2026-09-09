@@ -76,7 +76,14 @@ Status legend:
 
 ## 3.2 Screen Design
 
-- [ ] Wireframes / screen definitions for each module above
+- [x] Overview screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Live Session screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Hands screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Hand Detail screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Players screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Session History screen wireframe (canvas, see `12-ui-designs.md`)
+- [x] Reports screen wireframe (canvas, see `12-ui-designs.md`)
+- [ ] Statistics screen wireframe — deferred until the PokerTracker 4 stats research follow-up below is done
 
 **Exit criteria (from roadmap):** the complete application structure is defined — not yet met.
 
@@ -149,12 +156,14 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 - [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
-- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats
+- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats — needed before its screen design (3.2) can be done
 - [ ] Reports module: exact set of predefined report templates is still TBD — refine during screen design (3.2)
 
 ---
 
 # Last Updated
+
+2026-09-09 — Published Phase 3.2 screen-design canvases (Claude Design) for Overview, Live Session, Hands, Hand Detail, Players, Session History and Reports; recorded their links in new doc `12-ui-designs.md` (registered in `01-documentation-structure.md`). Statistics's screen design stays open pending the PokerTracker 4 stats research follow-up.
 
 2026-09-09 — Reports module defined in `05-product-map.md`: Session History (log of past sessions + session detail) and Report Generation (predefined templates + exporting a saved Statistics view, PDF/CSV) as two separate sidebar entries within one module; global filters plus a date-range period; out-of-scope boundaries against Statistics, Live Session and hand editing. Also linked Live Session's existing "session history" reference to this module. Phase 3.1 (Product Map) is now complete — Phase 3 overall stays in progress pending 3.2 (Screen Design).
 

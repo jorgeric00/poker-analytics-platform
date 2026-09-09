@@ -45,6 +45,7 @@ docs/
 09-data-model.md
 10-api-design.md
 11-development-tracking.md
+12-ui-designs.md
 
 decisions/
 
@@ -175,6 +176,16 @@ Breaks each roadmap phase into concrete subtasks and tracks their status (done /
 Question answered:
 
 > What is the current status of the project, task by task?
+
+---
+
+## 12-ui-designs.md
+
+Lists the visual screen designs (Claude Design canvases) produced during Phase 3.2 — Screen Design, one link per screen. Depends on `05-product-map.md`.
+
+Question answered:
+
+> What do the screens look like?
 
 ---
 
