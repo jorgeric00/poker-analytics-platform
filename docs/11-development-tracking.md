@@ -125,7 +125,7 @@ Status legend:
 - [x] 🧪 Backend scaffold: Spring Boot 3.3.4 + Java 17 skeleton in `backend/` (builds, one passing test)
 - [x] 🧪 Frontend scaffold: Tauri + React + TypeScript in `frontend/` (generated via `create-tauri-app`, `npm install` works)
 - [ ] Hand history parser — real, kept import layer built early per `decisions/ADR-005-early-import-parser.md` (ported from the MIT-licensed `HHSmithy/PokerHandHistoryParser` reference, see `THIRD-PARTY-NOTICES.md`), scoped to currently-operating rooms only, one room at a time:
-  - [x] PokerStars cash (Zoom, No Limit Hold'em) — `backend/src/main/java/com/pokeranalytics/importing/parser/pokerstars/`, validated against both the reference library's own sample fixtures and 81 real hands dropped in `docs/hand-history/poker-stars/`
+  - [x] PokerStars cash — `backend/src/main/java/com/pokeranalytics/importing/{model,parser/pokerstars}/`, validated against both 62 ported reference sample fixtures (128 hands: side pots, run-it-twice, antes, Cap games, Hold'em/Omaha/Omaha Hi-Lo, Fixed/Pot/No Limit, multi-currency, weird player names) and 81 real Zoom hands dropped in `docs/hand-history/poker-stars/` — 8 JUnit tests, all green
   - [ ] PokerStars MTT / Spin&Go — reference library has tournament-parsing code but no sample-based tests of its own for it, and no Spin&Go/Expresso jackpot-format handling at all; needs real sample hand histories to validate properly
   - [ ] Winamax cash / MTT / Spin&Go (Expresso)
   - [ ] PartyPoker cash / MTT
@@ -169,6 +169,8 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Implementation priority: Statistics and Reports are the most complex modules in the product map (confirmed by the PT4 research in `13-statistics-module.md`) and should be built last in Phase 9, after Overview, Live Session, Hands and Players
 
 ---
+
+2026-09-10 — Built the real PokerStars cash parser in `com.pokeranalytics.importing` (per ADR-005): `model` package (`ParsedHand`, `Seat`, `HandAction`, `HandActionType`, `SummarySeat`, `Street`) plus `parser.pokerstars.PokerStarsParser`. Ported 62 sample hand histories from the reference library into `backend/src/test/resources/hand-history/pokerstars/` and validated against them (128 hands) plus the existing 81 real hands — all 8 tests green. Along the way, fixed real bugs the reference research alone hadn't surfaced: numbered/multiple side pots in the same summary line, "Hand was run twice" appearing after `*** SUMMARY ***` (not before), Cap-game headers/raises with trailing descriptive text, lone-CR (classic Mac) line endings in one fixture, table and player names containing their own apostrophes/colons, and Omaha Hi/Lo partial "shows" lines with no hand description. Retired `com.pokeranalytics.spike.handhistory` (both `main` and `test`), fully superseded.
 
 # Last Updated
 

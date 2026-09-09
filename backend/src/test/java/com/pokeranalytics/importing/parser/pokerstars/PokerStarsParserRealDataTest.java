@@ -1,5 +1,8 @@
-package com.pokeranalytics.spike.handhistory;
+package com.pokeranalytics.importing.parser.pokerstars;
 
+import com.pokeranalytics.importing.model.HandActionType;
+import com.pokeranalytics.importing.model.ParsedHand;
+import com.pokeranalytics.importing.model.SummarySeat;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,12 +21,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Phase 9 feasibility spike (see docs/11-development-tracking.md): proves the PokerStars Zoom
- * cash-game hand history format is parseable, using real hand histories dropped under
- * docs/hand-history/poker-stars/. This is NOT the frozen import-engine architecture — it should
- * not be extended with real domain logic until Phases 4-8 are documented.
+ * Real import-layer code — see {@code docs/decisions/ADR-005-early-import-parser.md}.
+ *
+ * Validates {@link PokerStarsParser} against real PokerStars Zoom cash hands dropped in
+ * {@code docs/hand-history/poker-stars/} — supersedes the earlier feasibility spike
+ * (com.pokeranalytics.spike.handhistory), now retired.
  */
-class PokerStarsHandHistoryParserTest {
+class PokerStarsParserRealDataTest {
 
     private static final Path SAMPLES_DIR = Paths.get("..", "docs", "hand-history", "poker-stars");
 
@@ -35,7 +39,7 @@ class PokerStarsHandHistoryParserTest {
         List<ParsedHand> all = new ArrayList<>();
         try (DirectoryStream<Path> files = Files.newDirectoryStream(SAMPLES_DIR, "*.txt")) {
             for (Path file : files) {
-                all.addAll(PokerStarsHandHistoryParser.parseFile(file));
+                all.addAll(PokerStarsParser.parseFile(file));
             }
         }
         return all;
@@ -84,7 +88,7 @@ class PokerStarsHandHistoryParserTest {
         assertEquals(new BigDecimal("0.20"), hand.totalPot);
         assertEquals(new BigDecimal("0"), hand.rake);
 
-        ParsedSummarySeat winner = hand.summarySeats.stream()
+        SummarySeat winner = hand.summarySeats.stream()
                 .filter(s -> s.playerName().equals("manuelolo15"))
                 .findFirst()
                 .orElseThrow();
@@ -98,14 +102,15 @@ class PokerStarsHandHistoryParserTest {
 
         ParsedHand hand = findHand(hands, "262026560699");
 
-        assertEquals(List.of("Ts", "5d", "4h", "Ad", "Td"), hand.boardCards);
+        assertEquals(1, hand.boards.size());
+        assertEquals(List.of("Ts", "5d", "4h", "Ad", "Td"), hand.boards.get(0));
         assertEquals(new BigDecimal("4.61"), hand.totalPot);
         assertEquals(new BigDecimal("0.23"), hand.rake);
 
-        boolean sawShowdownActions = hand.actions.stream().anyMatch(a -> a.type().equals("SHOWS"));
+        boolean sawShowdownActions = hand.actions.stream().anyMatch(a -> a.type() == HandActionType.SHOWS);
         assertTrue(sawShowdownActions, "Expected at least one SHOWS action");
 
-        ParsedSummarySeat winner = hand.summarySeats.stream()
+        SummarySeat winner = hand.summarySeats.stream()
                 .filter(s -> s.playerName().equals("SirButterman"))
                 .findFirst()
                 .orElseThrow();
@@ -119,7 +124,7 @@ class PokerStarsHandHistoryParserTest {
 
         ParsedHand hand = findHand(hands, "262026561348");
 
-        ParsedSummarySeat multiWordNameSeat = hand.summarySeats.stream()
+        SummarySeat multiWordNameSeat = hand.summarySeats.stream()
                 .filter(s -> s.seatNumber() == 5)
                 .findFirst()
                 .orElseThrow();
