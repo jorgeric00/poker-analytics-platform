@@ -45,7 +45,7 @@ The docs form a top-down dependency chain (`docs/01-documentation-structure.md`)
 3. `docs/02-development-workflow.md` — how features are analyzed, documented, implemented and reviewed; Git workflow
 4. `docs/03-product-vision.md` — why the product exists, target users, MVP scope
 5. `docs/04-architecture.md` — how the system is built (components, data flow, database strategy)
-6. `docs/05-product-map.md` — what the app does, module by module (currently only the "Overview" module is defined; the rest are still to be written)
+6. `docs/05-product-map.md` — what the app does, module by module (written incrementally, one module at a time; see `docs/11-development-tracking.md` for which modules are currently defined)
 7. `docs/decisions/` — ADRs; never delete or edit an accepted ADR, write a new one if a decision changes
 8. `docs/11-development-tracking.md` — current task-level status; not part of the dependency chain, updated continuously (see "Repository Status" above)
 
@@ -102,6 +102,7 @@ Desktop:
 - Keep `docs/11-development-tracking.md` in sync with actual progress — check off subtasks as they're completed, and reflect a fully-completed phase's status back in `docs/00-development-roadmap.md`.
 - Every commit adds a new entry (dated) to the "Last Updated" section of `docs/11-development-tracking.md` explaining what that commit did.
 - When writing or rewriting a module/screen in `docs/05-product-map.md`, always ask the user for that screen's specifications first (what it shows, its filters, its actions/navigation, what's out of scope) — don't draft it unprompted from the product vision alone.
+- More generally: whenever a task involves any doubt, ambiguity, or a decision about scope/design/approach — not just product-map specs — ask the user before proceeding, rather than assuming.
 - After finishing any piece of work, re-review `docs/` for decisions that changed along the way (even ones not planned up front) — update the affected doc(s) and, if an accepted ADR's decision changed, add a new ADR rather than editing the old one, in the same change.
 
 ## Product Principles
