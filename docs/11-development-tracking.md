@@ -159,8 +159,8 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Legal/ToS review for the real-time table overlay HUD specifically against **PokerStars** and **Winamax**'s current Terms of Service before building it (Winamax has historically banned real-time HUD/datamining tools under French ANJ regulation; PokerStars restricts live overlays in several jurisdictions) — also covers opponent-data aggregation ("Community Intelligence") described in `03-product-vision.md`
 - [ ] Technical spike: cross-platform feasibility of a real-time overlay rendered on top of another application's window (Windows/macOS/Linux each need different native APIs — this is outside what Tauri provides for its own window) — needed before committing to the overlay's implementation approach
 - [ ] Define the monetization/pricing model — ambition is now explicitly a commercial product (see `03-product-vision.md`), but the business model itself (license, subscription, freemium cloud tier...) is still undecided
-- [ ] Upgrade local Node.js to `^20.19` or `>=22.12` (`frontend/` currently fails `npm run build` on Node 18.17.1)
-- [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
+- [x] ~~Upgrade local Node.js to `^20.19` or `>=22.12` (`frontend/` currently fails `npm run build` on Node 18.17.1)~~ — done: Node.js 24.19.0 (LTS) installed, `npm install` + `npm run build` verified working
+- [x] ~~Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds~~ — done: installed via `rustup` (1.98.1); `npm run tauri dev` itself (full desktop app launch) not yet exercised
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 - [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
 - [ ] Statistics module: PokerTracker 4 research done and an MVP stat catalog + breakdown-dimension proposal drafted in `13-statistics-module.md`; remaining before its screen design (3.2) can start: verify the doc's "not yet confirmed" stat group and resolve its Open Questions
@@ -171,6 +171,8 @@ Items raised during review that don't block the current phase but should be reso
 ---
 
 # Last Updated
+
+2026-09-10 — Set up frontend tooling: installed Node.js 24.19.0 (LTS, replacing the EOL 18.17.1) and the Rust toolchain via `rustup` (1.98.1). Verified `npm install` and `npm run build` both work now (previously `npm run build` crashed on Node 18). `npm run tauri dev` (full desktop app launch) not yet exercised.
 
 2026-09-10 — Upgraded the backend from Java 17 to Java 25 (`decisions/ADR-006-java-25.md`), skipping 21 since there's no reason to target a non-latest LTS pre-1.0. Installed Zulu 25 alongside the existing Zulu 8/17/21. Discovered and fixed a real compatibility gap along the way: Spring Boot 3.3.4's ASM classpath scanner can't read Java 25's class file format, so also bumped Spring Boot to 3.5.16 — verified empirically (full 9-test suite green on Java 25 + Spring Boot 3.5.16, including the Spring context test) rather than assumed. Updated `CLAUDE.md`'s Technology Stack section and `JAVA_HOME` guidance accordingly.
 

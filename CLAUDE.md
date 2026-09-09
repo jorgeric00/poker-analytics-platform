@@ -29,10 +29,10 @@ If `mvn` fails with a `JAVA_HOME` error, this machine has multiple JDKs installe
 npm install       # install dependencies
 npm run dev       # Vite dev server (web only, no Tauri shell)
 npm run build     # tsc + vite build
-npm run tauri dev # full desktop app (requires the Rust toolchain, not installed on this machine yet)
+npm run tauri dev # full desktop app (requires the Rust toolchain)
 ```
 
-Known issue: the scaffolded `vite`/`rolldown` versions require Node `^20.19` or `>=22.12`; this machine has Node 18.17.1 (EOL), which makes `npm run build` crash. Upgrade Node before doing frontend work.
+Node.js `24.19.0` (LTS) and the Rust toolchain (via `rustup`, `1.98.1`) are installed on this machine. If a freshly-opened terminal doesn't see `rustc`/`cargo` on `PATH`, start a new shell — `rustup`'s installer only updates `PATH` for new processes.
 
 No `test` or `lint` script exists yet in `package.json` — don't assume or invent one.
 
