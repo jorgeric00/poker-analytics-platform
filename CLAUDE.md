@@ -12,7 +12,7 @@ The project is in the design phase described by `docs/00-development-roadmap.md`
 
 ## Commands
 
-### Backend (`backend/`, Java 17 + Spring Boot, Maven)
+### Backend (`backend/`, Java 25 + Spring Boot, Maven)
 
 ```
 mvn compile                     # compile
@@ -21,7 +21,7 @@ mvn test -Dtest=ClassName       # run a single test class (e.g. PokerAnalyticsAp
 mvn spring-boot:run             # run the app locally (port 8080)
 ```
 
-If `mvn` fails with a `JAVA_HOME` error, this machine has multiple JDKs installed (Zulu 8/17/21) and no default `JAVA_HOME` — prefix commands with `JAVA_HOME="/c/Program Files/Zulu/zulu-17" mvn ...` or set `JAVA_HOME` in the shell profile.
+If `mvn` fails with a `JAVA_HOME` error, this machine has multiple JDKs installed (Zulu 8/17/21/25) and no default `JAVA_HOME` — prefix commands with `JAVA_HOME="/c/Program Files/Zulu/zulu-25" mvn ...` (the backend targets Java 25, see `decisions/ADR-006-java-25.md`) or set `JAVA_HOME` in the shell profile.
 
 ### Frontend (`frontend/`, React + TypeScript + Tauri, npm)
 
@@ -67,11 +67,11 @@ The product should provide:
 - AI-assisted insights
 - Future cloud features
 
-## Technology Stack (`docs/decisions/ADR-001-stack-selection.md`, superseded in part by ADR-003)
+## Technology Stack (`docs/decisions/ADR-001-stack-selection.md`, superseded in part by ADR-003 and ADR-006)
 
 Backend:
-- Java 17
-- Spring Boot
+- Java 25 (`docs/decisions/ADR-006-java-25.md`)
+- Spring Boot (3.5.16+ — earlier 3.3.x doesn't support Java 25's class file format, see ADR-006)
 - Packaged as an executable JAR on a bundled JRE, run as a Tauri sidecar process, talking to the frontend over local HTTP (`docs/decisions/ADR-004-backend-packaging.md`). GraalVM native-image is a deliberately deferred fallback, not the current plan.
 - Internally organized as a **modular monolith** (one package per bounded module, e.g. `com.pokeranalytics.importing`, `.hands`, `.analytics`; modules only call each other through a small application-service API) following **pragmatic DDD** — no CQRS/event sourcing (`docs/decisions/ADR-002-modular-monolith.md`).
 

@@ -122,7 +122,7 @@ Status legend:
 
 # Phase 9 — Implementation — ⬜ Not Started (early spike done ahead of schedule)
 
-- [x] 🧪 Backend scaffold: Spring Boot 3.3.4 + Java 17 skeleton in `backend/` (builds, one passing test)
+- [x] 🧪 Backend scaffold: Spring Boot 3.5.16 + Java 25 skeleton in `backend/` (builds, one passing test — see `decisions/ADR-006-java-25.md` for the version history)
 - [x] 🧪 Frontend scaffold: Tauri + React + TypeScript in `frontend/` (generated via `create-tauri-app`, `npm install` works)
 - [ ] Hand history parser — real, kept import layer built early per `decisions/ADR-005-early-import-parser.md` (ported from the MIT-licensed `HHSmithy/PokerHandHistoryParser` reference, see `THIRD-PARTY-NOTICES.md`), scoped to currently-operating rooms only, one room at a time:
   - [x] PokerStars cash — `backend/src/main/java/com/pokeranalytics/importing/{model,parser/pokerstars}/`, validated against both 62 ported reference sample fixtures (128 hands: side pots, run-it-twice, antes, Cap games, Hold'em/Omaha/Omaha Hi-Lo, Fixed/Pot/No Limit, multi-currency, weird player names) and 81 real Zoom hands dropped in `docs/hand-history/poker-stars/` — 8 JUnit tests, all green
@@ -170,9 +170,11 @@ Items raised during review that don't block the current phase but should be reso
 
 ---
 
-2026-09-10 — Built the real PokerStars cash parser in `com.pokeranalytics.importing` (per ADR-005): `model` package (`ParsedHand`, `Seat`, `HandAction`, `HandActionType`, `SummarySeat`, `Street`) plus `parser.pokerstars.PokerStarsParser`. Ported 62 sample hand histories from the reference library into `backend/src/test/resources/hand-history/pokerstars/` and validated against them (128 hands) plus the existing 81 real hands — all 8 tests green. Along the way, fixed real bugs the reference research alone hadn't surfaced: numbered/multiple side pots in the same summary line, "Hand was run twice" appearing after `*** SUMMARY ***` (not before), Cap-game headers/raises with trailing descriptive text, lone-CR (classic Mac) line endings in one fixture, table and player names containing their own apostrophes/colons, and Omaha Hi/Lo partial "shows" lines with no hand description. Retired `com.pokeranalytics.spike.handhistory` (both `main` and `test`), fully superseded.
-
 # Last Updated
+
+2026-09-10 — Upgraded the backend from Java 17 to Java 25 (`decisions/ADR-006-java-25.md`), skipping 21 since there's no reason to target a non-latest LTS pre-1.0. Installed Zulu 25 alongside the existing Zulu 8/17/21. Discovered and fixed a real compatibility gap along the way: Spring Boot 3.3.4's ASM classpath scanner can't read Java 25's class file format, so also bumped Spring Boot to 3.5.16 — verified empirically (full 9-test suite green on Java 25 + Spring Boot 3.5.16, including the Spring context test) rather than assumed. Updated `CLAUDE.md`'s Technology Stack section and `JAVA_HOME` guidance accordingly.
+
+2026-09-10 — Built the real PokerStars cash parser in `com.pokeranalytics.importing` (per ADR-005): `model` package (`ParsedHand`, `Seat`, `HandAction`, `HandActionType`, `SummarySeat`, `Street`) plus `parser.pokerstars.PokerStarsParser`. Ported 62 sample hand histories from the reference library into `backend/src/test/resources/hand-history/pokerstars/` and validated against them (128 hands) plus the existing 81 real hands — all 8 tests green. Along the way, fixed real bugs the reference research alone hadn't surfaced: numbered/multiple side pots in the same summary line, "Hand was run twice" appearing after `*** SUMMARY ***` (not before), Cap-game headers/raises with trailing descriptive text, lone-CR (classic Mac) line endings in one fixture, table and player names containing their own apostrophes/colons, and Omaha Hi/Lo partial "shows" lines with no hand description. Retired `com.pokeranalytics.spike.handhistory` (both `main` and `test`), fully superseded.
 
 2026-09-09 — Decided to port the MIT-licensed `HHSmithy/PokerHandHistoryParser` (C#) reference library into Java as the real, kept hand-history import layer, ahead of Phases 4-8 — documented as a deliberate, scoped exception in new `decisions/ADR-005-early-import-parser.md`, with `CLAUDE.md` updated to name the exception explicitly. Expanded the MVP room list in `03-product-vision.md` from PokerStars+Winamax to every currently-operating room the reference library supports (PokerStars, Winamax, PartyPoker, 888/Pacific, iPoker, Winning Poker Network) — rooms are ported and validated one at a time, PokerStars first. Added `THIRD-PARTY-NOTICES.md` for attribution.
 
