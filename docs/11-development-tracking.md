@@ -71,7 +71,7 @@ Status legend:
 - [x] Live Session module
 - [x] Hands module
 - [x] Players module
-- [ ] Statistics module
+- [x] Statistics module
 - [ ] Reports module
 
 ## 3.2 Screen Design
@@ -149,10 +149,13 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 - [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
+- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats
 
 ---
 
 # Last Updated
+
+2026-09-09 — Statistics module defined in `05-product-map.md`: configurable stats (user-chosen columns + user-defined breakdowns, exact library TBD pending PokerTracker 4 research), saved views, single dashboard adapting to the Game Type filter (cash vs. tournament stats), global filters plus a minimum-sample-size filter, drill-down navigation into Hands, and out-of-scope boundaries against Players, Hands, Live Session and the future Reports module. Also added a general "ask before deciding" rule to `CLAUDE.md` and refreshed its stale product-map module-count note.
 
 2026-09-09 — Players module defined in `05-product-map.md`: opponents-only scope, nickname-only player identity (aggregated across rooms), profile with stats vs. Hero + linked hands list + predefined tags/free notes, searchable player list, global filters plus a minimum-sample-size filter, and out-of-scope boundaries against Live Session, AI-assisted insights, hand editing and Hero's own stats.
 

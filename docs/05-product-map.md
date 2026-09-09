@@ -328,3 +328,58 @@ The Players module must **not** include:
 - Hero's own stats/profile (belongs to Overview / Statistics).
 
 ---
+
+## Statistics
+
+### Purpose
+
+The Statistics module lets the player study their own game in depth.
+
+It should answer the following question:
+
+> **"I want to study my game."**
+
+Unlike the Overview (a fixed, high-level summary read in under 30 seconds), Statistics is **configurable** and detailed — built to surface information a player couldn't spot at a glance. Its design will draw on **PokerTracker 4** as a reference for which stats are worth including.
+
+---
+
+### Information Displayed
+
+#### Configurable Stats
+
+- The player chooses which stats/columns to display, picked from a stats library.
+- The player defines their own breakdowns by combining dimensions (e.g. position, street, stakes, hand type).
+
+> The exact stat library and breakdown dimensions will be refined later, based on researching PokerTracker 4 — not part of this initial definition.
+
+#### Saved Views
+
+A chosen combination of stats + breakdown can be saved as a named view, to reopen later without reconfiguring it.
+
+---
+
+### Filters
+
+- **Minimum sample size** — a minimum-hands-played threshold, to hide breakdowns with too small a sample to be reliable.
+- **Global filters** — Poker Room, Stakes, Game Type, Date Range. Game Type in particular determines which stats apply (e.g. BB/100 for Cash, ROI/ICM for Tournament/Spin & Go) — there are no separate cash/tournament views, the same dashboard adapts to the filter.
+
+---
+
+### Navigation
+
+- Reachable from the sidebar menu.
+- Drill-down — clicking a stat or a bar in a breakdown opens the corresponding filtered hand list in the Hands module.
+- Save or load a custom view.
+
+---
+
+### Out of Scope
+
+The Statistics module must **not** include:
+
+- Opponent-specific analysis (belongs to Players — Statistics is about Hero's own game).
+- Hand replay (belongs to Hands; Statistics only drills down to the filtered list, it does not replay hands).
+- The real-time table overlay / HUD (belongs to Live Session).
+- Exporting / printable reports (belongs to the future Reports module).
+
+---
