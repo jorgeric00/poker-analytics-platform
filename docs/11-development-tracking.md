@@ -156,12 +156,18 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 - [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
-- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats, writing the findings up in `13-statistics-module.md` — needed before its screen design (3.2) can be done
+- [ ] Statistics module: PokerTracker 4 research done and an MVP stat catalog + breakdown-dimension proposal drafted in `13-statistics-module.md`; remaining before its screen design (3.2) can start: verify the doc's "not yet confirmed" stat group and resolve its Open Questions
+- [ ] Reports module: PT4 research surfaced adjacent concepts worth considering when Reports' predefined templates are defined (3.2) — its "My Reports" import/export file format, and LeakTracker's benchmark-vs-winning-players deviation view (see `13-statistics-module.md`'s Future Expansion section)
 - [ ] Reports module: exact set of predefined report templates is still TBD — refine during screen design (3.2)
+- [ ] Implementation priority: Statistics and Reports are the most complex modules in the product map (confirmed by the PT4 research in `13-statistics-module.md`) and should be built last in Phase 9, after Overview, Live Session, Hands and Players
 
 ---
 
 # Last Updated
+
+2026-09-09 — Noted a new follow-up: Statistics and Reports, being the most complex modules, should be built last in Phase 9 implementation order (after Overview, Live Session, Hands and Players). The `13-statistics-module.md` stat catalog's "not yet confirmed" group stays a base to work from until the user brings real PokerTracker 4 screenshots to verify/refine it.
+
+2026-09-09 — Researched PokerTracker 4 (8 official doc pages: Quick Start, Creating My Reports, Custom Statistics Guide, Global Filters, Equity Calculator, Net Adjusted Winnings, BB/100 vs bb/100, LeakTracker) and populated `13-statistics-module.md` with a provenance-tagged Stat Catalog (PT4-confirmed / project-mandated / unconfirmed-convention), an MVP stat table (10 stats), MVP + Future breakdown dimensions (PT4's 6-category Global Filters framework), a simplified Saved Views scope, and a Future Expansion backlog (custom stat builder, Equity Calculator, ICM-based Net Adjusted Winnings, LeakTracker-style analysis). Reworded the Statistics follow-up accordingly and added a new Reports follow-up for adjacent concepts found during this research.
 
 2026-09-09 — Created `13-statistics-module.md` as a skeleton deep-dive doc for the Statistics module's stat catalog and breakdown dimensions (Research Status, Stat Catalog, Breakdown Dimensions, Open Questions and Screen Design sections, all TODO pending the PokerTracker 4 research), registered in `01-documentation-structure.md`; `05-product-map.md`'s Statistics section now points to it instead of just deferring the detail in place.
 
