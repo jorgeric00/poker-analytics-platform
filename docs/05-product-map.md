@@ -188,7 +188,7 @@ Unlike the Overview (historical, read in under 30 seconds), this module is only 
 ### Navigation
 
 - Reachable from the sidebar menu.
-- On session end, the session is saved into a session history for later review.
+- On session end, the session is saved into the session history for later review — see Reports → Session History.
 
 ---
 
@@ -381,5 +381,65 @@ The Statistics module must **not** include:
 - Hand replay (belongs to Hands; Statistics only drills down to the filtered list, it does not replay hands).
 - The real-time table overlay / HUD (belongs to Live Session).
 - Exporting / printable reports (belongs to the future Reports module).
+
+---
+
+## Reports
+
+### Purpose
+
+The Reports module covers two related needs:
+
+> **"I want to review my session history."**
+>
+> **"I want to generate an exportable report of my results."**
+
+It is reachable as **two separate sidebar entries** — Session History and Reports — while remaining a single module in the product map.
+
+---
+
+### Information Displayed
+
+#### Session History
+
+A table/log of past sessions — the destination of the "session history" that the Live Session module refers to once a session ends.
+
+Clicking a row opens that session's detail (P&L, duration, hands played, etc.).
+
+#### Report Generation
+
+Creating and exporting a formal report. Content is defined in two combined ways:
+
+- **Predefined templates** — e.g. tax summary, session log, performance by period.
+- **A saved Statistics view** — exporting a stats + breakdown combination the user already configured in Statistics.
+
+> The exact set of predefined templates will be refined later, during screen design (3.2) — not part of this initial definition.
+
+Export formats: **PDF** and **CSV**.
+
+---
+
+### Filters
+
+- **Global filters** — Poker Room, Stakes, Game Type.
+- **Date range** — the period a report covers.
+
+---
+
+### Navigation
+
+- Two sidebar entries: **Session History** and **Reports**.
+- From Session History, clicking a row opens that session's detail.
+- From Reports, generate/export a report from a template or from a saved Statistics view.
+
+---
+
+### Out of Scope
+
+The Reports module must **not** include:
+
+- Interactive/configurable dashboards (belongs to Statistics — Reports only exports what's already calculated or a saved view).
+- Live session data (belongs to Live Session).
+- Editing imported hands — raw hand histories are the immutable source of truth (see Architecture Principles in `CLAUDE.md`).
 
 ---
