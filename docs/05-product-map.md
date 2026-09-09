@@ -350,7 +350,7 @@ Unlike the Overview (a fixed, high-level summary read in under 30 seconds), Stat
 - The player chooses which stats/columns to display, picked from a stats library.
 - The player defines their own breakdowns by combining dimensions (e.g. position, street, stakes, hand type).
 
-> The exact stat library and breakdown dimensions will be refined later, based on researching PokerTracker 4 — not part of this initial definition.
+> The exact stat library and breakdown dimensions are being researched against PokerTracker 4 and documented separately in `13-statistics-module.md` — not part of this initial definition.
 
 #### Saved Views
 

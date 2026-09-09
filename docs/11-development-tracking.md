@@ -156,12 +156,14 @@ Items raised during review that don't block the current phase but should be reso
 - [ ] Install the Rust toolchain (`rustc`/`cargo`) — required for `npm run tauri dev` / desktop builds
 - [ ] Community/cloud analytics platform storage decision — deferred; only relevant if the product succeeds and that phase actually starts (explicitly optional per `03-product-vision.md`). Revisit with its own ADR then; ClickHouse remains the leading candidate given its multi-tenant/large-scale strengths.
 - [ ] Players module: exact stat set for the player profile, exact predefined tag set, and exact player-list columns are still TBD — refine during screen design (3.2)
-- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats — needed before its screen design (3.2) can be done
+- [ ] Statistics module: study PokerTracker 4 to determine the final stats library and breakdown dimensions offered by the module's configurable stats, writing the findings up in `13-statistics-module.md` — needed before its screen design (3.2) can be done
 - [ ] Reports module: exact set of predefined report templates is still TBD — refine during screen design (3.2)
 
 ---
 
 # Last Updated
+
+2026-09-09 — Created `13-statistics-module.md` as a skeleton deep-dive doc for the Statistics module's stat catalog and breakdown dimensions (Research Status, Stat Catalog, Breakdown Dimensions, Open Questions and Screen Design sections, all TODO pending the PokerTracker 4 research), registered in `01-documentation-structure.md`; `05-product-map.md`'s Statistics section now points to it instead of just deferring the detail in place.
 
 2026-09-09 — Published Phase 3.2 screen-design canvases (Claude Design) for Overview, Live Session, Hands, Hand Detail, Players, Session History and Reports; recorded their links in new doc `12-ui-designs.md` (registered in `01-documentation-structure.md`). Statistics's screen design stays open pending the PokerTracker 4 stats research follow-up.
 

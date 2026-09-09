@@ -46,6 +46,7 @@ docs/
 10-api-design.md
 11-development-tracking.md
 12-ui-designs.md
+13-statistics-module.md
 
 decisions/
 
@@ -186,6 +187,16 @@ Lists the visual screen designs (Claude Design canvases) produced during Phase 3
 Question answered:
 
 > What do the screens look like?
+
+---
+
+## 13-statistics-module.md
+
+Defines the Statistics module's stat catalog and breakdown dimensions in depth (sourced from researching PokerTracker 4), since this module is more complex than a summary in `05-product-map.md` can hold. Depends on `05-product-map.md`; feeds into the future `07-analytics-engine.md` (which owns how each stat is calculated, not this document).
+
+Question answered:
+
+> Which stats and breakdowns does Statistics offer, and how are they organized?
 
 ---
 
