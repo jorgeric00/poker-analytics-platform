@@ -32,6 +32,8 @@ npm run tauri dev # full desktop app (requires the Rust toolchain, not installed
 
 Known issue: the scaffolded `vite`/`rolldown` versions require Node `^20.19` or `>=22.12`; this machine has Node 18.17.1 (EOL), which makes `npm run build` crash. Upgrade Node before doing frontend work.
 
+No `test` or `lint` script exists yet in `package.json` — don't assume or invent one.
+
 ## Required Reading Before Making Changes
 
 This project follows a strict **design-first** workflow (`docs/02-development-workflow.md`): documentation is written and reviewed before code is implemented, and undocumented architectural changes are not permitted. Before proposing or making any non-trivial change, read the relevant docs — they are the source of truth, not this file.
