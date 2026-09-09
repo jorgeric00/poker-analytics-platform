@@ -1,0 +1,1420 @@
+﻿PokerStars Zoom Hand #262026561348:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:28:25 CET [2026/09/09 15:28:25 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: volbeat57 (€35.64 in chips) 
+Seat 2: manuelolo15 (€10.13 in chips) 
+Seat 3: jorgericoo (€10 in chips) 
+Seat 4: magiamonty (€12.94 in chips) 
+Seat 5: iurii machushak (€9.71 in chips) 
+Seat 6: beatrice8220 (€16.63 in chips) 
+manuelolo15: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [8h 3c]
+magiamonty: folds 
+iurii machushak: folds 
+beatrice8220: folds 
+volbeat57: folds 
+manuelolo15: raises €0.20 to €0.30
+jorgericoo: folds 
+Uncalled bet (€0.20) returned to manuelolo15
+manuelolo15 collected €0.20 from pot
+manuelolo15: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: volbeat57 (button) folded before Flop (didn't bet)
+Seat 2: manuelolo15 (small blind) collected (€0.20)
+Seat 3: jorgericoo (big blind) folded before Flop
+Seat 4: magiamonty folded before Flop (didn't bet)
+Seat 5: iurii machushak folded before Flop (didn't bet)
+Seat 6: beatrice8220 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026566733:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:28:48 CET [2026/09/09 15:28:48 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Widoky (€12.26 in chips) 
+Seat 2: MrBakito (€9.73 in chips) 
+Seat 3: Oscartiki5 (€3.11 in chips) 
+Seat 4: vindicatif62530 (€11.09 in chips) 
+Seat 5: jorgericoo (€9.90 in chips) 
+Seat 6: iurii machushak (€6.70 in chips) 
+MrBakito: posts small blind €0.05
+Oscartiki5: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Td 9c]
+vindicatif62530: folds 
+jorgericoo: folds 
+iurii machushak: raises €0.20 to €0.30
+Widoky: folds 
+MrBakito: folds 
+Oscartiki5: calls €0.20
+*** FLOP *** [6d 7s 2h]
+Oscartiki5: checks 
+iurii machushak: bets €0.80
+Oscartiki5: folds 
+Uncalled bet (€0.80) returned to iurii machushak
+iurii machushak collected €0.62 from pot
+iurii machushak: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.65 | Rake €0.03 
+Board [6d 7s 2h]
+Seat 1: Widoky (button) folded before Flop (didn't bet)
+Seat 2: MrBakito (small blind) folded before Flop
+Seat 3: Oscartiki5 (big blind) folded on the Flop
+Seat 4: vindicatif62530 folded before Flop (didn't bet)
+Seat 5: jorgericoo folded before Flop (didn't bet)
+Seat 6: iurii machushak collected (€0.62)
+
+
+
+PokerStars Zoom Hand #262026570986:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:29:06 CET [2026/09/09 15:29:06 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€9.90 in chips) 
+Seat 2: Widoky (€12.26 in chips) 
+Seat 3: calende9277 (€12.31 in chips) 
+Seat 4: manuelolo15 (€10.23 in chips) 
+Seat 5: lamuerta8300 (€12.16 in chips) 
+Seat 6: SirButterman (€12.20 in chips) 
+Widoky: posts small blind €0.05
+calende9277: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [6h 9c]
+manuelolo15: raises €0.15 to €0.25
+lamuerta8300: folds 
+SirButterman: raises €1 to €1.25
+jorgericoo: folds 
+Widoky: folds 
+calende9277: folds 
+manuelolo15: folds 
+Uncalled bet (€1) returned to SirButterman
+SirButterman collected €0.65 from pot
+SirButterman: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.65 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: calende9277 (big blind) folded before Flop
+Seat 4: manuelolo15 folded before Flop
+Seat 5: lamuerta8300 folded before Flop (didn't bet)
+Seat 6: SirButterman collected (€0.65)
+
+
+
+PokerStars Zoom Hand #262026574222:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:29:20 CET [2026/09/09 15:29:20 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: fernimongui (€12.46 in chips) 
+Seat 2: jorgericoo (€9.90 in chips) 
+Seat 3: galache (€12.99 in chips) 
+Seat 4: HomeLesS_DF (€10.13 in chips) 
+Seat 5: festuket (€3.90 in chips) 
+Seat 6: oneminuteone (€10.85 in chips) 
+jorgericoo: posts small blind €0.05
+galache: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [8d 9s]
+HomeLesS_DF: folds 
+festuket: folds 
+oneminuteone: raises €0.15 to €0.25
+fernimongui: folds 
+jorgericoo: folds 
+galache: calls €0.15
+*** FLOP *** [3s As 6d]
+galache: checks 
+oneminuteone: bets €0.20
+galache: folds 
+Uncalled bet (€0.20) returned to oneminuteone
+oneminuteone collected €0.52 from pot
+oneminuteone: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.55 | Rake €0.03 
+Board [3s As 6d]
+Seat 1: fernimongui (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) folded before Flop
+Seat 3: galache (big blind) folded on the Flop
+Seat 4: HomeLesS_DF folded before Flop (didn't bet)
+Seat 5: festuket folded before Flop (didn't bet)
+Seat 6: oneminuteone collected (€0.52)
+
+
+
+PokerStars Zoom Hand #262026580971:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:29:50 CET [2026/09/09 15:29:50 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: iurii machushak (€6.97 in chips) 
+Seat 2: lamuerta8300 (€14.03 in chips) 
+Seat 3: SirButterman (€12.55 in chips) 
+Seat 4: casimir46 (€18.01 in chips) 
+Seat 5: RedNlke (€19.16 in chips) 
+Seat 6: jorgericoo (€9.85 in chips) 
+lamuerta8300: posts small blind €0.05
+SirButterman: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2s 2h]
+casimir46: folds 
+RedNlke: folds 
+jorgericoo: calls €0.10
+iurii machushak: folds 
+lamuerta8300: folds 
+SirButterman: checks 
+*** FLOP *** [3s Tc 4d]
+SirButterman: checks 
+jorgericoo: checks 
+*** TURN *** [3s Tc 4d] [Qs]
+SirButterman: bets €0.18
+jorgericoo: calls €0.18
+*** RIVER *** [3s Tc 4d Qs] [9s]
+SirButterman: checks 
+jorgericoo: checks 
+*** SHOW DOWN ***
+SirButterman: shows [8h 5s] (high card Queen)
+jorgericoo: shows [2s 2h] (a pair of Deuces)
+jorgericoo collected €0.58 from pot
+*** SUMMARY ***
+Total pot €0.61 | Rake €0.03 
+Board [3s Tc 4d Qs 9s]
+Seat 1: iurii machushak (button) folded before Flop (didn't bet)
+Seat 2: lamuerta8300 (small blind) folded before Flop
+Seat 3: SirButterman (big blind) showed [8h 5s] and lost with high card Queen
+Seat 4: casimir46 folded before Flop (didn't bet)
+Seat 5: RedNlke folded before Flop (didn't bet)
+Seat 6: jorgericoo showed [2s 2h] and won (€0.58) with a pair of Deuces
+
+
+
+PokerStars Zoom Hand #262026590242:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:30:29 CET [2026/09/09 15:30:29 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: SirButterman (€12.27 in chips) 
+Seat 2: The4G (€5.52 in chips) 
+Seat 3: jorgericoo (€10.15 in chips) 
+Seat 4: vindicatif62530 (€10.09 in chips) 
+Seat 5: Widoky (€11.91 in chips) 
+Seat 6: FLOW4422646 (€14.29 in chips) 
+The4G: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5h Qc]
+vindicatif62530: raises €0.10 to €0.20
+Widoky: folds 
+FLOW4422646: folds 
+SirButterman: folds 
+The4G: raises €0.20 to €0.40
+jorgericoo: folds 
+vindicatif62530: calls €0.20
+*** FLOP *** [Kh 2s 5d]
+The4G: checks 
+vindicatif62530: bets €0.20
+The4G: calls €0.20
+*** TURN *** [Kh 2s 5d] [8c]
+The4G: checks 
+vindicatif62530: checks 
+*** RIVER *** [Kh 2s 5d 8c] [4d]
+The4G: bets €0.42
+vindicatif62530: folds 
+Uncalled bet (€0.42) returned to The4G
+The4G collected €1.24 from pot
+The4G: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.30 | Rake €0.06 
+Board [Kh 2s 5d 8c 4d]
+Seat 1: SirButterman (button) folded before Flop (didn't bet)
+Seat 2: The4G (small blind) collected (€1.24)
+Seat 3: jorgericoo (big blind) folded before Flop
+Seat 4: vindicatif62530 folded on the River
+Seat 5: Widoky folded before Flop (didn't bet)
+Seat 6: FLOW4422646 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026598421:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:31:04 CET [2026/09/09 15:31:04 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: iurii machushak (€9.85 in chips) 
+Seat 2: jorgericoo (€10.05 in chips) 
+Seat 3: Widoky (€17.18 in chips) 
+Seat 4: RedNlke (€10 in chips) 
+Seat 5: MrBakito (€7.98 in chips) 
+Seat 6: galache (€12.74 in chips) 
+jorgericoo: posts small blind €0.05
+Widoky: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [4h 5h]
+RedNlke: raises €0.20 to €0.30
+MrBakito: folds 
+galache: calls €0.30
+iurii machushak: folds 
+jorgericoo: calls €0.25
+Widoky: folds 
+*** FLOP *** [4d Qd Ac]
+jorgericoo: checks 
+RedNlke: checks 
+galache: checks 
+*** TURN *** [4d Qd Ac] [7s]
+jorgericoo: checks 
+RedNlke: checks 
+galache: checks 
+*** RIVER *** [4d Qd Ac 7s] [Th]
+jorgericoo: checks 
+RedNlke: bets €0.70
+galache: folds 
+jorgericoo: folds 
+Uncalled bet (€0.70) returned to RedNlke
+RedNlke collected €0.95 from pot
+RedNlke: doesn't show hand 
+*** SUMMARY ***
+Total pot €1 | Rake €0.05 
+Board [4d Qd Ac 7s Th]
+Seat 1: iurii machushak (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) folded on the River
+Seat 3: Widoky (big blind) folded before Flop
+Seat 4: RedNlke collected (€0.95)
+Seat 5: MrBakito folded before Flop (didn't bet)
+Seat 6: galache folded on the River
+
+
+
+PokerStars Zoom Hand #262026609196:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:31:49 CET [2026/09/09 15:31:49 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€9.75 in chips) 
+Seat 2: manuelolo15 (€10 in chips) 
+Seat 3: SirButterman (€11.16 in chips) 
+Seat 4: The4G (€6.06 in chips) 
+Seat 5: Widoky (€17.03 in chips) 
+Seat 6: FLOW4422646 (€14.14 in chips) 
+manuelolo15: posts small blind €0.05
+SirButterman: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Ac 4s]
+The4G: folds 
+Widoky: folds 
+FLOW4422646: raises €0.10 to €0.20
+jorgericoo: folds 
+manuelolo15: folds 
+SirButterman: folds 
+Uncalled bet (€0.10) returned to FLOW4422646
+FLOW4422646 collected €0.25 from pot
+FLOW4422646: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: manuelolo15 (small blind) folded before Flop
+Seat 3: SirButterman (big blind) folded before Flop
+Seat 4: The4G folded before Flop (didn't bet)
+Seat 5: Widoky folded before Flop (didn't bet)
+Seat 6: FLOW4422646 collected (€0.25)
+
+
+
+PokerStars Zoom Hand #262026611648:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:32:00 CET [2026/09/09 15:32:00 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: iurii machushak (€9.74 in chips) 
+Seat 2: Widoky (€11.81 in chips) 
+Seat 3: lamuerta8300 (€13.73 in chips) 
+Seat 4: galache (€12.44 in chips) 
+Seat 5: jorgericoo (€9.75 in chips) 
+Seat 6: vindicatif62530 (€9.49 in chips) 
+Widoky: posts small blind €0.05
+lamuerta8300: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Jd As]
+galache: folds 
+jorgericoo: raises €0.15 to €0.25
+vindicatif62530: folds 
+iurii machushak: folds 
+Widoky: folds 
+lamuerta8300: folds 
+Uncalled bet (€0.15) returned to jorgericoo
+jorgericoo collected €0.25 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: iurii machushak (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: lamuerta8300 (big blind) folded before Flop
+Seat 4: galache folded before Flop (didn't bet)
+Seat 5: jorgericoo collected (€0.25)
+Seat 6: vindicatif62530 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026610056:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:31:53 CET [2026/09/09 15:31:53 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: manuelolo15 (€10 in chips) 
+Seat 2: iurii machushak (€9.79 in chips) 
+Seat 3: Oscartiki5 (€2.66 in chips) 
+Seat 4: jorgericoo (€9.75 in chips) 
+Seat 5: Franciscopesca (€6.73 in chips) 
+Seat 6: lamuerta8300 (€13.73 in chips) 
+iurii machushak: posts small blind €0.05
+Oscartiki5: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [4s 2d]
+jorgericoo: folds 
+Franciscopesca is disconnected 
+Franciscopesca has timed out while disconnected
+Franciscopesca: folds 
+lamuerta8300: folds 
+manuelolo15: raises €0.15 to €0.25
+iurii machushak: folds 
+Oscartiki5: folds 
+Uncalled bet (€0.15) returned to manuelolo15
+manuelolo15 collected €0.25 from pot
+manuelolo15: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: manuelolo15 (button) collected (€0.25)
+Seat 2: iurii machushak (small blind) folded before Flop
+Seat 3: Oscartiki5 (big blind) folded before Flop
+Seat 4: jorgericoo folded before Flop (didn't bet)
+Seat 5: Franciscopesca folded before Flop (didn't bet)
+Seat 6: lamuerta8300 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026615483:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:32:16 CET [2026/09/09 15:32:16 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: festuket (€3.89 in chips) 
+Seat 2: leonor2008 (€13.98 in chips) 
+Seat 3: jorgericoo (€9.90 in chips) 
+Seat 4: RedNlke (€17.14 in chips) 
+Seat 5: casimir46 (€16.61 in chips) 
+Seat 6: Alehyska (€11.90 in chips) 
+leonor2008: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2s 5d]
+RedNlke: folds 
+casimir46: folds 
+Alehyska: folds 
+festuket: raises €0.30 to €0.40
+leonor2008: folds 
+jorgericoo: folds 
+Uncalled bet (€0.30) returned to festuket
+festuket collected €0.25 from pot
+festuket: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: festuket (button) collected (€0.25)
+Seat 2: leonor2008 (small blind) folded before Flop
+Seat 3: jorgericoo (big blind) folded before Flop
+Seat 4: RedNlke folded before Flop (didn't bet)
+Seat 5: casimir46 folded before Flop (didn't bet)
+Seat 6: Alehyska folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026619221:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:32:32 CET [2026/09/09 15:32:32 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: oneminuteone (€12.67 in chips) 
+Seat 2: jorgericoo (€9.80 in chips) 
+Seat 3: leonor2008 (€13.93 in chips) 
+Seat 4: RedNlke (€17.09 in chips) 
+Seat 5: manuelolo15 (€10.15 in chips) 
+Seat 6: casimir46 (€16.61 in chips) 
+jorgericoo: posts small blind €0.05
+leonor2008: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5h 4h]
+RedNlke: folds 
+manuelolo15: folds 
+casimir46: folds 
+oneminuteone: folds 
+jorgericoo: raises €0.10 to €0.20
+leonor2008: calls €0.10
+*** FLOP *** [3h 7d Kd]
+jorgericoo: checks 
+leonor2008: checks 
+*** TURN *** [3h 7d Kd] [4d]
+jorgericoo: bets €0.13
+leonor2008: folds 
+Uncalled bet (€0.13) returned to jorgericoo
+jorgericoo collected €0.38 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.40 | Rake €0.02 
+Board [3h 7d Kd 4d]
+Seat 1: oneminuteone (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) collected (€0.38)
+Seat 3: leonor2008 (big blind) folded on the Turn
+Seat 4: RedNlke folded before Flop (didn't bet)
+Seat 5: manuelolo15 folded before Flop (didn't bet)
+Seat 6: casimir46 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026629347:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:15 CET [2026/09/09 15:33:15 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€9.98 in chips) 
+Seat 2: iurii machushak (€9.79 in chips) 
+Seat 3: MrBakito (€5.84 in chips) 
+Seat 4: fernimongui (€12.97 in chips) 
+Seat 5: Widoky (€10.36 in chips) 
+Seat 6: manuelolo15 (€10.05 in chips) 
+iurii machushak: posts small blind €0.05
+MrBakito: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Kc 4d]
+fernimongui: folds 
+Widoky: folds 
+manuelolo15: folds 
+jorgericoo: folds 
+iurii machushak: folds 
+Uncalled bet (€0.05) returned to MrBakito
+MrBakito collected €0.10 from pot
+MrBakito: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: iurii machushak (small blind) folded before Flop
+Seat 3: MrBakito (big blind) collected (€0.10)
+Seat 4: fernimongui folded before Flop (didn't bet)
+Seat 5: Widoky folded before Flop (didn't bet)
+Seat 6: manuelolo15 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026630312:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:19 CET [2026/09/09 15:33:19 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: oneminuteone (€12 in chips) 
+Seat 2: manuelolo15 (€10.05 in chips) 
+Seat 3: galache (€11.36 in chips) 
+Seat 4: calende9277 (€11.86 in chips) 
+Seat 5: SirButterman (€11.98 in chips) 
+Seat 6: jorgericoo (€9.98 in chips) 
+manuelolo15: posts small blind €0.05
+galache: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Kh 5d]
+calende9277: calls €0.10
+SirButterman: folds 
+jorgericoo: folds 
+oneminuteone: folds 
+manuelolo15: folds 
+galache: checks 
+*** FLOP *** [2d 8s 6d]
+galache: checks 
+calende9277: bets €0.26
+galache: folds 
+Uncalled bet (€0.26) returned to calende9277
+calende9277 collected €0.24 from pot
+calende9277: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0.01 
+Board [2d 8s 6d]
+Seat 1: oneminuteone (button) folded before Flop (didn't bet)
+Seat 2: manuelolo15 (small blind) folded before Flop
+Seat 3: galache (big blind) folded on the Flop
+Seat 4: calende9277 collected (€0.24)
+Seat 5: SirButterman folded before Flop (didn't bet)
+Seat 6: jorgericoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026633359:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:32 CET [2026/09/09 15:33:32 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: iurii machushak (€7.32 in chips) 
+Seat 2: MrBakito (€5.89 in chips) 
+Seat 3: RedNlke (€10.65 in chips) 
+Seat 4: Widoky (€14.41 in chips) 
+Seat 5: jorgericoo (€9.98 in chips) 
+Seat 6: Mclan1 (€10.79 in chips) 
+MrBakito: posts small blind €0.05
+RedNlke: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5h Th]
+Widoky: folds 
+jorgericoo: folds 
+Mclan1: folds 
+iurii machushak: folds 
+MrBakito: folds 
+Uncalled bet (€0.05) returned to RedNlke
+RedNlke collected €0.10 from pot
+RedNlke: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: iurii machushak (button) folded before Flop (didn't bet)
+Seat 2: MrBakito (small blind) folded before Flop
+Seat 3: RedNlke (big blind) collected (€0.10)
+Seat 4: Widoky folded before Flop (didn't bet)
+Seat 5: jorgericoo folded before Flop (didn't bet)
+Seat 6: Mclan1 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026634532:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:37 CET [2026/09/09 15:33:37 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: MrBakito (€5.84 in chips) 
+Seat 2: The4G (€13.79 in chips) 
+Seat 3: jorgericoo (€9.98 in chips) 
+Seat 4: Widoky (€14.41 in chips) 
+Seat 5: Mclan1 (€10.79 in chips) 
+Seat 6: lamuerta8300 (€13.80 in chips) 
+The4G: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [3d 5s]
+Widoky: folds 
+Mclan1: folds 
+lamuerta8300: folds 
+MrBakito: folds 
+The4G: folds 
+Uncalled bet (€0.05) returned to jorgericoo
+jorgericoo collected €0.10 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: MrBakito (button) folded before Flop (didn't bet)
+Seat 2: The4G (small blind) folded before Flop
+Seat 3: jorgericoo (big blind) collected (€0.10)
+Seat 4: Widoky folded before Flop (didn't bet)
+Seat 5: Mclan1 folded before Flop (didn't bet)
+Seat 6: lamuerta8300 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026632177:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:27 CET [2026/09/09 15:33:27 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Mitijaou2102 (€11.02 in chips) 
+Seat 2: Mclan1 (€10.84 in chips) 
+Seat 3: SirButterman (€10.31 in chips) 
+Seat 4: jorgericoo (€9.98 in chips) 
+Seat 5: beatrice8220 (€14.39 in chips) 
+Seat 6: leonor2008 (€13.68 in chips) 
+Mclan1: posts small blind €0.05
+SirButterman: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [6c 5d]
+jorgericoo: folds 
+beatrice8220: calls €0.10
+leonor2008: folds 
+Mitijaou2102: calls €0.10
+Mclan1: folds 
+SirButterman: checks 
+*** FLOP *** [2h 6d Tc]
+SirButterman: checks 
+beatrice8220: checks 
+Mitijaou2102: checks 
+*** TURN *** [2h 6d Tc] [9h]
+SirButterman: checks 
+beatrice8220: checks 
+Mitijaou2102: checks 
+*** RIVER *** [2h 6d Tc 9h] [Qc]
+SirButterman: checks 
+beatrice8220: checks 
+Mitijaou2102: bets €0.80
+SirButterman: folds 
+beatrice8220: folds 
+Uncalled bet (€0.80) returned to Mitijaou2102
+Mitijaou2102 collected €0.33 from pot
+Mitijaou2102: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.35 | Rake €0.02 
+Board [2h 6d Tc 9h Qc]
+Seat 1: Mitijaou2102 (button) collected (€0.33)
+Seat 2: Mclan1 (small blind) folded before Flop
+Seat 3: SirButterman (big blind) folded on the River
+Seat 4: jorgericoo folded before Flop (didn't bet)
+Seat 5: beatrice8220 folded on the River
+Seat 6: leonor2008 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026637637:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:50 CET [2026/09/09 15:33:50 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: lamuerta8300 (€13.75 in chips) 
+Seat 2: FllanosB (€19.67 in chips) 
+Seat 3: Oscartiki5 (€2.74 in chips) 
+Seat 4: iurii machushak (€10.15 in chips) 
+Seat 5: Alehyska (€2.21 in chips) 
+Seat 6: jorgericoo (€10.03 in chips) 
+FllanosB: posts small blind €0.05
+Oscartiki5: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2s 4c]
+iurii machushak: folds 
+Alehyska: folds 
+jorgericoo: folds 
+lamuerta8300: folds 
+FllanosB: raises €0.10 to €0.20
+Oscartiki5: folds 
+Uncalled bet (€0.10) returned to FllanosB
+FllanosB collected €0.20 from pot
+FllanosB: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: lamuerta8300 (button) folded before Flop (didn't bet)
+Seat 2: FllanosB (small blind) collected (€0.20)
+Seat 3: Oscartiki5 (big blind) folded before Flop
+Seat 4: iurii machushak folded before Flop (didn't bet)
+Seat 5: Alehyska folded before Flop (didn't bet)
+Seat 6: jorgericoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026640240:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:34:02 CET [2026/09/09 15:34:02 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€10.03 in chips) 
+Seat 2: Vipvaleri (€5.43 in chips) 
+Seat 3: FLOW4422646 (€14.32 in chips) 
+Seat 4: casimir46 (€16.46 in chips) 
+Seat 5: SirButterman (€10.21 in chips) 
+Seat 6: calende9277 (€11.85 in chips) 
+Vipvaleri: posts small blind €0.05
+FLOW4422646: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5d Jh]
+casimir46: folds 
+SirButterman: folds 
+calende9277: calls €0.10
+jorgericoo: folds 
+Vipvaleri: raises €0.20 to €0.30
+FLOW4422646: folds 
+calende9277: folds 
+Uncalled bet (€0.20) returned to Vipvaleri
+Vipvaleri collected €0.30 from pot
+Vipvaleri: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.30 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: Vipvaleri (small blind) collected (€0.30)
+Seat 3: FLOW4422646 (big blind) folded before Flop
+Seat 4: casimir46 folded before Flop (didn't bet)
+Seat 5: SirButterman folded before Flop (didn't bet)
+Seat 6: calende9277 folded before Flop
+
+
+
+PokerStars Zoom Hand #262026638982:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:33:56 CET [2026/09/09 15:33:56 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Widoky (€14.36 in chips) 
+Seat 2: RedNlke (€10.70 in chips) 
+Seat 3: lamuerta8300 (€13.75 in chips) 
+Seat 4: jorgericoo (€10.03 in chips) 
+Seat 5: mapetit02 (€12 in chips) 
+Seat 6: FLOW4422646 (€14.32 in chips) 
+RedNlke: posts small blind €0.05
+lamuerta8300: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Kd 4s]
+jorgericoo: folds 
+mapetit02: folds 
+FLOW4422646: folds 
+Widoky: raises €0.20 to €0.30
+RedNlke: calls €0.25
+lamuerta8300: folds 
+*** FLOP *** [7h 2s 3s]
+RedNlke: checks 
+Widoky: bets €0.33
+RedNlke: calls €0.33
+*** TURN *** [7h 2s 3s] [Ad]
+RedNlke: checks 
+Widoky: bets €1.61
+RedNlke: folds 
+Uncalled bet (€1.61) returned to Widoky
+Widoky collected €1.29 from pot
+Widoky: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.36 | Rake €0.07 
+Board [7h 2s 3s Ad]
+Seat 1: Widoky (button) collected (€1.29)
+Seat 2: RedNlke (small blind) folded on the Turn
+Seat 3: lamuerta8300 (big blind) folded before Flop
+Seat 4: jorgericoo folded before Flop (didn't bet)
+Seat 5: mapetit02 folded before Flop (didn't bet)
+Seat 6: FLOW4422646 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026642761:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:34:12 CET [2026/09/09 15:34:12 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Mclan1 (€11.47 in chips) 
+Seat 2: jorgericoo (€10.03 in chips) 
+Seat 3: lamuerta8300 (€10 in chips) 
+Seat 4: mapetit02 (€12 in chips) 
+Seat 5: SirButterman (€10.16 in chips) 
+Seat 6: FllanosB (€19.77 in chips) 
+jorgericoo: posts small blind €0.05
+lamuerta8300: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Ac Qh]
+mapetit02: raises €0.10 to €0.20
+SirButterman: raises €0.55 to €0.75
+FllanosB: folds 
+Mclan1: folds 
+jorgericoo: calls €0.70
+lamuerta8300: folds 
+mapetit02: raises €0.55 to €1.30
+SirButterman: calls €0.55
+jorgericoo: calls €0.55
+*** FLOP *** [4d 3s 3d]
+jorgericoo: checks 
+mapetit02: checks 
+SirButterman: bets €2.85
+jorgericoo: calls €2.85
+mapetit02: folds 
+*** TURN *** [4d 3s 3d] [4s]
+jorgericoo: checks 
+SirButterman: checks 
+*** RIVER *** [4d 3s 3d 4s] [Ts]
+jorgericoo: checks 
+SirButterman: checks 
+*** SHOW DOWN ***
+jorgericoo: shows [Ac Qh] (two pair, Fours and Threes)
+SirButterman: shows [As Qc] (two pair, Fours and Threes)
+jorgericoo collected €4.61 from pot
+SirButterman collected €4.61 from pot
+*** SUMMARY ***
+Total pot €9.70 | Rake €0.48 
+Board [4d 3s 3d 4s Ts]
+Seat 1: Mclan1 (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) showed [Ac Qh] and won (€4.61) with two pair, Fours and Threes
+Seat 3: lamuerta8300 (big blind) folded before Flop
+Seat 4: mapetit02 folded on the Flop
+Seat 5: SirButterman showed [As Qc] and won (€4.61) with two pair, Fours and Threes
+Seat 6: FllanosB folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026654936:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:35:04 CET [2026/09/09 15:35:04 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: oneminuteone (€11.85 in chips) 
+Seat 2: Mitijaou2102 (€10.85 in chips) 
+Seat 3: FLOW4422646 (€14.31 in chips) 
+Seat 4: RedNlke (€16.89 in chips) 
+Seat 5: Widoky (€15.02 in chips) 
+Seat 6: jorgericoo (€10.49 in chips) 
+Mitijaou2102: posts small blind €0.05
+FLOW4422646: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5c 6s]
+RedNlke: raises €0.20 to €0.30
+Widoky: folds 
+jorgericoo: folds 
+oneminuteone: folds 
+Mitijaou2102: folds 
+FLOW4422646: folds 
+Uncalled bet (€0.20) returned to RedNlke
+RedNlke collected €0.25 from pot
+RedNlke: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: oneminuteone (button) folded before Flop (didn't bet)
+Seat 2: Mitijaou2102 (small blind) folded before Flop
+Seat 3: FLOW4422646 (big blind) folded before Flop
+Seat 4: RedNlke collected (€0.25)
+Seat 5: Widoky folded before Flop (didn't bet)
+Seat 6: jorgericoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026653251:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:34:57 CET [2026/09/09 15:34:57 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Oscartiki5 (€2.49 in chips) 
+Seat 2: oneminuteone (€11.90 in chips) 
+Seat 3: SirButterman (€12.25 in chips) 
+Seat 4: iurii machushak (€8.27 in chips) 
+Seat 5: jorgericoo (€10.49 in chips) 
+Seat 6: RedNlke (€16.89 in chips) 
+oneminuteone: posts small blind €0.05
+SirButterman: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2h 5h]
+iurii machushak: raises €0.20 to €0.30
+jorgericoo: folds 
+RedNlke: folds 
+Oscartiki5: folds 
+oneminuteone: folds 
+SirButterman: raises €0.95 to €1.25
+iurii machushak: folds 
+Uncalled bet (€0.95) returned to SirButterman
+SirButterman collected €0.65 from pot
+SirButterman: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.65 | Rake €0 
+Seat 1: Oscartiki5 (button) folded before Flop (didn't bet)
+Seat 2: oneminuteone (small blind) folded before Flop
+Seat 3: SirButterman (big blind) collected (€0.65)
+Seat 4: iurii machushak folded before Flop
+Seat 5: jorgericoo folded before Flop (didn't bet)
+Seat 6: RedNlke folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026655647:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:35:08 CET [2026/09/09 15:35:08 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Mitijaou2102 (€10.80 in chips) 
+Seat 2: fernimongui (€1.76 in chips) 
+Seat 3: iurii machushak (€9.95 in chips) 
+Seat 4: jorgericoo (€10.49 in chips) 
+Seat 5: galache (€20.02 in chips) 
+Seat 6: festuket (€4 in chips) 
+fernimongui: posts small blind €0.05
+iurii machushak: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Qc Ad]
+jorgericoo: raises €0.10 to €0.20
+galache: folds 
+festuket: folds 
+Mitijaou2102: raises €0.60 to €0.80
+fernimongui: folds 
+iurii machushak: folds 
+jorgericoo: calls €0.60
+*** FLOP *** [3d 9d Ah]
+jorgericoo: checks 
+Mitijaou2102: bets €0.90
+jorgericoo: calls €0.90
+*** TURN *** [3d 9d Ah] [3h]
+jorgericoo: checks 
+Mitijaou2102: checks 
+*** RIVER *** [3d 9d Ah 3h] [Kc]
+jorgericoo: bets €2.22
+Mitijaou2102: folds 
+Uncalled bet (€2.22) returned to jorgericoo
+jorgericoo collected €3.37 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €3.55 | Rake €0.18 
+Board [3d 9d Ah 3h Kc]
+Seat 1: Mitijaou2102 (button) folded on the River
+Seat 2: fernimongui (small blind) folded before Flop
+Seat 3: iurii machushak (big blind) folded before Flop
+Seat 4: jorgericoo collected (€3.37)
+Seat 5: galache folded before Flop (didn't bet)
+Seat 6: festuket folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026665124:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:35:48 CET [2026/09/09 15:35:48 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: SirButterman (€12.55 in chips) 
+Seat 2: Alehyska (€7.90 in chips) 
+Seat 3: jorgericoo (€12.16 in chips) 
+Seat 4: Widoky (€20.48 in chips) 
+Seat 5: iurii machushak (€7.97 in chips) 
+Seat 6: lamuerta8300 (€10.77 in chips) 
+Alehyska: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [6h Qc]
+Widoky: raises €0.20 to €0.30
+iurii machushak: folds 
+lamuerta8300: folds 
+SirButterman: folds 
+Alehyska: raises €0.80 to €1.10
+jorgericoo: folds 
+Widoky: calls €0.80
+*** FLOP *** [5h 7h Qh]
+Alehyska: bets €1.42
+Widoky: folds 
+Uncalled bet (€1.42) returned to Alehyska
+Alehyska collected €2.18 from pot
+Alehyska: doesn't show hand 
+*** SUMMARY ***
+Total pot €2.30 | Rake €0.12 
+Board [5h 7h Qh]
+Seat 1: SirButterman (button) folded before Flop (didn't bet)
+Seat 2: Alehyska (small blind) collected (€2.18)
+Seat 3: jorgericoo (big blind) folded before Flop
+Seat 4: Widoky folded on the Flop
+Seat 5: iurii machushak folded before Flop (didn't bet)
+Seat 6: lamuerta8300 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026669494:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:36:07 CET [2026/09/09 15:36:07 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: RedNlke (€10.15 in chips) 
+Seat 2: jorgericoo (€12.06 in chips) 
+Seat 3: mapetit02 (€11 in chips) 
+Seat 4: Mitijaou2102 (€9.10 in chips) 
+Seat 5: ivanbody (€15.14 in chips) 
+Seat 6: SirButterman (€10.32 in chips) 
+jorgericoo: posts small blind €0.05
+mapetit02: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Td Kd]
+Mitijaou2102: folds 
+ivanbody: folds 
+SirButterman: folds 
+RedNlke: folds 
+jorgericoo: raises €0.10 to €0.20
+mapetit02: raises €0.40 to €0.60
+jorgericoo: folds 
+Uncalled bet (€0.40) returned to mapetit02
+mapetit02 collected €0.40 from pot
+mapetit02: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.40 | Rake €0 
+Seat 1: RedNlke (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) folded before Flop
+Seat 3: mapetit02 (big blind) collected (€0.40)
+Seat 4: Mitijaou2102 folded before Flop (didn't bet)
+Seat 5: ivanbody folded before Flop (didn't bet)
+Seat 6: SirButterman folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026674182:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:36:27 CET [2026/09/09 15:36:27 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€11.86 in chips) 
+Seat 2: iurii machushak (€9.43 in chips) 
+Seat 3: Toppo_016 (€18.30 in chips) 
+Seat 4: manuelolo15 (€11.28 in chips) 
+Seat 5: beatrice8220 (€13.54 in chips) 
+Seat 6: Alehyska (€8.98 in chips) 
+iurii machushak: posts small blind €0.05
+Toppo_016: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Jd Qd]
+manuelolo15: folds 
+beatrice8220: folds 
+Alehyska: raises €0.13 to €0.23
+jorgericoo: calls €0.23
+iurii machushak: calls €0.18
+Toppo_016: folds 
+*** FLOP *** [Tc Qs Ks]
+iurii machushak: checks 
+Alehyska: bets €0.49
+jorgericoo: raises €1.14 to €1.63
+iurii machushak: folds 
+Alehyska: raises €7.12 to €8.75 and is all-in
+jorgericoo: calls €7.12
+*** TURN *** [Tc Qs Ks] [6h]
+*** RIVER *** [Tc Qs Ks 6h] [7d]
+*** SHOW DOWN ***
+Alehyska: shows [Jc As] (a straight, Ten to Ace)
+jorgericoo: shows [Jd Qd] (a pair of Queens)
+Alehyska collected €17.38 from pot
+*** SUMMARY ***
+Total pot €18.29 | Rake €0.91 
+Board [Tc Qs Ks 6h 7d]
+Seat 1: jorgericoo (button) showed [Jd Qd] and lost with a pair of Queens
+Seat 2: iurii machushak (small blind) folded on the Flop
+Seat 3: Toppo_016 (big blind) folded before Flop
+Seat 4: manuelolo15 folded before Flop (didn't bet)
+Seat 5: beatrice8220 folded before Flop (didn't bet)
+Seat 6: Alehyska showed [Jc As] and won (€17.38) with a straight, Ten to Ace
+
+
+
+PokerStars Zoom Hand #262026686882:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:37:21 CET [2026/09/09 15:37:21 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Alehyska (€17.38 in chips) 
+Seat 2: Widoky (€15.12 in chips) 
+Seat 3: HomeLesS_DF (€10.79 in chips) 
+Seat 4: Toppo_016 (€18.30 in chips) 
+Seat 5: jorgericoo (€2.88 in chips) 
+Seat 6: iurii machushak (€10.20 in chips) 
+Widoky: posts small blind €0.05
+HomeLesS_DF: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Jc As]
+Toppo_016: folds 
+jorgericoo: raises €0.15 to €0.25
+iurii machushak: raises €0.35 to €0.60
+Alehyska: calls €0.60
+Widoky: folds 
+HomeLesS_DF: folds 
+jorgericoo: raises €2.28 to €2.88 and is all-in
+iurii machushak: folds 
+Alehyska: calls €2.28
+*** FLOP *** [3s Ks Td]
+*** TURN *** [3s Ks Td] [6d]
+*** RIVER *** [3s Ks Td 6d] [6h]
+*** SHOW DOWN ***
+jorgericoo: shows [Jc As] (a pair of Sixes)
+Alehyska: shows [9c 9d] (two pair, Nines and Sixes)
+Alehyska collected €6.18 from pot
+*** SUMMARY ***
+Total pot €6.51 | Rake €0.33 
+Board [3s Ks Td 6d 6h]
+Seat 1: Alehyska (button) showed [9c 9d] and won (€6.18) with two pair, Nines and Sixes
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: HomeLesS_DF (big blind) folded before Flop
+Seat 4: Toppo_016 folded before Flop (didn't bet)
+Seat 5: jorgericoo showed [Jc As] and lost with a pair of Sixes
+Seat 6: iurii machushak folded before Flop
+
+
+
+PokerStars Zoom Hand #262026699955:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:38:18 CET [2026/09/09 15:38:18 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: iurii machushak (€9.48 in chips) 
+Seat 2: Widoky (€14.97 in chips) 
+Seat 3: oneminuteone (€11.59 in chips) 
+Seat 4: jorgericoo (€9.99 in chips) 
+Seat 5: ivanbody (€6.06 in chips) 
+Seat 6: Oscartiki5 (€2.53 in chips) 
+Widoky: posts small blind €0.05
+oneminuteone: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Js 6h]
+jorgericoo: folds 
+ivanbody: folds 
+Oscartiki5: folds 
+iurii machushak: folds 
+Widoky: folds 
+Uncalled bet (€0.05) returned to oneminuteone
+oneminuteone collected €0.10 from pot
+oneminuteone: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: iurii machushak (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: oneminuteone (big blind) collected (€0.10)
+Seat 4: jorgericoo folded before Flop (didn't bet)
+Seat 5: ivanbody folded before Flop (didn't bet)
+Seat 6: Oscartiki5 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026700803:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:38:22 CET [2026/09/09 15:38:22 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: CrujeNueces (€5.48 in chips) 
+Seat 2: Mitijaou2102 (€9.85 in chips) 
+Seat 3: Oscartiki5 (€2.53 in chips) 
+Seat 4: iurii machushak (€9.48 in chips) 
+Seat 5: manuelolo15 (€11.40 in chips) 
+Seat 6: jorgericoo (€9.99 in chips) 
+Mitijaou2102: posts small blind €0.05
+Oscartiki5: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [8c Ks]
+iurii machushak: folds 
+manuelolo15: folds 
+jorgericoo: folds 
+CrujeNueces: raises €0.12 to €0.22
+Mitijaou2102: raises €9.63 to €9.85 and is all-in
+Oscartiki5: folds 
+CrujeNueces: folds 
+Uncalled bet (€9.63) returned to Mitijaou2102
+Mitijaou2102 collected €0.54 from pot
+Mitijaou2102: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.54 | Rake €0 
+Seat 1: CrujeNueces (button) folded before Flop
+Seat 2: Mitijaou2102 (small blind) collected (€0.54)
+Seat 3: Oscartiki5 (big blind) folded before Flop
+Seat 4: iurii machushak folded before Flop (didn't bet)
+Seat 5: manuelolo15 folded before Flop (didn't bet)
+Seat 6: jorgericoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026702566:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:38:29 CET [2026/09/09 15:38:29 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: Widoky (€14.92 in chips) 
+Seat 2: oneminuteone (€11.64 in chips) 
+Seat 3: jorgericoo (€9.99 in chips) 
+Seat 4: iurii machushak (€9.45 in chips) 
+Seat 5: CrujeNueces (€5.15 in chips) 
+Seat 6: leonor2008 (€9.30 in chips) 
+oneminuteone: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Kh 6s]
+iurii machushak: calls €0.10
+CrujeNueces: folds 
+leonor2008: folds 
+Widoky: folds 
+oneminuteone: folds 
+jorgericoo: checks 
+*** FLOP *** [8c Qs 2h]
+jorgericoo: checks 
+iurii machushak: checks 
+*** TURN *** [8c Qs 2h] [8h]
+jorgericoo: checks 
+iurii machushak: checks 
+*** RIVER *** [8c Qs 2h 8h] [2c]
+jorgericoo: checks 
+iurii machushak: checks 
+*** SHOW DOWN ***
+jorgericoo: shows [Kh 6s] (two pair, Eights and Deuces)
+iurii machushak: mucks hand 
+jorgericoo collected €0.24 from pot
+*** SUMMARY ***
+Total pot €0.25 | Rake €0.01 
+Board [8c Qs 2h 8h 2c]
+Seat 1: Widoky (button) folded before Flop (didn't bet)
+Seat 2: oneminuteone (small blind) folded before Flop
+Seat 3: jorgericoo (big blind) showed [Kh 6s] and won (€0.24) with two pair, Eights and Deuces
+Seat 4: iurii machushak mucked [Td Jd]
+Seat 5: CrujeNueces folded before Flop (didn't bet)
+Seat 6: leonor2008 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026716609:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:39:29 CET [2026/09/09 15:39:29 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€10.13 in chips) 
+Seat 2: Widoky (€21.16 in chips) 
+Seat 3: Mitijaou2102 (€9.97 in chips) 
+Seat 4: oneminuteone (€10 in chips) 
+Seat 5: Alehyska (€22.16 in chips) 
+Seat 6: lamuerta8300 (€12.58 in chips) 
+Widoky: posts small blind €0.05
+Mitijaou2102: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [5c Qd]
+oneminuteone: raises €0.10 to €0.20
+Alehyska: folds 
+lamuerta8300: folds 
+jorgericoo: folds 
+Widoky: folds 
+Mitijaou2102: folds 
+Uncalled bet (€0.10) returned to oneminuteone
+oneminuteone collected €0.25 from pot
+oneminuteone: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: Mitijaou2102 (big blind) folded before Flop
+Seat 4: oneminuteone collected (€0.25)
+Seat 5: Alehyska folded before Flop (didn't bet)
+Seat 6: lamuerta8300 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026720691:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:39:47 CET [2026/09/09 15:39:47 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: magiamonty (€11.96 in chips) 
+Seat 2: jorgericoo (€10.13 in chips) 
+Seat 3: NeverReturn (€8 in chips) 
+Seat 4: RedNlke (€17.88 in chips) 
+Seat 5: Mclan1 (€11.22 in chips) 
+Seat 6: CrujeNueces (€5.21 in chips) 
+jorgericoo: posts small blind €0.05
+NeverReturn: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2d 3c]
+RedNlke: folds 
+Mclan1: raises €0.10 to €0.20
+CrujeNueces: folds 
+magiamonty: folds 
+jorgericoo: calls €0.15
+NeverReturn: raises €0.85 to €1.05
+Mclan1: folds 
+jorgericoo: folds 
+Uncalled bet (€0.85) returned to NeverReturn
+NeverReturn collected €0.60 from pot
+NeverReturn: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0 
+Seat 1: magiamonty (button) folded before Flop (didn't bet)
+Seat 2: jorgericoo (small blind) folded before Flop
+Seat 3: NeverReturn (big blind) collected (€0.60)
+Seat 4: RedNlke folded before Flop (didn't bet)
+Seat 5: Mclan1 folded before Flop
+Seat 6: CrujeNueces folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026728939:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:40:23 CET [2026/09/09 15:40:23 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: D0nAnKs (€8.60 in chips) 
+Seat 2: Widoky (€19.03 in chips) 
+Seat 3: SirButterman (€10.31 in chips) 
+Seat 4: iurii machushak (€9.89 in chips) 
+Seat 5: jorgericoo (€9.93 in chips) 
+Seat 6: Mitijaou2102 (€9.72 in chips) 
+Widoky: posts small blind €0.05
+SirButterman: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Qc Qd]
+iurii machushak: folds 
+jorgericoo: raises €0.15 to €0.25
+Mitijaou2102: folds 
+D0nAnKs: folds 
+Widoky: folds 
+SirButterman: folds 
+Uncalled bet (€0.15) returned to jorgericoo
+jorgericoo collected €0.25 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: D0nAnKs (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) folded before Flop
+Seat 3: SirButterman (big blind) folded before Flop
+Seat 4: iurii machushak folded before Flop (didn't bet)
+Seat 5: jorgericoo collected (€0.25)
+Seat 6: Mitijaou2102 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026732324:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:40:37 CET [2026/09/09 15:40:37 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: SirButterman (€10.21 in chips) 
+Seat 2: NeverReturn (€10 in chips) 
+Seat 3: magiamonty (€12.65 in chips) 
+Seat 4: Widoky (€20.15 in chips) 
+Seat 5: calende9277 (€10.81 in chips) 
+Seat 6: jorgericoo (€10.08 in chips) 
+NeverReturn: posts small blind €0.05
+magiamonty: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Ah 5s]
+Widoky: folds 
+calende9277: folds 
+jorgericoo: folds 
+SirButterman: folds 
+NeverReturn: raises €0.20 to €0.30
+magiamonty: folds 
+Uncalled bet (€0.20) returned to NeverReturn
+NeverReturn collected €0.20 from pot
+NeverReturn: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: SirButterman (button) folded before Flop (didn't bet)
+Seat 2: NeverReturn (small blind) collected (€0.20)
+Seat 3: magiamonty (big blind) folded before Flop
+Seat 4: Widoky folded before Flop (didn't bet)
+Seat 5: calende9277 folded before Flop (didn't bet)
+Seat 6: jorgericoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026733237:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:40:41 CET [2026/09/09 15:40:41 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: beatrice8220 (€14.13 in chips) 
+Seat 2: CrujeNueces (€5.05 in chips) 
+Seat 3: jorgericoo (€10.08 in chips) 
+Seat 4: SirButterman (€11.36 in chips) 
+Seat 5: iurii machushak (€9.80 in chips) 
+Seat 6: casimir46 (€15.73 in chips) 
+CrujeNueces: posts small blind €0.05
+jorgericoo: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [2c 5h]
+SirButterman: folds 
+iurii machushak: folds 
+casimir46: folds 
+beatrice8220: folds 
+CrujeNueces: folds 
+Uncalled bet (€0.05) returned to jorgericoo
+jorgericoo collected €0.10 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: beatrice8220 (button) folded before Flop (didn't bet)
+Seat 2: CrujeNueces (small blind) folded before Flop
+Seat 3: jorgericoo (big blind) collected (€0.10)
+Seat 4: SirButterman folded before Flop (didn't bet)
+Seat 5: iurii machushak folded before Flop (didn't bet)
+Seat 6: casimir46 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026737683:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:41:00 CET [2026/09/09 15:41:00 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: jorgericoo (€10.13 in chips) 
+Seat 2: Widoky (€19.03 in chips) 
+Seat 3: casimir46 (€15.73 in chips) 
+Seat 4: NeverReturn (€10.10 in chips) 
+Seat 5: HomeLesS_DF (€14.14 in chips) 
+Seat 6: iurii machushak (€9.80 in chips) 
+Widoky: posts small blind €0.05
+casimir46: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [8c 4s]
+NeverReturn: folds 
+HomeLesS_DF: folds 
+iurii machushak: folds 
+jorgericoo: folds 
+Widoky: raises €0.20 to €0.30
+casimir46: folds 
+Uncalled bet (€0.20) returned to Widoky
+Widoky collected €0.20 from pot
+Widoky: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: jorgericoo (button) folded before Flop (didn't bet)
+Seat 2: Widoky (small blind) collected (€0.20)
+Seat 3: casimir46 (big blind) folded before Flop
+Seat 4: NeverReturn folded before Flop (didn't bet)
+Seat 5: HomeLesS_DF folded before Flop (didn't bet)
+Seat 6: iurii machushak folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #262026739699:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:41:09 CET [2026/09/09 15:41:09 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: calende9277 (€10.66 in chips) 
+Seat 2: jorgericoo (€10.13 in chips) 
+Seat 3: HomeLesS_DF (€14.14 in chips) 
+Seat 4: iurii machushak (€10.53 in chips) 
+Seat 5: CrujeNueces (€5 in chips) 
+Seat 6: oneminuteone (€10.37 in chips) 
+jorgericoo: posts small blind €0.05
+HomeLesS_DF: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Td Jh]
+iurii machushak: folds 
+CrujeNueces: folds 
+oneminuteone: raises €0.15 to €0.25
+calende9277: calls €0.25
+jorgericoo: calls €0.20
+HomeLesS_DF: folds 
+*** FLOP *** [2d Qs Ah]
+jorgericoo: checks 
+oneminuteone: checks 
+calende9277: checks 
+*** TURN *** [2d Qs Ah] [6s]
+jorgericoo: checks 
+oneminuteone: checks 
+calende9277: bets €0.20
+jorgericoo: folds 
+oneminuteone: folds 
+Uncalled bet (€0.20) returned to calende9277
+calende9277 collected €0.81 from pot
+calende9277: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.85 | Rake €0.04 
+Board [2d Qs Ah 6s]
+Seat 1: calende9277 (button) collected (€0.81)
+Seat 2: jorgericoo (small blind) folded on the Turn
+Seat 3: HomeLesS_DF (big blind) folded before Flop
+Seat 4: iurii machushak folded before Flop (didn't bet)
+Seat 5: CrujeNueces folded before Flop (didn't bet)
+Seat 6: oneminuteone folded on the Turn
+
+
+
+PokerStars Zoom Hand #262026751428:  Hold'em No Limit (€0.05/€0.10) - 2026/09/09 21:42:00 CET [2026/09/09 15:42:00 ET]
+Table 'Caph' 6-max Seat #1 is the button
+Seat 1: NeverReturn (€10 in chips) 
+Seat 2: CrujeNueces (€5 in chips) 
+Seat 3: iurii machushak (€10.63 in chips) 
+Seat 4: SirButterman (€10.06 in chips) 
+Seat 5: jorgericoo (€9.88 in chips) 
+Seat 6: Widoky (€18.58 in chips) 
+CrujeNueces: posts small blind €0.05
+iurii machushak: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to jorgericoo [Jc Tc]
+SirButterman: raises €0.20 to €0.30
+jorgericoo: calls €0.30
+Widoky: folds 
+NeverReturn: folds 
+CrujeNueces: folds 
+iurii machushak: folds 
+*** FLOP *** [As 9c Qd]
+SirButterman: checks 
+jorgericoo: bets €0.36
+SirButterman: calls €0.36
+*** TURN *** [As 9c Qd] [Th]
+SirButterman: checks 
+jorgericoo: bets €0.92
+SirButterman: folds 
+Uncalled bet (€0.92) returned to jorgericoo
+jorgericoo collected €1.40 from pot
+jorgericoo: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.47 | Rake €0.07 
+Board [As 9c Qd Th]
+Seat 1: NeverReturn (button) folded before Flop (didn't bet)
+Seat 2: CrujeNueces (small blind) folded before Flop
+Seat 3: iurii machushak (big blind) folded before Flop
+Seat 4: SirButterman folded on the Turn
+Seat 5: jorgericoo collected (€1.40)
+Seat 6: Widoky folded before Flop (didn't bet)
+
+
+

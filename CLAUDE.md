@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The project is in the design phase described by `docs/00-development-roadmap.md` (currently Phase 3 — Product Design). `backend/` and `frontend/` currently hold only base scaffolding (bootstrap app, no domain code) created ahead of schedule as a technical spike; they are not yet organized around the modules described in `docs/05-product-map.md` because that doc is still incomplete. Treat any code here as scaffolding, not an implementation to extend, until the Phase 4-8 docs exist.
 
+**Exception:** `backend/src/main/java/com/pokeranalytics/importing/model` and `.../importing/parser` (including its per-room subpackages) are real, kept domain code, not scaffolding — see `docs/decisions/ADR-005-early-import-parser.md`. This exception is scoped strictly to hand-history *parsing*; the rest of `backend/` (REST layer, persistence, analytics) is still frozen scaffolding until Phases 4-8 are documented.
+
 **Before starting any task, read `docs/11-development-tracking.md`** — it is the up-to-date, task-level checklist of what's done, in progress, or pending within each roadmap phase (the roadmap itself only tracks whole-phase status and changes rarely). After completing work, update it in the same change: check off the subtask(s) finished, and add any new follow-up items discovered along the way.
 
 ## Commands

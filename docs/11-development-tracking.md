@@ -124,19 +124,26 @@ Status legend:
 
 - [x] 🧪 Backend scaffold: Spring Boot 3.3.4 + Java 17 skeleton in `backend/` (builds, one passing test)
 - [x] 🧪 Frontend scaffold: Tauri + React + TypeScript in `frontend/` (generated via `create-tauri-app`, `npm install` works)
-- [ ] Hand history parser spike (validate feasibility against PokerStars and Winamax — cash, MTT and Spin&Go/Expresso formats — before Phases 4-8 are frozen)
+- [ ] Hand history parser — real, kept import layer built early per `decisions/ADR-005-early-import-parser.md` (ported from the MIT-licensed `HHSmithy/PokerHandHistoryParser` reference, see `THIRD-PARTY-NOTICES.md`), scoped to currently-operating rooms only, one room at a time:
+  - [x] PokerStars cash (Zoom, No Limit Hold'em) — `backend/src/main/java/com/pokeranalytics/importing/parser/pokerstars/`, validated against both the reference library's own sample fixtures and 81 real hands dropped in `docs/hand-history/poker-stars/`
+  - [ ] PokerStars MTT / Spin&Go — reference library has tournament-parsing code but no sample-based tests of its own for it, and no Spin&Go/Expresso jackpot-format handling at all; needs real sample hand histories to validate properly
+  - [ ] Winamax cash / MTT / Spin&Go (Expresso)
+  - [ ] PartyPoker cash / MTT
+  - [ ] 888 (incl. "Pacific" brand) cash / MTT
+  - [ ] iPoker Network cash / MTT
+  - [ ] Winning Poker Network cash / MTT
 - [ ] Backend project (real, following the frozen architecture/data model)
 - [ ] Database setup
-- [ ] Parser (PokerStars + Winamax, cash + MTT + Spin&Go/Expresso)
+- [ ] Parser (PokerStars, Winamax, PartyPoker, 888, iPoker, Winning — cash + MTT + Spin&Go/Expresso)
 - [ ] Import engine
 - [ ] Analytics engine (cash and tournament stats)
 - [ ] REST API
 - [ ] Frontend (real screens, following the product map)
 - [ ] Replay
 - [ ] HUD — in-app live dashboards
-- [ ] HUD — real-time table overlay (blocked on the ToS review and overlay feasibility spike above)
 - [ ] Testing
 - [ ] Packaging
+- [ ] HUD — real-time table overlay — moved to the very last task of the whole project: depends on the Statistics module (opponent stat computation) and the Players module (opponent profiles), and its legality is still unconfirmed (blocked on the ToS review and overlay feasibility spike in Follow-ups below)
 
 > The two scaffold items are a deliberate technical spike, done out of the strict roadmap order to validate the stack. They are not the frozen Phase 9 implementation and should not be extended with real domain logic until Phases 4-8 are documented.
 
@@ -164,6 +171,12 @@ Items raised during review that don't block the current phase but should be reso
 ---
 
 # Last Updated
+
+2026-09-09 — Decided to port the MIT-licensed `HHSmithy/PokerHandHistoryParser` (C#) reference library into Java as the real, kept hand-history import layer, ahead of Phases 4-8 — documented as a deliberate, scoped exception in new `decisions/ADR-005-early-import-parser.md`, with `CLAUDE.md` updated to name the exception explicitly. Expanded the MVP room list in `03-product-vision.md` from PokerStars+Winamax to every currently-operating room the reference library supports (PokerStars, Winamax, PartyPoker, 888/Pacific, iPoker, Winning Poker Network) — rooms are ported and validated one at a time, PokerStars first. Added `THIRD-PARTY-NOTICES.md` for attribution.
+
+2026-09-09 — Started the hand history parser feasibility spike: wrote a prototype parser (`com.pokeranalytics.spike.handhistory`, explicitly marked as a spike, not the frozen import module) and JUnit tests validating it against 81 real PokerStars Zoom cash hands dropped in `docs/hand-history/poker-stars/`. All 4 tests pass (`mvn test`, run with `JAVA_HOME` set to Zulu 17). Confirmed feasible for this format, including edge cases found along the way (disconnect/timeout notices interleaved in the action log, "mucks hand"). Still open: PokerStars MTT/Spin&Go and all of Winamax, pending sample hand histories.
+
+2026-09-09 — Moved `HUD — real-time table overlay` to the very last task in Phase 9's implementation order (previously listed right before Testing/Packaging): it depends on the Statistics and Players modules, and its legality is still unconfirmed pending the ToS-review follow-up.
 
 2026-09-09 — Noted a new follow-up: Statistics and Reports, being the most complex modules, should be built last in Phase 9 implementation order (after Overview, Live Session, Hands and Players). The `13-statistics-module.md` stat catalog's "not yet confirmed" group stays a base to work from until the user brings real PokerTracker 4 screenshots to verify/refine it.
 

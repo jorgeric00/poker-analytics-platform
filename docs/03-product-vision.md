@@ -180,10 +180,10 @@ The first version should focus on replacing the core functionality of existing t
 
 ## Target Poker Rooms & Formats (MVP)
 
-- **Rooms**: PokerStars and Winamax.
+- **Rooms**: PokerStars, Winamax, PartyPoker, 888 (including its historical "Pacific" brand), iPoker Network, and Winning Poker Network — every currently-operating room covered by the reference parser this project's import layer is based on (see `decisions/ADR-005-early-import-parser.md`).
 - **Formats**: Cash games, MTTs (tournaments), and Spin&Go / Expresso.
 
-This is a broad MVP surface (2 rooms × 3 formats) — the parser and analytics engine both need to handle all of it from the start, including tournament-specific analytics (ICM, bubble factor), not just cash game stats.
+This is a broad MVP surface (6 rooms × 3 formats) — the parser and analytics engine both need to handle all of it from the start, including tournament-specific analytics (ICM, bubble factor), not just cash game stats. Room support is being built and validated one room at a time (see `11-development-tracking.md`); PokerStars cash is the first fully validated against real data.
 
 ## Included
 
