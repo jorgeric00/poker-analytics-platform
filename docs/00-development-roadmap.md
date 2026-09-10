@@ -162,7 +162,7 @@ Each query should include:
 
 Output:
 
-`docs/04-query-catalog.md`
+`docs/06-query-catalog.md`
 
 ---
 

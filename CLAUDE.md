@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Status
 
-The project is in the design phase described by `docs/00-development-roadmap.md` (currently Phase 3 — Product Design). `backend/` and `frontend/` currently hold only base scaffolding (bootstrap app, no domain code) created ahead of schedule as a technical spike; they are not yet organized around the modules described in `docs/05-product-map.md` because that doc is still incomplete. Treat any code here as scaffolding, not an implementation to extend, until the Phase 4-8 docs exist.
+The project is in the design phase described by `docs/00-development-roadmap.md` (Phase 3 — Product Design is functionally done pending the deferred Statistics screen wireframe; Phase 4 — Query Catalog is done; Phases 5-8 not started). `backend/` and `frontend/` currently hold only base scaffolding (bootstrap app, no domain code) created ahead of schedule as a technical spike; they are not yet organized around the modules described in `docs/05-product-map.md` because that doc is still incomplete. Treat any code here as scaffolding, not an implementation to extend, until the Phase 5-8 docs exist.
 
 **Exception:** `backend/src/main/java/com/pokeranalytics/importing/model` and `.../importing/parser` (including its per-room subpackages) are real, kept domain code, not scaffolding — see `docs/decisions/ADR-005-early-import-parser.md`. This exception is scoped strictly to hand-history *parsing*; the rest of `backend/` (REST layer, persistence, analytics) is still frozen scaffolding until Phases 4-8 are documented. Its parsing behavior and test fixtures are ported from the MIT-licensed `HHSmithy/PokerHandHistoryParser`; keep `THIRD-PARTY-NOTICES.md` (repo root) current if more of that reference is ported.
 
@@ -53,7 +53,7 @@ The docs form a top-down dependency chain (`docs/01-documentation-structure.md`)
 9. `docs/12-ui-designs.md` — screen wireframe canvas links from Phase 3.2 Screen Design; depends on `05-product-map.md`
 10. `docs/13-statistics-module.md` — deep-dive on the Statistics module's stat catalog and breakdown dimensions (too detailed for `05-product-map.md`); depends on `05-product-map.md`, will feed into the future `07-analytics-engine.md`
 
-Docs not yet written (per the roadmap, phases 4–8): `06-query-catalog.md`, `07-analytics-engine.md`, `08-storage-strategy.md`, `09-data-model.md`, `10-api-design.md`.
+Docs not yet written (per the roadmap, phases 5–8): `07-analytics-engine.md`, `08-storage-strategy.md`, `09-data-model.md`, `10-api-design.md`. Phase 4's `06-query-catalog.md` is done.
 
 If an implementation need conflicts with what a doc says, resolve the conflict by updating the doc first — don't silently diverge from it in code.
 
