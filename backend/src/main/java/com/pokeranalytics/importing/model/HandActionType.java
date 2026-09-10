@@ -30,5 +30,9 @@ public enum HandActionType {
     /** Tournament knockout: "PlayerName wins $X for eliminating Y and their own bounty increases by $Z to $W". */
     WINS_BOUNTY,
     /** Tournament-only: "PlayerName finished the tournament in Nth place". */
-    TOURNAMENT_FINISH
+    TOURNAMENT_FINISH,
+    /** Winning Poker Network's own generic "posts (N)" catch-up post — neither a blind nor tagged as a dead bet. */
+    POSTS,
+    /** A voluntary preflop straddle, distinct from a blind. */
+    STRADDLE
 }

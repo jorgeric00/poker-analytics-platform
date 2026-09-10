@@ -8,7 +8,7 @@ This file credits third-party work that influenced or was ported into this proje
 
 - <https://github.com/HHSmithy/PokerHandHistoryParser> (a fork of the original <https://github.com/KBelbina/PokerHandHistoryParser>)
 
-See `docs/decisions/ADR-005-early-import-parser.md` for why and how this was done: our code is a fresh Java implementation (regex/state-machine style, not a line-by-line translation), but the parsing behavior, edge cases, and several sample hand-history fixtures under `backend/src/test/resources/hand-history/` are directly based on that project, including its "Pacific" (888/Cassava/LuckyAcePoker.com) sample fixtures ported into `backend/src/test/resources/hand-history/poker888/`.
+See `docs/decisions/ADR-005-early-import-parser.md` for why and how this was done: our code is a fresh Java implementation (regex/state-machine style, not a line-by-line translation), but the parsing behavior, edge cases, and several sample hand-history fixtures under `backend/src/test/resources/hand-history/` are directly based on that project, including its "Pacific" (888/Cassava/LuckyAcePoker.com) sample fixtures ported into `backend/src/test/resources/hand-history/poker888/`, and its Winning Poker Network sample fixtures ported into `backend/src/test/resources/hand-history/winningpoker/`.
 
 Original license (The MIT License):
 
