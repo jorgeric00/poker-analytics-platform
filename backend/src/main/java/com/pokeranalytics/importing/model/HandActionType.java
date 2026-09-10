@@ -25,6 +25,10 @@ public enum HandActionType {
     DOESNT_SHOW,
     MUCKS,
     SHOWS,
-    /** "is disconnected" / "has timed out" / "has timed out while disconnected" / "is connected". */
-    CONNECTION_STATUS
+    /** "is disconnected" / "has timed out" / "has timed out while disconnected" / "is connected" / "has returned". */
+    CONNECTION_STATUS,
+    /** Tournament knockout: "PlayerName wins $X for eliminating Y and their own bounty increases by $Z to $W". */
+    WINS_BOUNTY,
+    /** Tournament-only: "PlayerName finished the tournament in Nth place". */
+    TOURNAMENT_FINISH
 }

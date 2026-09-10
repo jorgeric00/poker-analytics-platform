@@ -54,6 +54,9 @@ ADR-001-stack-selection.md
 ADR-002-modular-monolith.md
 ADR-003-local-analytics-storage.md
 ADR-004-backend-packaging.md
+ADR-005-early-import-parser.md
+ADR-006-java-25.md
+ADR-007-port-tournament-formats-without-fixtures.md
 ```
 
 ---

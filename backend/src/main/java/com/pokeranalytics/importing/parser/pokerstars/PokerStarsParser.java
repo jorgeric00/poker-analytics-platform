@@ -2,6 +2,7 @@ package com.pokeranalytics.importing.parser.pokerstars;
 
 import com.pokeranalytics.importing.model.HandAction;
 import com.pokeranalytics.importing.model.HandActionType;
+import com.pokeranalytics.importing.model.HandFormat;
 import com.pokeranalytics.importing.model.ParsedHand;
 import com.pokeranalytics.importing.model.Seat;
 import com.pokeranalytics.importing.model.Street;
@@ -24,20 +25,47 @@ import java.util.regex.Pattern;
  * {@code HHSmithy/PokerHandHistoryParser} reference (see {@code THIRD-PARTY-NOTICES.md}),
  * re-implemented as a Java regex/state-machine parser rather than a line-by-line translation.
  *
- * Scope: cash games only. Tournament headers ("Tournament #...") have a different shape and are
- * not handled here — see the open follow-ups in {@code docs/11-development-tracking.md}.
+ * Also handles regular multi-table tournaments (headers shaped "Tournament #TID, $BUYIN ... -
+ * Level N (SB/BB) - DATE") — see {@link #TOURNAMENT_HEADER}. The action/street/summary grammar
+ * for a tournament hand turned out to be nearly identical to the cash grammar above (ante posts,
+ * "and is all-in" suffixes, numbered side pots, the summary section) once ported, which is why
+ * this stays one class rather than a second one mirroring {@code WinamaxTournamentParser} — only
+ * the header shape and two knockout/finish-only trailing lines ({@link #WINS_BOUNTY}, {@link
+ * #TOURNAMENT_FINISH}) are genuinely new. Unlike every other room ported so far, no fixture data
+ * for this exists in the {@code HHSmithy/PokerHandHistoryParser} reference at all (it has
+ * tournament-parsing code but ships no tournament sample files for any room) — this was instead
+ * built and validated against real, verbatim PokerStars tournament hand histories published on
+ * Wikipedia's "Hand history" article (a knockout hand with a bounty/finish-place line, and an
+ * older multi-way all-in hand with numbered side pots), cross-checked against a further real
+ * ante-posting example quoted in arXiv:2312.11753. See
+ * {@code docs/decisions/ADR-007-port-tournament-formats-without-fixtures.md} for why this room's
+ * tournament format was ported without either kind of validation data the rest of this module has
+ * relied on.
+ *
+ * Known gap: PokerStars' own hand-history text has no signal this parser can use to tell a
+ * regular scheduled tournament apart from a 3-max Spin&amp;Go (unlike Winamax's Expresso, which
+ * names itself) — every non-cash hand is classified as {@link HandFormat#TOURNAMENT}. The
+ * reference library has the same limitation (its own tournament-format detection is hardcoded to
+ * always return "SitAndGo", with the multi-table-tournament branch commented out).
  */
 public final class PokerStarsParser {
 
     private static final Pattern HEADER = Pattern.compile(
             "^PokerStars (?:Zoom Hand|Hand|Game) #(\\d+):\\s+(.+?)\\s+\\(([^/]+)/([^)]+)\\)\\s+-\\s+(.+)$");
+    // "PokerStars Hand #156605842579: Tournament #1618015625, $2.00+$2.00+$0.40 USD Hold'em No
+    // Limit - Level XVIII (300/600) - 2016/07/29 23:25:05 MSK [...]" — buyIn is captured raw (may
+    // be "$X+$Y" or "$X+$Y+$Z" for a knockout bounty, with or without a trailing currency code);
+    // blinds are bare chip counts, not currency amounts.
+    private static final Pattern TOURNAMENT_HEADER = Pattern.compile(
+            "^PokerStars (?:Hand|Game) #(\\d+): Tournament #\\d+, (\\S+(?: [A-Z]{3})?) (.+?) - Level (\\S+)"
+                    + " \\(([^/]+)/([^)]+)\\) - (.+)$");
     // Greedy name capture: table names can contain an apostrophe themselves (e.g. "Isildur's PLO
     // 50"), so we can't stop at the first closing quote — greedy backtracking finds the quote
     // that actually precedes the fixed "N-max Seat #N is the button" suffix.
     private static final Pattern TABLE = Pattern.compile(
             "^Table '(.+)' (\\d+)-max Seat #(\\d+) is the button$");
     private static final Pattern SEAT = Pattern.compile(
-            "^Seat (\\d+): (.+?) \\((.+?) in chips\\)$");
+            "^Seat (\\d+): (.+?) \\((.+?) in chips\\)(?: is sitting out)?$");
     private static final Pattern HOLE_CARDS_MARKER = Pattern.compile("^\\*\\*\\* HOLE CARDS \\*\\*\\*$");
     private static final Pattern DEALT = Pattern.compile("^Dealt to (.+) \\[(.+?)\\]$");
 
@@ -80,7 +108,14 @@ public final class PokerStarsParser {
     // Standalone Omaha Hi/Lo informational line, no player/colon prefix.
     private static final Pattern NO_LOW_HAND_QUALIFIED = Pattern.compile("^No low hand qualified$");
     private static final Pattern CONNECTION_STATUS = Pattern.compile(
-            "^(.+) (is disconnected|has timed out while disconnected|has timed out|is connected)$");
+            "^(.+) (is disconnected|has timed out while disconnected|has timed out|is connected|has returned)$");
+    // Tournament knockout only: "nossoff wins $1 for eliminating Hero and their own bounty
+    // increases by $1 to $6".
+    private static final Pattern WINS_BOUNTY =
+            Pattern.compile("^(.+) wins (\\S+) for eliminating (.+?) and their own bounty increases by (\\S+) to (\\S+)$");
+    // Tournament only: "Hero finished the tournament in 5028th place".
+    private static final Pattern TOURNAMENT_FINISH =
+            Pattern.compile("^(.+) finished the tournament in (\\d+)\\S* place$");
 
     // Recognized but not recorded as hand actions — table/session noise, not poker actions.
     private static final Pattern SITS_OUT = Pattern.compile("^(.+): (?:is sitting out|sits out)$");
@@ -161,7 +196,20 @@ public final class PokerStarsParser {
             Matcher m;
 
             if (!inSummary) {
-                if ((m = HEADER.matcher(line)).matches()) {
+                // Tried before the generic cash HEADER: a tournament header's shape ("... $BUYIN
+                // GAMETYPE - Level N (SB/BB) - DATE") also happens to satisfy the looser cash
+                // pattern (its lazy game-type group would swallow "Tournament #TID, $BUYIN
+                // GAMETYPE - Level N" whole), so the more specific pattern must win the race.
+                if ((m = TOURNAMENT_HEADER.matcher(line)).matches()) {
+                    hand.handId = m.group(1);
+                    hand.format = HandFormat.TOURNAMENT;
+                    hand.buyIn = m.group(2).trim();
+                    hand.gameType = m.group(3).trim();
+                    hand.tournamentLevel = romanToInt(m.group(4).trim());
+                    hand.smallBlind = new BigDecimal(m.group(5).trim());
+                    hand.bigBlind = new BigDecimal(m.group(6).trim());
+                    hand.timestampRaw = m.group(7).trim();
+                } else if ((m = HEADER.matcher(line)).matches()) {
                     hand.handId = m.group(1);
                     hand.gameType = m.group(2).trim();
                     Money sb = parseMoney(m.group(3).trim());
@@ -241,6 +289,10 @@ public final class PokerStarsParser {
                     // informational only, no player/action to record
                 } else if (CONNECTION_STATUS.matcher(line).matches()) {
                     hand.actions.add(new HandAction(street, HandActionType.CONNECTION_STATUS, line));
+                } else if (WINS_BOUNTY.matcher(line).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.WINS_BOUNTY, line));
+                } else if (TOURNAMENT_FINISH.matcher(line).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.TOURNAMENT_FINISH, line));
                 } else if (SITS_OUT.matcher(line).matches()
                         || LEAVES_TABLE.matcher(line).matches()
                         || JOINS_TABLE.matcher(line).matches()
@@ -289,6 +341,30 @@ public final class PokerStarsParser {
             return 1;
         }
         return currentRunIndex;
+    }
+
+    private static final int[] ROMAN_VALUES = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static final String[] ROMAN_SYMBOLS = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+    /** Converts a tournament header's Level numeral (e.g. "XVIII") to an int (e.g. 18). */
+    private static int romanToInt(String roman) {
+        int result = 0;
+        int i = 0;
+        while (i < roman.length()) {
+            int matched = -1;
+            for (int j = 0; j < ROMAN_SYMBOLS.length; j++) {
+                if (roman.startsWith(ROMAN_SYMBOLS[j], i)) {
+                    matched = j;
+                    break;
+                }
+            }
+            if (matched == -1) {
+                throw new IllegalArgumentException("Cannot parse roman numeral: '" + roman + "'");
+            }
+            result += ROMAN_VALUES[matched];
+            i += ROMAN_SYMBOLS[matched].length();
+        }
+        return result;
     }
 
     private static Money parseMoney(String token) {
