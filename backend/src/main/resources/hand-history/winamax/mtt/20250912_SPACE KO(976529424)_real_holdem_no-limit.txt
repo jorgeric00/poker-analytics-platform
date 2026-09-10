@@ -1,0 +1,873 @@
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-1-1757674810 - Holdem no limit (25/100/200) - 2025/09/12 11:00:10 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #6 is the button
+Seat 1: JM-21 (20000, 0.50€ bounty)
+Seat 2: patouchew (20000, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (20000, 0.50€ bounty)
+Seat 4: MK2704 (20000, 0.50€ bounty)
+Seat 5: Zyglox (20000, 0.50€ bounty)
+Seat 6: Theo2013bal (20000, 0.50€ bounty)
+*** ANTE/BLINDS ***
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+MK2704 posts ante 25
+Zyglox posts ante 25
+Theo2013bal posts ante 25
+JM-21 posts small blind 100
+patouchew posts big blind 200
+Dealt to Zyglox [2s Th]
+*** PRE-FLOP *** 
+-M3RCR3DI- folds
+MK2704 calls 200
+Zyglox folds
+Theo2013bal calls 200
+JM-21 folds
+patouchew raises 19775 to 19975 and is all-in
+MK2704 folds
+Theo2013bal folds
+patouchew collected 20625 from pot
+*** SUMMARY ***
+Total pot 20625 | No rake
+Seat 2: patouchew (big blind) won 20625
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-2-1757674848 - Holdem no limit (25/100/200) - 2025/09/12 11:00:48 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #1 is the button
+Seat 1: JM-21 (19875, 0.50€ bounty)
+Seat 2: patouchew (20625, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (19975, 0.50€ bounty)
+Seat 5: Zyglox (19975, 0.50€ bounty)
+Seat 6: Theo2013bal (19775, 0.50€ bounty)
+*** ANTE/BLINDS ***
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+JM-21 posts ante 25
+Zyglox posts ante 25
+Theo2013bal posts ante 25
+patouchew posts small blind 100
+-M3RCR3DI- posts big blind 200
+Dealt to Zyglox [8s 5s]
+*** PRE-FLOP *** 
+Zyglox folds
+Theo2013bal raises 400 to 600
+JM-21 calls 600
+patouchew folds
+-M3RCR3DI- folds
+*** FLOP *** [As 4s 8c]
+Theo2013bal checks
+JM-21 checks
+*** TURN *** [As 4s 8c][Th]
+Theo2013bal checks
+JM-21 checks
+*** RIVER *** [As 4s 8c Th][Ah]
+Theo2013bal bets 569
+JM-21 folds
+Theo2013bal collected 2194 from pot
+*** SUMMARY ***
+Total pot 2194 | No rake
+Board: [As 4s 8c Th Ah]
+Seat 6: Theo2013bal won 2194
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-3-1757674900 - Holdem no limit (25/100/200) - 2025/09/12 11:01:40 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #2 is the button
+Seat 1: JM-21 (19250, 0.50€ bounty)
+Seat 2: patouchew (20500, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (19750, 0.50€ bounty)
+Seat 4: val en deux (20000, 0.50€ bounty)
+Seat 5: Zyglox (19950, 0.50€ bounty)
+Seat 6: Theo2013bal (20775, 0.50€ bounty)
+*** ANTE/BLINDS ***
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+Zyglox posts ante 25
+Theo2013bal posts ante 25
+-M3RCR3DI- posts small blind 100
+val en deux posts big blind 200
+Dealt to Zyglox [5c 4d]
+*** PRE-FLOP *** 
+Zyglox folds
+Theo2013bal folds
+JM-21 raises 200 to 400
+patouchew folds
+-M3RCR3DI- folds
+val en deux calls 200
+*** FLOP *** [2h 4h 3d]
+val en deux checks
+JM-21 bets 368
+val en deux calls 368
+*** TURN *** [2h 4h 3d][2s]
+val en deux checks
+JM-21 bets 625
+val en deux calls 625
+*** RIVER *** [2h 4h 3d 2s][2c]
+val en deux checks
+JM-21 bets 1973
+val en deux folds
+JM-21 collected 5009 from pot
+*** SUMMARY ***
+Total pot 5009 | No rake
+Board: [2h 4h 3d 2s 2c]
+Seat 1: JM-21 won 5009
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-4-1757674976 - Holdem no limit (25/100/200) - 2025/09/12 11:02:56 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #3 is the button
+Seat 1: JM-21 (20868, 0.50€ bounty)
+Seat 2: patouchew (20475, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (19625, 0.50€ bounty)
+Seat 4: val en deux (18582, 0.50€ bounty)
+Seat 5: Zyglox (19925, 0.50€ bounty)
+*** ANTE/BLINDS ***
+val en deux posts ante 25
+Zyglox posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [6c Ac]
+*** PRE-FLOP *** 
+JM-21 calls 200
+patouchew calls 200
+-M3RCR3DI- raises 400 to 600
+val en deux folds
+Zyglox calls 400
+JM-21 calls 400
+patouchew calls 400
+*** FLOP *** [4d 8d 5h]
+Zyglox checks
+JM-21 checks
+patouchew checks
+-M3RCR3DI- checks
+*** TURN *** [4d 8d 5h][Qh]
+Zyglox checks
+JM-21 bets 200
+patouchew folds
+-M3RCR3DI- folds
+Zyglox calls 200
+*** RIVER *** [4d 8d 5h Qh][Tc]
+Zyglox checks
+JM-21 bets 1059
+Zyglox folds
+JM-21 collected 4084 from pot
+*** SUMMARY ***
+Total pot 4084 | No rake
+Board: [4d 8d 5h Qh Tc]
+Seat 1: JM-21 won 4084
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-5-1757675066 - Holdem no limit (25/100/200) - 2025/09/12 11:04:26 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #4 is the button
+Seat 1: JM-21 (23068, 0.50€ bounty)
+Seat 2: patouchew (19850, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (19000, 0.50€ bounty)
+Seat 4: val en deux (18457, 0.50€ bounty)
+Seat 5: Zyglox (19100, 0.50€ bounty)
+Seat 6: DarK-KarbacK (20000, 0.50€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+DarK-KarbacK posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts small blind 100
+DarK-KarbacK posts big blind 200
+Dealt to Zyglox [Js Ad]
+*** PRE-FLOP *** 
+JM-21 folds
+patouchew calls 200
+-M3RCR3DI- folds
+val en deux folds
+Zyglox raises 300 to 500
+DarK-KarbacK calls 300
+patouchew calls 300
+*** FLOP *** [Qc Kh Th]
+Zyglox bets 413
+DarK-KarbacK calls 413
+patouchew folds
+*** TURN *** [Qc Kh Th][Jh]
+Zyglox bets 1238
+DarK-KarbacK calls 1238
+*** RIVER *** [Qc Kh Th Jh][4d]
+Zyglox bets 2476
+DarK-KarbacK calls 2476
+*** SHOW DOWN ***
+Zyglox shows [Js Ad] (Straight Ace high)
+DarK-KarbacK shows [5s As] (Straight Ace high)
+DarK-KarbacK collected 4952 from pot
+Zyglox collected 4952 from pot
+*** SUMMARY ***
+Total pot 9904 | No rake
+Board: [Qc Kh Th Jh 4d]
+Seat 5: Zyglox (small blind) showed [Js Ad] and won 4952 with Straight Ace high
+Seat 6: DarK-KarbacK (big blind) showed [5s As] and won 4952 with Straight Ace high
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-6-1757675141 - Holdem no limit (25/100/200) - 2025/09/12 11:05:41 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #5 is the button
+Seat 1: JM-21 (23043, 0.50€ bounty)
+Seat 2: patouchew (19325, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18975, 0.50€ bounty)
+Seat 4: val en deux (18432, 0.50€ bounty)
+Seat 5: Zyglox (19400, 0.50€ bounty)
+Seat 6: DarK-KarbacK (20300, 0.50€ bounty)
+*** ANTE/BLINDS ***
+DarK-KarbacK posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+DarK-KarbacK posts small blind 100
+JM-21 posts big blind 200
+Dealt to Zyglox [8s 6c]
+*** PRE-FLOP *** 
+patouchew folds
+-M3RCR3DI- folds
+val en deux calls 200
+Zyglox folds
+DarK-KarbacK raises 400 to 600
+JM-21 calls 400
+val en deux calls 400
+*** FLOP *** [7s 3h 5d]
+DarK-KarbacK checks
+JM-21 checks
+val en deux bets 683
+DarK-KarbacK calls 683
+JM-21 calls 683
+*** TURN *** [7s 3h 5d][7c]
+DarK-KarbacK checks
+JM-21 checks
+val en deux checks
+*** RIVER *** [7s 3h 5d 7c][7h]
+DarK-KarbacK checks
+JM-21 checks
+val en deux checks
+*** SHOW DOWN ***
+JM-21 shows [Jc Ah] (Trips of 7)
+val en deux shows [8h 9s] (Trips of 7)
+DarK-KarbacK shows [Ac Qh] (Trips of 7)
+DarK-KarbacK collected 3999 from pot
+*** SUMMARY ***
+Total pot 3999 | No rake
+Board: [7s 3h 5d 7c 7h]
+Seat 1: JM-21 (big blind) showed [Jc Ah] and lost with Trips of 7
+Seat 4: val en deux showed [8h 9s] and lost with Trips of 7
+Seat 6: DarK-KarbacK (small blind) showed [Ac Qh] and won 3999 with Trips of 7
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-7-1757675253 - Holdem no limit (25/100/200) - 2025/09/12 11:07:33 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #6 is the button
+Seat 1: JM-21 (21735, 0.50€ bounty)
+Seat 2: patouchew (19300, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18950, 0.50€ bounty)
+Seat 4: val en deux (17124, 0.50€ bounty)
+Seat 5: Zyglox (19375, 0.50€ bounty)
+Seat 6: DarK-KarbacK (22991, 0.50€ bounty)
+*** ANTE/BLINDS ***
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+DarK-KarbacK posts ante 25
+JM-21 posts small blind 100
+patouchew posts big blind 200
+Dealt to Zyglox [3h 7d]
+*** PRE-FLOP *** 
+-M3RCR3DI- folds
+val en deux raises 300 to 500
+Zyglox folds
+DarK-KarbacK calls 500
+JM-21 calls 400
+patouchew calls 300
+*** FLOP *** [Qh Js Jc]
+JM-21 checks
+patouchew checks
+val en deux checks
+DarK-KarbacK checks
+*** TURN *** [Qh Js Jc][Th]
+JM-21 checks
+patouchew checks
+val en deux checks
+DarK-KarbacK checks
+*** RIVER *** [Qh Js Jc Th][8h]
+JM-21 bets 1398
+patouchew folds
+val en deux folds
+DarK-KarbacK folds
+JM-21 collected 3548 from pot
+*** SUMMARY ***
+Total pot 3548 | No rake
+Board: [Qh Js Jc Th 8h]
+Seat 1: JM-21 (small blind) won 3548
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-8-1757675334 - Holdem no limit (25/100/200) - 2025/09/12 11:08:54 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #1 is the button
+Seat 1: JM-21 (23360, 0.50€ bounty)
+Seat 2: patouchew (18775, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18925, 0.50€ bounty)
+Seat 4: val en deux (16599, 0.50€ bounty)
+Seat 5: Zyglox (19350, 0.50€ bounty)
+Seat 6: DarK-KarbacK (22466, 0.50€ bounty)
+*** ANTE/BLINDS ***
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+JM-21 posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+DarK-KarbacK posts ante 25
+patouchew posts small blind 100
+-M3RCR3DI- posts big blind 200
+Dealt to Zyglox [4s Ks]
+*** PRE-FLOP *** 
+val en deux folds
+Zyglox raises 200 to 400
+DarK-KarbacK folds
+JM-21 folds
+patouchew folds
+-M3RCR3DI- folds
+Zyglox collected 850 from pot
+*** SUMMARY ***
+Total pot 850 | No rake
+Seat 5: Zyglox won 850
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-9-1757675373 - Holdem no limit (25/100/200) - 2025/09/12 11:09:33 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #2 is the button
+Seat 1: JM-21 (23335, 0.50€ bounty)
+Seat 2: patouchew (18650, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18700, 0.50€ bounty)
+Seat 4: val en deux (16574, 0.50€ bounty)
+Seat 5: Zyglox (19775, 0.50€ bounty)
+Seat 6: DarK-KarbacK (22441, 0.50€ bounty)
+*** ANTE/BLINDS ***
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+Zyglox posts ante 25
+DarK-KarbacK posts ante 25
+-M3RCR3DI- posts small blind 100
+val en deux posts big blind 200
+Dealt to Zyglox [Kc Ts]
+*** PRE-FLOP *** 
+Zyglox folds
+DarK-KarbacK folds
+JM-21 calls 200
+patouchew folds
+-M3RCR3DI- folds
+val en deux checks
+*** FLOP *** [5c 8s 9h]
+val en deux checks
+JM-21 checks
+*** TURN *** [5c 8s 9h][6s]
+val en deux bets 200
+JM-21 calls 200
+*** RIVER *** [5c 8s 9h 6s][7c]
+val en deux bets 683
+JM-21 calls 683
+*** SHOW DOWN ***
+JM-21 shows [2h 5h] (Straight 9 high)
+val en deux shows [Ac 7h] (Straight 9 high)
+val en deux collected 1208 from pot
+JM-21 collected 1208 from pot
+*** SUMMARY ***
+Total pot 2416 | No rake
+Board: [5c 8s 9h 6s 7c]
+Seat 1: JM-21 showed [2h 5h] and won 1208 with Straight 9 high
+Seat 4: val en deux (big blind) showed [Ac 7h] and won 1208 with Straight 9 high
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-10-1757675459 - Holdem no limit (25/100/200) - 2025/09/12 11:10:59 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #3 is the button
+Seat 1: JM-21 (23435, 0.50€ bounty)
+Seat 2: patouchew (18625, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18575, 0.50€ bounty)
+Seat 4: val en deux (16674, 0.50€ bounty)
+Seat 5: Zyglox (19750, 0.50€ bounty)
+*** ANTE/BLINDS ***
+val en deux posts ante 25
+Zyglox posts ante 25
+JM-21 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [Kc Ad]
+*** PRE-FLOP *** 
+JM-21 calls 200
+patouchew calls 200
+-M3RCR3DI- folds
+val en deux calls 100
+Zyglox raises 300 to 500
+JM-21 calls 300
+patouchew calls 300
+val en deux calls 300
+*** FLOP *** [Td Ts 5d]
+val en deux bets 744
+Zyglox calls 744
+JM-21 calls 744
+patouchew calls 744
+*** TURN *** [Td Ts 5d][6d]
+val en deux bets 1785
+Zyglox calls 1785
+JM-21 folds
+patouchew folds
+*** RIVER *** [Td Ts 5d 6d][5c]
+val en deux bets 5636
+Zyglox folds
+val en deux collected 14307 from pot
+*** SUMMARY ***
+Total pot 14307 | No rake
+Board: [Td Ts 5d 6d 5c]
+Seat 4: val en deux (small blind) won 14307
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-11-1757675570 - Holdem no limit (25/100/200) - 2025/09/12 11:12:50 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #4 is the button
+Seat 2: patouchew (17356, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18550, 0.50€ bounty)
+Seat 4: val en deux (22291, 0.50€ bounty)
+Seat 5: Zyglox (16696, 0.50€ bounty)
+Seat 6: Pereapp (20000, 0.50€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+Pereapp posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts small blind 100
+Pereapp posts big blind 200
+Dealt to Zyglox [6s Jh]
+*** PRE-FLOP *** 
+patouchew calls 200
+-M3RCR3DI- folds
+val en deux calls 200
+Zyglox folds
+Pereapp checks
+*** FLOP *** [3c 8h Tc]
+Pereapp checks
+patouchew bets 825
+val en deux folds
+Pereapp folds
+patouchew collected 1650 from pot
+*** SUMMARY ***
+Total pot 1650 | No rake
+Board: [3c 8h Tc]
+Seat 2: patouchew won 1650
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-12-1757675587 - Holdem no limit (25/100/200) - 2025/09/12 11:13:07 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #5 is the button
+Seat 1: grillon6 (20000, 0.50€ bounty)
+Seat 2: patouchew (17956, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18525, 0.50€ bounty)
+Seat 4: val en deux (22066, 0.50€ bounty)
+Seat 5: Zyglox (16571, 0.50€ bounty)
+Seat 6: Pereapp (19775, 0.50€ bounty)
+*** ANTE/BLINDS ***
+Pereapp posts ante 25
+grillon6 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts small blind 100
+grillon6 posts big blind 200
+Dealt to Zyglox [4d Ks]
+*** PRE-FLOP *** 
+patouchew calls 200
+-M3RCR3DI- folds
+val en deux folds
+Zyglox raises 200 to 400
+Pereapp calls 300
+grillon6 calls 200
+patouchew calls 200
+*** FLOP *** [Jc 3h 4c]
+Pereapp bets 578
+grillon6 folds
+patouchew calls 578
+Zyglox folds
+*** TURN *** [Jc 3h 4c][3s]
+Pereapp bets 959
+patouchew calls 959
+*** RIVER *** [Jc 3h 4c 3s][Qs]
+Pereapp checks
+patouchew checks
+*** SHOW DOWN ***
+Pereapp shows [Ac 8c] (One pair : 3)
+patouchew shows [7d 7s] (Two pairs : 7 and 3)
+patouchew collected 4824 from pot
+*** SUMMARY ***
+Total pot 4824 | No rake
+Board: [Jc 3h 4c 3s Qs]
+Seat 2: patouchew showed [7d 7s] and won 4824 with Two pairs : 7 and 3
+Seat 6: Pereapp (small blind) showed [Ac 8c] and lost with One pair : 3
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-13-1757675665 - Holdem no limit (25/100/200) - 2025/09/12 11:14:25 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #6 is the button
+Seat 1: grillon6 (19575, 0.50€ bounty)
+Seat 2: patouchew (20818, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18500, 0.50€ bounty)
+Seat 4: val en deux (22041, 0.50€ bounty)
+Seat 5: Zyglox (16146, 0.50€ bounty)
+Seat 6: Pereapp (17813, 0.50€ bounty)
+*** ANTE/BLINDS ***
+grillon6 posts ante 25
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts ante 25
+grillon6 posts small blind 100
+patouchew posts big blind 200
+Dealt to Zyglox [2s 7c]
+*** PRE-FLOP *** 
+-M3RCR3DI- folds
+val en deux folds
+Zyglox folds
+Pereapp raises 300 to 500
+grillon6 calls 400
+patouchew calls 300
+*** FLOP *** [7h 8c Js]
+grillon6 bets 1650
+patouchew folds
+Pereapp calls 1650
+*** TURN *** [7h 8c Js][9c]
+grillon6 bets 17400 and is all-in
+Pereapp folds
+grillon6 collected 22350 from pot
+*** SUMMARY ***
+Total pot 22350 | No rake
+Board: [7h 8c Js 9c]
+Seat 1: grillon6 (small blind) won 22350
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-14-1757675721 - Holdem no limit (25/100/200) - 2025/09/12 11:15:21 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #1 is the button
+Seat 1: grillon6 (22350, 0.50€ bounty)
+Seat 2: patouchew (20293, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (18475, 0.50€ bounty)
+Seat 4: val en deux (22016, 0.50€ bounty)
+Seat 5: Zyglox (16121, 0.50€ bounty)
+Seat 6: Pereapp (15638, 0.50€ bounty)
+*** ANTE/BLINDS ***
+patouchew posts ante 25
+-M3RCR3DI- posts ante 25
+grillon6 posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts ante 25
+patouchew posts small blind 100
+-M3RCR3DI- posts big blind 200
+Dealt to Zyglox [Js Td]
+*** PRE-FLOP *** 
+val en deux calls 200
+Zyglox folds
+Pereapp folds
+grillon6 folds
+patouchew raises 750 to 950
+-M3RCR3DI- calls 750
+val en deux calls 750
+*** FLOP *** [Ks 8s Kd]
+patouchew checks
+-M3RCR3DI- checks
+val en deux checks
+*** TURN *** [Ks 8s Kd][7d]
+patouchew bets 3000
+-M3RCR3DI- folds
+val en deux calls 3000
+*** RIVER *** [Ks 8s Kd 7d][As]
+patouchew bets 5850
+val en deux calls 5850
+*** SHOW DOWN ***
+val en deux shows [8h 7h] (Two pairs : Kings and 8)
+patouchew shows [Qs Kc] (Trips of Kings)
+patouchew collected 20700 from pot
+*** SUMMARY ***
+Total pot 20700 | No rake
+Board: [Ks 8s Kd 7d As]
+Seat 2: patouchew (small blind) showed [Qs Kc] and won 20700 with Trips of Kings
+Seat 4: val en deux showed [8h 7h] and lost with Two pairs : Kings and 8
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-15-1757675784 - Holdem no limit (25/100/200) - 2025/09/12 11:16:24 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #2 is the button
+Seat 1: grillon6 (22325, 0.50€ bounty)
+Seat 2: patouchew (31168, 0.50€ bounty)
+Seat 3: -M3RCR3DI- (17500, 0.50€ bounty)
+Seat 4: val en deux (12191, 0.50€ bounty)
+Seat 5: Zyglox (16096, 0.50€ bounty)
+Seat 6: Pereapp (15613, 0.50€ bounty)
+*** ANTE/BLINDS ***
+-M3RCR3DI- posts ante 25
+val en deux posts ante 25
+grillon6 posts ante 25
+patouchew posts ante 25
+Zyglox posts ante 25
+Pereapp posts ante 25
+-M3RCR3DI- posts small blind 100
+val en deux posts big blind 200
+Dealt to Zyglox [7c 2c]
+*** PRE-FLOP *** 
+Zyglox folds
+Pereapp folds
+grillon6 calls 200
+patouchew calls 200
+-M3RCR3DI- raises 17275 to 17475 and is all-in
+val en deux folds
+grillon6 calls 17275
+patouchew raises 13668 to 31143 and is all-in
+grillon6 calls 4825 and is all-in
+*** FLOP *** [9h 5c Ad]
+*** TURN *** [9h 5c Ad][3h]
+*** RIVER *** [9h 5c Ad 3h][Ts]
+*** SHOW DOWN ***
+-M3RCR3DI- shows [Ac Kh] (One pair : Aces)
+grillon6 shows [9d 9c] (Trips of 9)
+patouchew shows [9s Th] (Two pairs : Tens and 9)
+patouchew collected 8843 from side pot 1
+grillon6 collected 62425 from main pot
+*** SUMMARY ***
+Total pot 71268 | No rake
+Board: [9h 5c Ad 3h Ts]
+Seat 1: grillon6 showed [9d 9c] and won 62425 with Trips of 9
+Seat 2: patouchew (button) showed [9s Th] and won 8843 with Two pairs : Tens and 9
+Seat 3: -M3RCR3DI- (small blind) showed [Ac Kh] and lost with One pair : Aces
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-16-1757675856 - Holdem no limit (25/100/200) - 2025/09/12 11:17:36 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #3 is the button
+Seat 1: grillon6 (62425, 0.60€ bounty)
+Seat 2: patouchew (8843, 0.50€ bounty)
+Seat 4: val en deux (11966, 0.50€ bounty)
+Seat 5: Zyglox (16071, 0.50€ bounty)
+Seat 6: Pereapp (15588, 0.50€ bounty)
+*** ANTE/BLINDS ***
+val en deux posts ante 25
+Zyglox posts ante 25
+grillon6 posts ante 25
+patouchew posts ante 25
+Pereapp posts ante 25
+val en deux posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [3s 7h]
+*** PRE-FLOP *** 
+Pereapp raises 200 to 400
+grillon6 calls 400
+patouchew calls 400
+val en deux calls 300
+Zyglox folds
+*** FLOP *** [9c Tc Jd]
+val en deux checks
+Pereapp checks
+grillon6 checks
+patouchew checks
+*** TURN *** [9c Tc Jd][9d]
+val en deux bets 200
+Pereapp raises 900 to 1100
+grillon6 calls 1100
+patouchew folds
+val en deux raises 900 to 2000
+Pereapp calls 900
+grillon6 calls 900
+*** RIVER *** [9c Tc Jd 9d][2d]
+val en deux bets 400
+Pereapp calls 400
+grillon6 folds
+*** SHOW DOWN ***
+Pereapp shows [9h 8h] (Trips of 9)
+val en deux shows [Kc Qd] (Straight King high)
+val en deux collected 8725 from pot
+*** SUMMARY ***
+Total pot 8725 | No rake
+Board: [9c Tc Jd 9d 2d]
+Seat 4: val en deux (small blind) showed [Kc Qd] and won 8725 with Straight King high
+Seat 6: Pereapp showed [9h 8h] and lost with Trips of 9
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-17-1757675937 - Holdem no limit (25/100/200) - 2025/09/12 11:18:57 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #4 is the button
+Seat 1: grillon6 (60000, 0.60€ bounty)
+Seat 2: patouchew (8418, 0.50€ bounty)
+Seat 3: I_Need-Money (20000, 0.50€ bounty)
+Seat 4: val en deux (17866, 0.50€ bounty)
+Seat 5: Zyglox (15846, 0.50€ bounty)
+Seat 6: Pereapp (12763, 0.50€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+Pereapp posts ante 25
+grillon6 posts ante 25
+patouchew posts ante 25
+I_Need-Money posts ante 25
+val en deux posts ante 25
+Zyglox posts small blind 100
+Pereapp posts big blind 200
+Dealt to Zyglox [Jc Jh]
+*** PRE-FLOP *** 
+grillon6 raises 400 to 600
+patouchew calls 600
+I_Need-Money folds
+val en deux calls 600
+Zyglox calls 500
+Pereapp folds
+*** FLOP *** [8h 3c Qc]
+Zyglox bets 963
+grillon6 calls 963
+patouchew raises 1348 to 2311
+val en deux calls 2311
+Zyglox folds
+grillon6 calls 1348
+*** TURN *** [8h 3c Qc][Ts]
+grillon6 checks
+patouchew bets 3726
+val en deux calls 3726
+grillon6 folds
+*** RIVER *** [8h 3c Qc Ts][Th]
+patouchew bets 1756 and is all-in
+val en deux folds
+patouchew collected 19854 from pot
+*** SUMMARY ***
+Total pot 19854 | No rake
+Board: [8h 3c Qc Ts Th]
+Seat 2: patouchew won 19854
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-18-1757676019 - Holdem no limit (25/100/200) - 2025/09/12 11:20:19 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #5 is the button
+Seat 1: grillon6 (57064, 0.60€ bounty)
+Seat 2: patouchew (19854, 0.50€ bounty)
+Seat 3: I_Need-Money (19975, 0.50€ bounty)
+Seat 4: val en deux (11204, 0.50€ bounty)
+Seat 5: Zyglox (14258, 0.50€ bounty)
+Seat 6: Pereapp (12538, 0.50€ bounty)
+*** ANTE/BLINDS ***
+Pereapp posts ante 25
+grillon6 posts ante 25
+patouchew posts ante 25
+I_Need-Money posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts small blind 100
+grillon6 posts big blind 200
+Dealt to Zyglox [6c Qs]
+*** PRE-FLOP *** 
+patouchew calls 200
+I_Need-Money folds
+val en deux folds
+Zyglox folds
+Pereapp calls 100
+grillon6 checks
+*** FLOP *** [Ad 9s 6s]
+Pereapp checks
+grillon6 checks
+patouchew checks
+*** TURN *** [Ad 9s 6s][7h]
+Pereapp checks
+grillon6 bets 850
+patouchew folds
+Pereapp folds
+grillon6 collected 1600 from pot
+*** SUMMARY ***
+Total pot 1600 | No rake
+Board: [Ad 9s 6s 7h]
+Seat 1: grillon6 (big blind) won 1600
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-19-1757676080 - Holdem no limit (25/100/200) - 2025/09/12 11:21:20 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #6 is the button
+Seat 1: grillon6 (57589, 0.60€ bounty)
+Seat 2: patouchew (19629, 0.50€ bounty)
+Seat 3: I_Need-Money (19950, 0.50€ bounty)
+Seat 4: val en deux (11179, 0.50€ bounty)
+Seat 5: Zyglox (14233, 0.50€ bounty)
+Seat 6: Pereapp (12313, 0.50€ bounty)
+*** ANTE/BLINDS ***
+grillon6 posts ante 25
+patouchew posts ante 25
+I_Need-Money posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts ante 25
+grillon6 posts small blind 100
+patouchew posts big blind 200
+Dealt to Zyglox [6s Js]
+*** PRE-FLOP *** 
+I_Need-Money folds
+val en deux raises 200 to 400
+Zyglox folds
+Pereapp folds
+grillon6 folds
+patouchew calls 200
+*** FLOP *** [3s 7d Ad]
+patouchew checks
+val en deux checks
+*** TURN *** [3s 7d Ad][Kh]
+patouchew bets 1050
+val en deux folds
+patouchew collected 2100 from pot
+*** SUMMARY ***
+Total pot 2100 | No rake
+Board: [3s 7d Ad Kh]
+Seat 2: patouchew (big blind) won 2100
+
+
+Winamax Poker - Tournament "SPACE KO" buyIn: 0.90€ + 0.10€ level: 1 - HandId: #4194161939661717545-20-1757676140 - Holdem no limit (25/100/200) - 2025/09/12 11:22:20 UTC
+Table: 'SPACE KO(976529424)#040' 6-max (real money) Seat #1 is the button
+Seat 1: grillon6 (57464, 0.60€ bounty)
+Seat 2: patouchew (20254, 0.50€ bounty)
+Seat 3: I_Need-Money (19925, 0.50€ bounty)
+Seat 4: val en deux (10754, 0.50€ bounty)
+Seat 5: Zyglox (14208, 0.50€ bounty)
+Seat 6: Pereapp (12288, 0.50€ bounty)
+*** ANTE/BLINDS ***
+patouchew posts ante 25
+I_Need-Money posts ante 25
+grillon6 posts ante 25
+val en deux posts ante 25
+Zyglox posts ante 25
+Pereapp posts ante 25
+patouchew posts small blind 100
+I_Need-Money posts big blind 200
+Dealt to Zyglox [6c Ad]
+*** PRE-FLOP *** 
+val en deux folds
+Zyglox raises 200 to 400
+Pereapp calls 400
+grillon6 calls 400
+patouchew calls 300
+I_Need-Money folds
+*** FLOP *** [5c As 9d]
+patouchew bets 683
+Zyglox calls 683
+Pereapp folds
+grillon6 calls 683
+*** TURN *** [5c As 9d][Qd]
+patouchew checks
+Zyglox bets 2000
+grillon6 calls 2000
+patouchew calls 2000
+*** RIVER *** [5c As 9d Qd][2h]
+patouchew checks
+Zyglox bets 9999
+grillon6 raises 9999 to 19998
+patouchew folds
+Zyglox calls 1101 and is all-in
+*** SHOW DOWN ***
+Zyglox shows [6c Ad] (One pair : Aces)
+grillon6 shows [Jh Ac] (One pair : Aces)
+grillon6 collected 41097 from pot
+*** SUMMARY ***
+Total pot 41097 | No rake
+Board: [5c As 9d Qd 2h]
+Seat 1: grillon6 (button) showed [Jh Ac] and won 41097 with One pair : Aces
+Seat 5: Zyglox showed [6c Ad] and lost with One pair : Aces
+
+

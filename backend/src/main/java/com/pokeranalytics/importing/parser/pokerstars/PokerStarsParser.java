@@ -177,7 +177,7 @@ public final class PokerStarsParser {
                 } else if ((m = SEAT.matcher(line)).matches()) {
                     Money stack = parseMoney(m.group(3).trim());
                     hand.seats.add(new Seat(Integer.parseInt(m.group(1)), m.group(2).trim(),
-                            stack.amount(), stack.currency()));
+                            stack.amount(), stack.currency(), null));
                 } else if ((m = POST_ANTE.matcher(line)).matches()) {
                     hand.actions.add(new HandAction(street, HandActionType.POST_ANTE, line));
                 } else if ((m = POST_SB_BB.matcher(line)).matches()) {

@@ -1,0 +1,318 @@
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 1 - HandId: #4231788198226821121-1-1757014688 - Holdem no limit (10/20) - 2025/09/04 19:38:08 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #1 is the button
+Seat 1: Yanno3391 (500)
+Seat 2: Ben.Bowman (500)
+Seat 3: Zyglox (500)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [Kd 4d]
+*** PRE-FLOP *** 
+Yanno3391 calls 20
+Ben.Bowman calls 10
+Zyglox checks
+*** FLOP *** [Kc 5h 5c]
+Ben.Bowman bets 60
+Zyglox calls 60
+Yanno3391 folds
+*** TURN *** [Kc 5h 5c][Ks]
+Ben.Bowman checks
+Zyglox checks
+*** RIVER *** [Kc 5h 5c Ks][6s]
+Ben.Bowman bets 180
+Zyglox raises 240 to 420 and is all-in
+Ben.Bowman folds
+Zyglox collected 780 from pot
+*** SUMMARY ***
+Total pot 780 | No rake
+Board: [Kc 5h 5c Ks 6s]
+Seat 3: Zyglox (big blind) won 780
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 1 - HandId: #4231788198226821121-2-1757014756 - Holdem no limit (10/20) - 2025/09/04 19:39:16 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #2 is the button
+Seat 1: Yanno3391 (480)
+Seat 2: Ben.Bowman (240)
+Seat 3: Zyglox (780)
+*** ANTE/BLINDS ***
+Zyglox posts small blind 10
+Yanno3391 posts big blind 20
+Dealt to Zyglox [4s Td]
+*** PRE-FLOP *** 
+Ben.Bowman calls 20
+Zyglox folds
+Yanno3391 checks
+*** FLOP *** [6s 7s Qh]
+Yanno3391 checks
+Ben.Bowman bets 33
+Yanno3391 folds
+Ben.Bowman collected 83 from pot
+*** SUMMARY ***
+Total pot 83 | No rake
+Board: [6s 7s Qh]
+Seat 2: Ben.Bowman (button) won 83
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 1 - HandId: #4231788198226821121-3-1757014771 - Holdem no limit (10/20) - 2025/09/04 19:39:31 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #3 is the button
+Seat 1: Yanno3391 (460)
+Seat 2: Ben.Bowman (270)
+Seat 3: Zyglox (770)
+*** ANTE/BLINDS ***
+Yanno3391 posts small blind 10
+Ben.Bowman posts big blind 20
+Dealt to Zyglox [Jh Qd]
+*** PRE-FLOP *** 
+Zyglox raises 20 to 40
+Yanno3391 folds
+Ben.Bowman calls 20
+*** FLOP *** [7d 5d 6s]
+Ben.Bowman checks
+Zyglox checks
+*** TURN *** [7d 5d 6s][7h]
+Ben.Bowman bets 90
+Zyglox folds
+Ben.Bowman collected 180 from pot
+*** SUMMARY ***
+Total pot 180 | No rake
+Board: [7d 5d 6s 7h]
+Seat 2: Ben.Bowman (big blind) won 180
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 2 - HandId: #4231788198226821121-4-1757014807 - Holdem no limit (15/30) - 2025/09/04 19:40:07 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #1 is the button
+Seat 1: Yanno3391 (450)
+Seat 2: Ben.Bowman (320)
+Seat 3: Zyglox (730)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 15
+Zyglox posts big blind 30
+Dealt to Zyglox [6d 6s]
+*** PRE-FLOP *** 
+Yanno3391 folds
+Ben.Bowman calls 15
+Zyglox raises 45 to 75
+Ben.Bowman calls 45
+*** FLOP *** [4d Ad Jc]
+Ben.Bowman checks
+Zyglox checks
+*** TURN *** [4d Ad Jc][9s]
+Ben.Bowman bets 30
+Zyglox folds
+Ben.Bowman collected 180 from pot
+*** SUMMARY ***
+Total pot 180 | No rake
+Board: [4d Ad Jc 9s]
+Seat 2: Ben.Bowman (small blind) won 180
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 2 - HandId: #4231788198226821121-5-1757014840 - Holdem no limit (15/30) - 2025/09/04 19:40:40 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #2 is the button
+Seat 1: Yanno3391 (450)
+Seat 2: Ben.Bowman (395)
+Seat 3: Zyglox (655)
+*** ANTE/BLINDS ***
+Zyglox posts small blind 15
+Yanno3391 posts big blind 30
+Dealt to Zyglox [5h 5s]
+*** PRE-FLOP *** 
+Ben.Bowman calls 30
+Zyglox raises 45 to 75
+Yanno3391 folds
+Ben.Bowman calls 45
+*** FLOP *** [Qc Ah 7s]
+Zyglox checks
+Ben.Bowman bets 63
+Zyglox folds
+Ben.Bowman collected 243 from pot
+*** SUMMARY ***
+Total pot 243 | No rake
+Board: [Qc Ah 7s]
+Seat 2: Ben.Bowman (button) won 243
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 3 - HandId: #4231788198226821121-6-1757014871 - Holdem no limit (20/40) - 2025/09/04 19:41:11 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #3 is the button
+Seat 1: Yanno3391 (420)
+Seat 2: Ben.Bowman (500)
+Seat 3: Zyglox (580)
+*** ANTE/BLINDS ***
+Yanno3391 posts small blind 20
+Ben.Bowman posts big blind 40
+Dealt to Zyglox [Js 8s]
+*** PRE-FLOP *** 
+Zyglox folds
+Yanno3391 calls 20
+Ben.Bowman checks
+*** FLOP *** [3d Tc Kd]
+Yanno3391 checks
+Ben.Bowman bets 40
+Yanno3391 folds
+Ben.Bowman collected 120 from pot
+*** SUMMARY ***
+Total pot 120 | No rake
+Board: [3d Tc Kd]
+Seat 2: Ben.Bowman (big blind) won 120
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 3 - HandId: #4231788198226821121-7-1757014889 - Holdem no limit (20/40) - 2025/09/04 19:41:29 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #1 is the button
+Seat 1: Yanno3391 (380)
+Seat 2: Ben.Bowman (540)
+Seat 3: Zyglox (580)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 20
+Zyglox posts big blind 40
+Dealt to Zyglox [8s 7c]
+*** PRE-FLOP *** 
+Yanno3391 calls 40
+Ben.Bowman calls 20
+Zyglox checks
+*** FLOP *** [3d Ts Js]
+Ben.Bowman bets 120
+Zyglox folds
+Yanno3391 raises 220 to 340 and is all-in
+Ben.Bowman calls 220
+*** TURN *** [3d Ts Js][7s]
+*** RIVER *** [3d Ts Js 7s][7h]
+*** SHOW DOWN ***
+Yanno3391 shows [Kh Ac] (One pair : 7)
+Ben.Bowman shows [2s Ks] (Flush King high)
+Ben.Bowman collected 800 from pot
+*** SUMMARY ***
+Total pot 800 | No rake
+Board: [3d Ts Js 7s 7h]
+Seat 1: Yanno3391 (button) showed [Kh Ac] and lost with One pair : 7
+Seat 2: Ben.Bowman (small blind) showed [2s Ks] and won 800 with Flush King high
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 3 - HandId: #4231788198226821121-8-1757014922 - Holdem no limit (20/40) - 2025/09/04 19:42:02 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #3 is the button
+Seat 2: Ben.Bowman (960)
+Seat 3: Zyglox (540)
+*** ANTE/BLINDS ***
+Zyglox posts small blind 20
+Ben.Bowman posts big blind 40
+Dealt to Zyglox [3d 6d]
+*** PRE-FLOP *** 
+Zyglox folds
+Ben.Bowman collected 60 from pot
+*** SUMMARY ***
+Total pot 60 | No rake
+Seat 2: Ben.Bowman (big blind) won 60
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 3 - HandId: #4231788198226821121-9-1757014927 - Holdem no limit (20/40) - 2025/09/04 19:42:07 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #2 is the button
+Seat 2: Ben.Bowman (980)
+Seat 3: Zyglox (520)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 20
+Zyglox posts big blind 40
+Dealt to Zyglox [7s Kc]
+*** PRE-FLOP *** 
+Ben.Bowman calls 20
+Zyglox checks
+*** FLOP *** [5h 2s Jh]
+Zyglox checks
+Ben.Bowman bets 40
+Zyglox calls 40
+*** TURN *** [5h 2s Jh][Jd]
+Zyglox bets 56
+Ben.Bowman calls 56
+*** RIVER *** [5h 2s Jh Jd][Ac]
+Zyglox checks
+Ben.Bowman bets 272
+Zyglox folds
+Ben.Bowman collected 544 from pot
+*** SUMMARY ***
+Total pot 544 | No rake
+Board: [5h 2s Jh Jd Ac]
+Seat 2: Ben.Bowman (small blind) (button) won 544
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 4 - HandId: #4231788198226821121-10-1757014986 - Holdem no limit (30/60) - 2025/09/04 19:43:06 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #3 is the button
+Seat 2: Ben.Bowman (1116)
+Seat 3: Zyglox (384)
+*** ANTE/BLINDS ***
+Zyglox posts small blind 30
+Ben.Bowman posts big blind 60
+Dealt to Zyglox [6h Qd]
+*** PRE-FLOP *** 
+Zyglox calls 30
+Ben.Bowman checks
+*** FLOP *** [8h 5c Tc]
+Ben.Bowman bets 60
+Zyglox folds
+Ben.Bowman collected 180 from pot
+*** SUMMARY ***
+Total pot 180 | No rake
+Board: [8h 5c Tc]
+Seat 2: Ben.Bowman (big blind) won 180
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 4 - HandId: #4231788198226821121-11-1757015006 - Holdem no limit (30/60) - 2025/09/04 19:43:26 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #2 is the button
+Seat 2: Ben.Bowman (1176)
+Seat 3: Zyglox (324)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 30
+Zyglox posts big blind 60
+Dealt to Zyglox [Td 8c]
+*** PRE-FLOP *** 
+Ben.Bowman calls 30
+Zyglox checks
+*** FLOP *** [6h 6d 3h]
+Zyglox checks
+Ben.Bowman bets 60
+Zyglox folds
+Ben.Bowman collected 180 from pot
+*** SUMMARY ***
+Total pot 180 | No rake
+Board: [6h 6d 3h]
+Seat 2: Ben.Bowman (small blind) (button) won 180
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 4 - HandId: #4231788198226821121-12-1757015035 - Holdem no limit (30/60) - 2025/09/04 19:43:55 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #3 is the button
+Seat 2: Ben.Bowman (1236)
+Seat 3: Zyglox (264)
+*** ANTE/BLINDS ***
+Zyglox posts small blind 30
+Ben.Bowman posts big blind 60
+Dealt to Zyglox [9s Qs]
+*** PRE-FLOP *** 
+Zyglox folds
+Ben.Bowman collected 90 from pot
+*** SUMMARY ***
+Total pot 90 | No rake
+Seat 2: Ben.Bowman (big blind) won 90
+
+
+Winamax Poker - Tournament "Expresso" buyIn: 1.86€ + 0.14€ level: 5 - HandId: #4231788198226821121-13-1757015049 - Holdem no limit (40/80) - 2025/09/04 19:44:09 UTC
+Table: 'Expresso(985289970)#0' 3-max (real money) Seat #2 is the button
+Seat 2: Ben.Bowman (1266)
+Seat 3: Zyglox (234)
+*** ANTE/BLINDS ***
+Ben.Bowman posts small blind 40
+Zyglox posts big blind 80
+Dealt to Zyglox [Tc Ts]
+*** PRE-FLOP *** 
+Ben.Bowman raises 80 to 160
+Zyglox raises 74 to 234 and is all-in
+Ben.Bowman calls 74
+*** FLOP *** [6c 7h 4c]
+*** TURN *** [6c 7h 4c][8s]
+*** RIVER *** [6c 7h 4c 8s][As]
+*** SHOW DOWN ***
+Zyglox shows [Tc Ts] (One pair : Tens)
+Ben.Bowman shows [Jd 5h] (Straight 8 high)
+Ben.Bowman collected 468 from pot
+*** SUMMARY ***
+Total pot 468 | No rake
+Board: [6c 7h 4c 8s As]
+Seat 2: Ben.Bowman (small blind) (button) showed [Jd 5h] and won 468 with Straight 8 high
+Seat 3: Zyglox (big blind) showed [Tc Ts] and lost with One pair : Tens
+
+

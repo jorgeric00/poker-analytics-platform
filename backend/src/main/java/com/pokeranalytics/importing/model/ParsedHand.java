@@ -21,6 +21,15 @@ public class ParsedHand {
     public BigDecimal bigBlind;
     public String timestampRaw;
 
+    public HandFormat format = HandFormat.CASH;
+    /** Tournament/Expresso only: the room's own tournament name, e.g. "Expresso", "ROTATION". */
+    public String tournamentName;
+    /** Tournament/Expresso only: raw buy-in text as the room wrote it, e.g. "1.80€ + 0.20€". */
+    public String buyIn;
+    public Integer tournamentLevel;
+    /** Tournament/Expresso only: per-player ante at this level, in chips (not currency); null if none. */
+    public BigDecimal ante;
+
     public String tableName;
     public int maxSeats;
     public int buttonSeat;

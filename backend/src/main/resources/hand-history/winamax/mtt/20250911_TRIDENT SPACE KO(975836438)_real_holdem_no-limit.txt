@@ -1,0 +1,520 @@
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-22-1757625647 - Holdem no limit (3/10/20) - 2025/09/11 21:20:47 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2026, 1.70€ bounty)
+Seat 2: KeLoseille (477, 1€ bounty)
+Seat 3: Zyglox (500, 1€ bounty)
+*** ANTE/BLINDS ***
+KeLoseille posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+KeLoseille posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [9d 3h]
+*** PRE-FLOP *** 
+Nobletmeg calls 20
+KeLoseille folds
+Zyglox checks
+*** FLOP *** [9c 7d Qc]
+Zyglox bets 21
+Nobletmeg folds
+Zyglox collected 80 from pot
+*** SUMMARY ***
+Total pot 80 | No rake
+Board: [9c 7d Qc]
+Seat 3: Zyglox (big blind) won 80
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-23-1757625672 - Holdem no limit (3/10/20) - 2025/09/11 21:21:12 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #2 is the button
+Seat 1: Nobletmeg (2003, 1.70€ bounty)
+Seat 2: KeLoseille (464, 1€ bounty)
+Seat 3: Zyglox (536, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+KeLoseille posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [5d 7s]
+*** PRE-FLOP *** 
+KeLoseille folds
+Zyglox folds
+Nobletmeg collected 39 from pot
+*** SUMMARY ***
+Total pot 39 | No rake
+Seat 1: Nobletmeg (big blind) won 39
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-24-1757625677 - Holdem no limit (3/10/20) - 2025/09/11 21:21:17 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2019, 1.70€ bounty)
+Seat 2: KeLoseille (461, 1€ bounty)
+Seat 3: Zyglox (523, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+KeLoseille posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+KeLoseille posts big blind 20
+Dealt to Zyglox [Jc 6d]
+*** PRE-FLOP *** 
+Zyglox calls 20
+Nobletmeg folds
+KeLoseille raises 438 to 458 and is all-in
+Zyglox folds
+KeLoseille collected 497 from pot
+*** SUMMARY ***
+Total pot 497 | No rake
+Seat 2: KeLoseille (big blind) won 497
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-25-1757625696 - Holdem no limit (3/10/20) - 2025/09/11 21:21:36 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2006, 1.70€ bounty)
+Seat 2: KeLoseille (497, 1€ bounty)
+Seat 3: Zyglox (500, 1€ bounty)
+*** ANTE/BLINDS ***
+KeLoseille posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+KeLoseille posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [7d Kc]
+*** PRE-FLOP *** 
+Nobletmeg folds
+KeLoseille folds
+Zyglox collected 39 from pot
+*** SUMMARY ***
+Total pot 39 | No rake
+Seat 3: Zyglox (big blind) won 39
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-26-1757625703 - Holdem no limit (3/10/20) - 2025/09/11 21:21:43 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #2 is the button
+Seat 1: Nobletmeg (2003, 1.70€ bounty)
+Seat 2: KeLoseille (484, 1€ bounty)
+Seat 3: Zyglox (516, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+KeLoseille posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [4c 7s]
+*** PRE-FLOP *** 
+KeLoseille folds
+Zyglox folds
+Nobletmeg collected 39 from pot
+*** SUMMARY ***
+Total pot 39 | No rake
+Seat 1: Nobletmeg (big blind) won 39
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-27-1757625707 - Holdem no limit (3/10/20) - 2025/09/11 21:21:47 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2019, 1.70€ bounty)
+Seat 3: Zyglox (503, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [8h Js]
+*** PRE-FLOP *** 
+Nobletmeg raises 40 to 60
+Zyglox folds
+Nobletmeg collected 86 from pot
+*** SUMMARY ***
+Total pot 86 | No rake
+Seat 1: Nobletmeg (small blind) (button) won 86
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-28-1757625713 - Holdem no limit (3/10/20) - 2025/09/11 21:21:53 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2042, 1.70€ bounty)
+Seat 2: rhg6 (500, 1€ bounty)
+Seat 3: Zyglox (480, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [Ts Kc]
+*** PRE-FLOP *** 
+Zyglox raises 20 to 40
+Nobletmeg folds
+Zyglox collected 66 from pot
+*** SUMMARY ***
+Total pot 66 | No rake
+Seat 3: Zyglox (small blind) (button) won 66
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-29-1757625718 - Holdem no limit (3/10/20) - 2025/09/11 21:21:58 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2019, 1.70€ bounty)
+Seat 2: rhg6 (500, 1€ bounty)
+Seat 3: Zyglox (503, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+rhg6 posts big blind 20
+Dealt to Zyglox [4d 6c]
+*** PRE-FLOP *** 
+Zyglox folds
+Nobletmeg calls 10
+rhg6 checks
+*** FLOP *** [8s 2d Qd]
+Nobletmeg bets 20
+rhg6 calls 20
+*** TURN *** [8s 2d Qd][2c]
+Nobletmeg bets 20
+rhg6 folds
+Nobletmeg collected 109 from pot
+*** SUMMARY ***
+Total pot 109 | No rake
+Board: [8s 2d Qd 2c]
+Seat 1: Nobletmeg (small blind) won 109
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-30-1757625730 - Holdem no limit (3/10/20) - 2025/09/11 21:22:10 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2065, 1.70€ bounty)
+Seat 2: rhg6 (457, 1€ bounty)
+Seat 3: Zyglox (500, 1€ bounty)
+*** ANTE/BLINDS ***
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [Qs 6d]
+*** PRE-FLOP *** 
+Nobletmeg folds
+rhg6 folds
+Zyglox collected 39 from pot
+*** SUMMARY ***
+Total pot 39 | No rake
+Seat 3: Zyglox (big blind) won 39
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-31-1757625735 - Holdem no limit (3/10/20) - 2025/09/11 21:22:15 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #2 is the button
+Seat 1: Nobletmeg (2062, 1.70€ bounty)
+Seat 2: rhg6 (444, 1€ bounty)
+Seat 3: Zyglox (516, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [5h Kh]
+*** PRE-FLOP *** 
+rhg6 raises 20 to 40
+Zyglox calls 30
+Nobletmeg folds
+*** FLOP *** [Qc 8h Qh]
+Zyglox bets 55
+rhg6 folds
+Zyglox collected 164 from pot
+*** SUMMARY ***
+Total pot 164 | No rake
+Board: [Qc 8h Qh]
+Seat 3: Zyglox (small blind) won 164
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-32-1757625751 - Holdem no limit (3/10/20) - 2025/09/11 21:22:31 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2039, 1.70€ bounty)
+Seat 2: rhg6 (401, 1€ bounty)
+Seat 3: Zyglox (582, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+rhg6 posts big blind 20
+Dealt to Zyglox [9h Td]
+*** PRE-FLOP *** 
+Zyglox folds
+Nobletmeg raises 20 to 40
+rhg6 calls 20
+*** FLOP *** [2h Qh 8h]
+Nobletmeg bets 20
+rhg6 raises 20 to 40
+Nobletmeg calls 20
+*** TURN *** [2h Qh 8h][6c]
+Nobletmeg checks
+rhg6 bets 59
+Nobletmeg calls 59
+*** RIVER *** [2h Qh 8h 6c][Qc]
+Nobletmeg checks
+rhg6 checks
+*** SHOW DOWN ***
+rhg6 shows [Kc 2c] (Two pairs : Queens and 2)
+Nobletmeg shows [As 8s] (Two pairs : Queens and 8)
+Nobletmeg collected 287 from pot
+*** SUMMARY ***
+Total pot 287 | No rake
+Board: [2h Qh 8h 6c Qc]
+Seat 1: Nobletmeg (small blind) showed [As 8s] and won 287 with Two pairs : Queens and 8
+Seat 2: rhg6 (big blind) showed [Kc 2c] and lost with Two pairs : Queens and 2
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-33-1757625778 - Holdem no limit (3/10/20) - 2025/09/11 21:22:58 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2184, 1.70€ bounty)
+Seat 2: rhg6 (259, 1€ bounty)
+Seat 3: Zyglox (579, 1€ bounty)
+*** ANTE/BLINDS ***
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [2c 7h]
+*** PRE-FLOP *** 
+Nobletmeg raises 2161 to 2181 and is all-in
+rhg6 folds
+Zyglox folds
+Nobletmeg collected 2220 from pot
+*** SUMMARY ***
+Total pot 2220 | No rake
+Seat 1: Nobletmeg (button) won 2220
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-34-1757625784 - Holdem no limit (3/10/20) - 2025/09/11 21:23:04 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #2 is the button
+Seat 1: Nobletmeg (2220, 1.70€ bounty)
+Seat 2: rhg6 (246, 1€ bounty)
+Seat 3: Zyglox (556, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [6c 9h]
+*** PRE-FLOP *** 
+rhg6 raises 40 to 60
+Zyglox folds
+Nobletmeg calls 40
+*** FLOP *** [6s Tc Th]
+Nobletmeg checks
+rhg6 checks
+*** TURN *** [6s Tc Th][3s]
+Nobletmeg checks
+rhg6 checks
+*** RIVER *** [6s Tc Th 3s][4h]
+Nobletmeg checks
+rhg6 checks
+*** SHOW DOWN ***
+Nobletmeg shows [Js Qd] (One pair : Tens)
+rhg6 shows [Kc Qh] (One pair : Tens)
+rhg6 collected 139 from pot
+*** SUMMARY ***
+Total pot 139 | No rake
+Board: [6s Tc Th 3s 4h]
+Seat 1: Nobletmeg (big blind) showed [Js Qd] and lost with One pair : Tens
+Seat 2: rhg6 (button) showed [Kc Qh] and won 139 with One pair : Tens
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-35-1757625798 - Holdem no limit (3/10/20) - 2025/09/11 21:23:18 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2157, 1.70€ bounty)
+Seat 2: rhg6 (322, 1€ bounty)
+Seat 3: Zyglox (543, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+rhg6 posts big blind 20
+Dealt to Zyglox [5s 4s]
+*** PRE-FLOP *** 
+Zyglox raises 20 to 40
+Nobletmeg folds
+rhg6 calls 20
+*** FLOP *** [8c Jc Ad]
+rhg6 bets 20
+Zyglox calls 20
+*** TURN *** [8c Jc Ad][Qd]
+rhg6 checks
+Zyglox bets 49
+rhg6 folds
+Zyglox collected 188 from pot
+*** SUMMARY ***
+Total pot 188 | No rake
+Board: [8c Jc Ad Qd]
+Seat 3: Zyglox (button) won 188
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-36-1757625829 - Holdem no limit (3/10/20) - 2025/09/11 21:23:49 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #1 is the button
+Seat 1: Nobletmeg (2144, 1.70€ bounty)
+Seat 2: rhg6 (259, 1€ bounty)
+Seat 3: Zyglox (619, 1€ bounty)
+*** ANTE/BLINDS ***
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [Ts 7d]
+*** PRE-FLOP *** 
+Nobletmeg folds
+rhg6 folds
+Zyglox collected 39 from pot
+*** SUMMARY ***
+Total pot 39 | No rake
+Seat 3: Zyglox (big blind) won 39
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-37-1757625834 - Holdem no limit (3/10/20) - 2025/09/11 21:23:54 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #2 is the button
+Seat 1: Nobletmeg (2141, 1.70€ bounty)
+Seat 2: rhg6 (246, 1€ bounty)
+Seat 3: Zyglox (635, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts small blind 10
+Nobletmeg posts big blind 20
+Dealt to Zyglox [Th Ac]
+*** PRE-FLOP *** 
+rhg6 folds
+Zyglox raises 30 to 50
+Nobletmeg folds
+Zyglox collected 79 from pot
+*** SUMMARY ***
+Total pot 79 | No rake
+Seat 3: Zyglox (small blind) won 79
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131822-38-1757625844 - Holdem no limit (3/10/20) - 2025/09/11 21:24:04 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0173' 3-max (real money) Seat #3 is the button
+Seat 1: Nobletmeg (2118, 1.70€ bounty)
+Seat 2: rhg6 (243, 1€ bounty)
+Seat 3: Zyglox (661, 1€ bounty)
+*** ANTE/BLINDS ***
+Nobletmeg posts ante 3
+rhg6 posts ante 3
+Zyglox posts ante 3
+Nobletmeg posts small blind 10
+rhg6 posts big blind 20
+Dealt to Zyglox [Ad 4s]
+*** PRE-FLOP *** 
+Zyglox raises 30 to 50
+Nobletmeg calls 40
+rhg6 calls 30
+*** FLOP *** [Ac Kd Jh]
+Nobletmeg checks
+rhg6 checks
+Zyglox bets 80
+Nobletmeg calls 80
+rhg6 folds
+*** TURN *** [Ac Kd Jh][8s]
+Nobletmeg checks
+Zyglox bets 528 and is all-in
+Nobletmeg calls 528
+*** RIVER *** [Ac Kd Jh 8s][Qd]
+*** SHOW DOWN ***
+Zyglox shows [Ad 4s] (One pair : Aces)
+Nobletmeg shows [Ah Th] (Straight Ace high)
+Nobletmeg collected 1375 from pot
+*** SUMMARY ***
+Total pot 1375 | No rake
+Board: [Ac Kd Jh 8s Qd]
+Seat 1: Nobletmeg (small blind) showed [Ah Th] and won 1375 with Straight Ace high
+Seat 3: Zyglox (button) showed [Ad 4s] and lost with One pair : Aces
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4191185587455131855-34-1757625911 - Holdem no limit (3/10/20) - 2025/09/11 21:25:11 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0206' 3-max (real money) Seat #1 is the button
+Seat 1: SecondBarr (490, 1€ bounty)
+Seat 2: Joelacisaill (1026, 1.20€ bounty)
+Seat 3: Zyglox (500, 1€ bounty)
+*** ANTE/BLINDS ***
+Joelacisaill posts ante 3
+Zyglox posts ante 3
+SecondBarr posts ante 3
+Joelacisaill posts small blind 10
+Zyglox posts big blind 20
+Dealt to Zyglox [Kc 4d]
+*** PRE-FLOP *** 
+SecondBarr folds
+Joelacisaill calls 10
+Zyglox checks
+*** FLOP *** [As 2s Ts]
+Joelacisaill checks
+Zyglox checks
+*** TURN *** [As 2s Ts][2h]
+Joelacisaill bets 32
+Zyglox folds
+Joelacisaill collected 81 from pot
+*** SUMMARY ***
+Total pot 81 | No rake
+Board: [As 2s Ts 2h]
+Seat 2: Joelacisaill (small blind) won 81
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4191185587455131855-35-1757625958 - Holdem no limit (3/12/25) - 2025/09/11 21:25:58 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0206' 3-max (real money) Seat #2 is the button
+Seat 1: SecondBarr (487, 1€ bounty)
+Seat 2: Joelacisaill (1052, 1.20€ bounty)
+Seat 3: Zyglox (477, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 3
+SecondBarr posts ante 3
+Joelacisaill posts ante 3
+Zyglox posts small blind 12
+SecondBarr posts big blind 25
+Dealt to Zyglox [Qc 2s]
+*** PRE-FLOP *** 
+Joelacisaill folds
+Zyglox calls 13
+SecondBarr raises 459 to 484 and is all-in
+Zyglox folds
+SecondBarr collected 518 from pot
+*** SUMMARY ***
+Total pot 518 | No rake
+Seat 1: SecondBarr (big blind) won 518
+
+
+Winamax Poker - Tournament "TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4191185587455131855-36-1757625978 - Holdem no limit (3/12/25) - 2025/09/11 21:26:18 UTC
+Table: 'TRIDENT SPACE KO(975836438)#0206' 3-max (real money) Seat #3 is the button
+Seat 1: SecondBarr (518, 1€ bounty)
+Seat 2: Joelacisaill (1049, 1.20€ bounty)
+Seat 3: Zyglox (449, 1€ bounty)
+*** ANTE/BLINDS ***
+SecondBarr posts ante 3
+Joelacisaill posts ante 3
+Zyglox posts ante 3
+SecondBarr posts small blind 12
+Joelacisaill posts big blind 25
+Dealt to Zyglox [Ac 5c]
+*** PRE-FLOP *** 
+Zyglox raises 38 to 63
+SecondBarr folds
+Joelacisaill calls 38
+*** FLOP *** [Qc Kc 6h]
+Joelacisaill checks
+Zyglox bets 74
+Joelacisaill raises 909 to 983 and is all-in
+Zyglox calls 309 and is all-in
+*** TURN *** [Qc Kc 6h][Qs]
+*** RIVER *** [Qc Kc 6h Qs][4s]
+*** SHOW DOWN ***
+Zyglox shows [Ac 5c] (One pair : Queens)
+Joelacisaill shows [Js Kd] (Two pairs : Kings and Queens)
+Joelacisaill collected 1513 from pot
+*** SUMMARY ***
+Total pot 1513 | No rake
+Board: [Qc Kc 6h Qs 4s]
+Seat 2: Joelacisaill (big blind) showed [Js Kd] and won 1513 with Two pairs : Kings and Queens
+Seat 3: Zyglox (button) showed [Ac 5c] and lost with One pair : Queens
+
+

@@ -1,0 +1,589 @@
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-1-1757679879 - Holdem no limit (25/100/200) - 2025/09/12 12:24:39 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #3 is the button
+Seat 1: Keskjvousser (21000, 1€ bounty)
+Seat 2: Pet2foufe (22406, 1€ bounty)
+Seat 3: Alex Nemi (20050, 1€ bounty)
+Seat 5: Zyglox (20000, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+Pet2foufe posts ante 25
+Alex Nemi posts ante 25
+Zyglox posts small blind 100
+Pet2foufe posts big blind 200
+Dealt to Zyglox [4d 9c]
+*** PRE-FLOP *** 
+Alex Nemi folds
+Zyglox folds
+Pet2foufe collected 375 from pot
+*** SUMMARY ***
+Total pot 375 | No rake
+Seat 2: Pet2foufe (big blind) won 375
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-2-1757679895 - Holdem no limit (25/100/200) - 2025/09/12 12:24:55 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #5 is the button
+Seat 1: Keskjvousser (21000, 1€ bounty)
+Seat 2: Pet2foufe (22556, 1€ bounty)
+Seat 3: Alex Nemi (20025, 1€ bounty)
+Seat 5: Zyglox (19875, 1€ bounty)
+Seat 6: MINIMUMAX (20000, 1€ bounty)
+*** ANTE/BLINDS ***
+Pet2foufe posts ante 25
+Alex Nemi posts ante 25
+Zyglox posts ante 25
+Pet2foufe posts small blind 100
+Alex Nemi posts big blind 200
+Dealt to Zyglox [8h 4s]
+*** PRE-FLOP *** 
+Zyglox folds
+Pet2foufe folds
+Alex Nemi collected 375 from pot
+*** SUMMARY ***
+Total pot 375 | No rake
+Seat 3: Alex Nemi (big blind) won 375
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-3-1757679904 - Holdem no limit (25/100/200) - 2025/09/12 12:25:04 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #2 is the button
+Seat 1: Keskjvousser (21000, 1€ bounty)
+Seat 2: Pet2foufe (22431, 1€ bounty)
+Seat 3: Alex Nemi (20175, 1€ bounty)
+Seat 4: Ffoldman (20000, 1€ bounty)
+Seat 5: Zyglox (19850, 1€ bounty)
+Seat 6: MINIMUMAX (20000, 1€ bounty)
+*** ANTE/BLINDS ***
+Alex Nemi posts ante 25
+Ffoldman posts ante 25
+Keskjvousser posts ante 25
+Pet2foufe posts ante 25
+Zyglox posts ante 25
+MINIMUMAX posts ante 25
+Alex Nemi posts small blind 100
+Ffoldman posts big blind 200
+Dealt to Zyglox [Kh 9d]
+*** PRE-FLOP *** 
+Zyglox folds
+MINIMUMAX raises 19775 to 19975 and is all-in
+Keskjvousser folds
+Pet2foufe folds
+Alex Nemi folds
+Ffoldman folds
+MINIMUMAX collected 20425 from pot
+*** SUMMARY ***
+Total pot 20425 | No rake
+Seat 6: MINIMUMAX won 20425
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-4-1757679939 - Holdem no limit (25/100/200) - 2025/09/12 12:25:39 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #3 is the button
+Seat 1: Keskjvousser (20975, 1€ bounty)
+Seat 2: Pet2foufe (22406, 1€ bounty)
+Seat 3: Alex Nemi (20050, 1€ bounty)
+Seat 4: Ffoldman (19775, 1€ bounty)
+Seat 5: Zyglox (19825, 1€ bounty)
+Seat 6: MINIMUMAX (20425, 1€ bounty)
+*** ANTE/BLINDS ***
+Ffoldman posts ante 25
+Zyglox posts ante 25
+Keskjvousser posts ante 25
+Pet2foufe posts ante 25
+Alex Nemi posts ante 25
+MINIMUMAX posts ante 25
+Ffoldman posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [As 5d]
+*** PRE-FLOP *** 
+MINIMUMAX calls 200
+Keskjvousser raises 250 to 450
+Pet2foufe folds
+Alex Nemi folds
+Ffoldman folds
+Zyglox calls 250
+MINIMUMAX calls 250
+*** FLOP *** [Kd 6h 4d]
+Zyglox checks
+MINIMUMAX checks
+Keskjvousser bets 560
+Zyglox calls 560
+MINIMUMAX folds
+*** TURN *** [Kd 6h 4d][Qs]
+Zyglox checks
+Keskjvousser bets 952
+Zyglox folds
+Keskjvousser collected 3672 from pot
+*** SUMMARY ***
+Total pot 3672 | No rake
+Board: [Kd 6h 4d Qs]
+Seat 1: Keskjvousser won 3672
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-5-1757680039 - Holdem no limit (25/100/200) - 2025/09/12 12:27:19 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #4 is the button
+Seat 1: Keskjvousser (22660, 1€ bounty)
+Seat 2: Pet2foufe (22381, 1€ bounty)
+Seat 3: Alex Nemi (20025, 1€ bounty)
+Seat 4: Ffoldman (19650, 1€ bounty)
+Seat 5: Zyglox (18790, 1€ bounty)
+Seat 6: MINIMUMAX (19950, 1€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+MINIMUMAX posts ante 25
+Keskjvousser posts ante 25
+Pet2foufe posts ante 25
+Alex Nemi posts ante 25
+Ffoldman posts ante 25
+Zyglox posts small blind 100
+MINIMUMAX posts big blind 200
+Dealt to Zyglox [2s Qh]
+*** PRE-FLOP *** 
+Keskjvousser folds
+Pet2foufe raises 200 to 400
+Alex Nemi folds
+Ffoldman folds
+Zyglox folds
+MINIMUMAX calls 200
+*** FLOP *** [9s 2h 3s]
+MINIMUMAX checks
+Pet2foufe bets 700
+MINIMUMAX calls 700
+*** TURN *** [9s 2h 3s][8h]
+MINIMUMAX checks
+Pet2foufe bets 2400
+MINIMUMAX calls 2400
+*** RIVER *** [9s 2h 3s 8h][Ah]
+MINIMUMAX checks
+Pet2foufe checks
+*** SHOW DOWN ***
+Pet2foufe shows [7c 7s] (One pair : 7)
+MINIMUMAX shows [8d Jh] (One pair : 8)
+MINIMUMAX collected 7250 from pot
+*** SUMMARY ***
+Total pot 7250 | No rake
+Board: [9s 2h 3s 8h Ah]
+Seat 2: Pet2foufe showed [7c 7s] and lost with One pair : 7
+Seat 6: MINIMUMAX (big blind) showed [8d Jh] and won 7250 with One pair : 8
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264031-6-1757680100 - Holdem no limit (25/100/200) - 2025/09/12 12:28:20 UTC
+Table: 'ROTATION(976530875)#030' 6-max (real money) Seat #5 is the button
+Seat 1: Keskjvousser (22635, 1€ bounty)
+Seat 3: Alex Nemi (20000, 1€ bounty)
+Seat 4: Ffoldman (19625, 1€ bounty)
+Seat 5: Zyglox (18665, 1€ bounty)
+Seat 6: MINIMUMAX (23675, 1€ bounty)
+*** ANTE/BLINDS ***
+MINIMUMAX posts ante 25
+Keskjvousser posts ante 25
+Alex Nemi posts ante 25
+Ffoldman posts ante 25
+Zyglox posts ante 25
+MINIMUMAX posts small blind 100
+Keskjvousser posts big blind 200
+Dealt to Zyglox [7h 6h]
+*** PRE-FLOP *** 
+Alex Nemi folds
+Ffoldman raises 400 to 600
+Zyglox calls 600
+MINIMUMAX calls 500
+Keskjvousser calls 400
+*** FLOP *** [Kd 6s 7s]
+MINIMUMAX checks
+Keskjvousser checks
+Ffoldman bets 1894
+Zyglox raises 16146 to 18040 and is all-in
+MINIMUMAX folds
+Keskjvousser folds
+Ffoldman calls 16146
+*** TURN *** [Kd 6s 7s][Ah]
+*** RIVER *** [Kd 6s 7s Ah][9h]
+*** SHOW DOWN ***
+Zyglox shows [7h 6h] (Two pairs : 7 and 6)
+Ffoldman shows [Kc Ad] (Two pairs : Aces and Kings)
+Ffoldman collected 38605 from pot
+*** SUMMARY ***
+Total pot 38605 | No rake
+Board: [Kd 6s 7s Ah 9h]
+Seat 4: Ffoldman showed [Kc Ad] and won 38605 with Two pairs : Aces and Kings
+Seat 5: Zyglox (button) showed [7h 6h] and lost with Two pairs : 7 and 6
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-17-1757680524 - Holdem no limit (25/100/200) - 2025/09/12 12:35:24 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #5 is the button
+Seat 1: AK_Killerr (4985, 1€ bounty)
+Seat 2: donbuster (43856, 1.20€ bounty)
+Seat 3: Zyglox (20000, 1€ bounty)
+Seat 4: Spinnerbait (13031, 1€ bounty)
+Seat 5: ProsperEf (37696, 1€ bounty)
+Seat 6: DUB4I_Tick3t (41432, 1.20€ bounty)
+*** ANTE/BLINDS ***
+DUB4I_Tick3t posts ante 25
+AK_Killerr posts ante 25
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts small blind 100
+AK_Killerr posts big blind 200
+Dealt to Zyglox [4s Js]
+*** PRE-FLOP *** 
+donbuster raises 200 to 400
+Zyglox folds
+Spinnerbait folds
+ProsperEf calls 400
+DUB4I_Tick3t folds
+AK_Killerr raises 4560 to 4960 and is all-in
+donbuster folds
+ProsperEf calls 4560
+*** FLOP *** [Qs Jh 4d]
+*** TURN *** [Qs Jh 4d][Ac]
+*** RIVER *** [Qs Jh 4d Ac][Qh]
+*** SHOW DOWN ***
+AK_Killerr shows [3c 3d] (Two pairs : Queens and 3)
+ProsperEf shows [Ks Jd] (Two pairs : Queens and Jacks)
+ProsperEf collected 10570 from pot
+*** SUMMARY ***
+Total pot 10570 | No rake
+Board: [Qs Jh 4d Ac Qh]
+Seat 1: AK_Killerr (big blind) showed [3c 3d] and lost with Two pairs : Queens and 3
+Seat 5: ProsperEf (button) showed [Ks Jd] and won 10570 with Two pairs : Queens and Jacks
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-18-1757680582 - Holdem no limit (25/100/200) - 2025/09/12 12:36:22 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #6 is the button
+Seat 2: donbuster (43431, 1.20€ bounty)
+Seat 3: Zyglox (19975, 1€ bounty)
+Seat 4: Spinnerbait (13006, 1€ bounty)
+Seat 5: ProsperEf (43281, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (41307, 1.20€ bounty)
+*** ANTE/BLINDS ***
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+donbuster posts big blind 200
+Dealt to Zyglox [Kh 9c]
+*** PRE-FLOP *** 
+Zyglox folds
+Spinnerbait folds
+ProsperEf raises 300 to 500
+DUB4I_Tick3t folds
+donbuster calls 300
+*** FLOP *** [2s 8c Kc]
+donbuster checks
+ProsperEf bets 394
+donbuster calls 394
+*** TURN *** [2s 8c Kc][6s]
+donbuster checks
+ProsperEf checks
+*** RIVER *** [2s 8c Kc 6s][7h]
+donbuster bets 42512 and is all-in
+ProsperEf calls 42362 and is all-in
+*** SHOW DOWN ***
+donbuster shows [Td 9h] (Straight Ten high)
+ProsperEf shows [Ts 9s] (Straight Ten high)
+ProsperEf collected 43319 from main pot
+donbuster collected 43468 from side pot 1
+*** SUMMARY ***
+Total pot 86787 | No rake
+Board: [2s 8c Kc 6s 7h]
+Seat 2: donbuster (big blind) showed [Td 9h] and won 43468 with Straight Ten high
+Seat 5: ProsperEf showed [Ts 9s] and won 43319 with Straight Ten high
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-19-1757680640 - Holdem no limit (25/100/200) - 2025/09/12 12:37:20 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #1 is the button
+Seat 2: donbuster (43468, 1.20€ bounty)
+Seat 3: Zyglox (19950, 1€ bounty)
+Seat 4: Spinnerbait (12981, 1€ bounty)
+Seat 5: ProsperEf (43319, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (41282, 1.20€ bounty)
+*** ANTE/BLINDS ***
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+donbuster posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [9h 4h]
+*** PRE-FLOP *** 
+Spinnerbait folds
+ProsperEf raises 300 to 500
+DUB4I_Tick3t folds
+donbuster calls 400
+Zyglox folds
+*** FLOP *** [Th Jc 2s]
+donbuster checks
+ProsperEf bets 464
+donbuster calls 464
+*** TURN *** [Th Jc 2s][8c]
+donbuster checks
+ProsperEf checks
+*** RIVER *** [Th Jc 2s 8c][3h]
+donbuster checks
+ProsperEf checks
+*** SHOW DOWN ***
+donbuster shows [5c Qc] (High card : Queen)
+ProsperEf shows [7d Qs] (High card : Queen)
+ProsperEf collected 2253 from pot
+*** SUMMARY ***
+Total pot 2253 | No rake
+Board: [Th Jc 2s 8c 3h]
+Seat 2: donbuster (small blind) showed [5c Qc] and lost with High card : Queen
+Seat 5: ProsperEf showed [7d Qs] and won 2253 with High card : Queen
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-20-1757680687 - Holdem no limit (25/100/200) - 2025/09/12 12:38:07 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #2 is the button
+Seat 2: donbuster (42479, 1.20€ bounty)
+Seat 3: Zyglox (19725, 1€ bounty)
+Seat 4: Spinnerbait (12956, 1€ bounty)
+Seat 5: ProsperEf (44583, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (41257, 1.20€ bounty)
+*** ANTE/BLINDS ***
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+donbuster posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+Zyglox posts small blind 100
+Spinnerbait posts big blind 200
+Dealt to Zyglox [4h Kc]
+*** PRE-FLOP *** 
+ProsperEf folds
+DUB4I_Tick3t folds
+donbuster raises 300 to 500
+Zyglox folds
+Spinnerbait calls 300
+*** FLOP *** [8s Ad 5h]
+Spinnerbait checks
+donbuster bets 429
+Spinnerbait folds
+donbuster collected 1654 from pot
+*** SUMMARY ***
+Total pot 1654 | No rake
+Board: [8s Ad 5h]
+Seat 2: donbuster (button) won 1654
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-21-1757680737 - Holdem no limit (25/100/200) - 2025/09/12 12:38:57 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #3 is the button
+Seat 1: VVicky (20000, 1€ bounty)
+Seat 2: donbuster (43179, 1.20€ bounty)
+Seat 3: Zyglox (19600, 1€ bounty)
+Seat 4: Spinnerbait (12431, 1€ bounty)
+Seat 5: ProsperEf (44558, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (41232, 1.20€ bounty)
+*** ANTE/BLINDS ***
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+VVicky posts ante 25
+donbuster posts ante 25
+Zyglox posts ante 25
+DUB4I_Tick3t posts ante 25
+Spinnerbait posts small blind 100
+ProsperEf posts big blind 200
+Dealt to Zyglox [3s 2h]
+*** PRE-FLOP *** 
+DUB4I_Tick3t folds
+VVicky raises 300 to 500
+donbuster folds
+Zyglox folds
+Spinnerbait folds
+ProsperEf calls 300
+*** FLOP *** [5h 6d 4s]
+ProsperEf checks
+VVicky bets 438
+ProsperEf calls 438
+*** TURN *** [5h 6d 4s][7c]
+ProsperEf checks
+VVicky bets 1382
+ProsperEf calls 1382
+*** RIVER *** [5h 6d 4s 7c][4c]
+ProsperEf checks
+VVicky bets 3912
+ProsperEf calls 3912
+*** SHOW DOWN ***
+VVicky shows [9h Qs] (One pair : 4)
+ProsperEf shows [Ad 4d] (Trips of 4)
+ProsperEf collected 12714 from pot
+*** SUMMARY ***
+Total pot 12714 | No rake
+Board: [5h 6d 4s 7c 4c]
+Seat 1: VVicky showed [9h Qs] and lost with One pair : 4
+Seat 5: ProsperEf (big blind) showed [Ad 4d] and won 12714 with Trips of 4
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-22-1757680797 - Holdem no limit (25/100/200) - 2025/09/12 12:39:57 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #4 is the button
+Seat 1: VVicky (13743, 1€ bounty)
+Seat 2: donbuster (43154, 1.20€ bounty)
+Seat 3: Zyglox (19575, 1€ bounty)
+Seat 4: Spinnerbait (12306, 1€ bounty)
+Seat 5: ProsperEf (51015, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (41207, 1.20€ bounty)
+*** ANTE/BLINDS ***
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+VVicky posts ante 25
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts small blind 100
+DUB4I_Tick3t posts big blind 200
+Dealt to Zyglox [2h Jd]
+*** PRE-FLOP *** 
+VVicky calls 200
+donbuster calls 200
+Zyglox folds
+Spinnerbait raises 1050 to 1250
+ProsperEf folds
+DUB4I_Tick3t folds
+VVicky folds
+donbuster calls 1050
+*** FLOP *** [Ac Ah Td]
+donbuster checks
+Spinnerbait checks
+*** TURN *** [Ac Ah Td][3h]
+donbuster bets 788
+Spinnerbait calls 788
+*** RIVER *** [Ac Ah Td 3h][3s]
+donbuster bets 4726
+Spinnerbait folds
+donbuster collected 9452 from pot
+*** SUMMARY ***
+Total pot 9452 | No rake
+Board: [Ac Ah Td 3h 3s]
+Seat 2: donbuster won 9452
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-23-1757680877 - Holdem no limit (25/100/200) - 2025/09/12 12:41:17 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #5 is the button
+Seat 1: VVicky (13518, 1€ bounty)
+Seat 2: donbuster (45817, 1.20€ bounty)
+Seat 3: Zyglox (19550, 1€ bounty)
+Seat 4: Spinnerbait (10243, 1€ bounty)
+Seat 5: ProsperEf (50890, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (40982, 1.20€ bounty)
+*** ANTE/BLINDS ***
+DUB4I_Tick3t posts ante 25
+VVicky posts ante 25
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts small blind 100
+VVicky posts big blind 200
+Dealt to Zyglox [6d Qs]
+*** PRE-FLOP *** 
+donbuster calls 200
+Zyglox folds
+Spinnerbait raises 300 to 500
+ProsperEf folds
+DUB4I_Tick3t folds
+VVicky calls 300
+donbuster calls 300
+*** FLOP *** [6h Ah 9s]
+VVicky checks
+donbuster checks
+Spinnerbait checks
+*** TURN *** [6h Ah 9s][Ts]
+VVicky checks
+donbuster checks
+Spinnerbait checks
+*** RIVER *** [6h Ah 9s Ts][5c]
+VVicky bets 875
+donbuster folds
+Spinnerbait folds
+VVicky collected 2625 from pot
+*** SUMMARY ***
+Total pot 2625 | No rake
+Board: [6h Ah 9s Ts 5c]
+Seat 1: VVicky (big blind) won 2625
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-24-1757680954 - Holdem no limit (25/100/200) - 2025/09/12 12:42:34 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #6 is the button
+Seat 1: VVicky (14743, 1€ bounty)
+Seat 2: donbuster (45292, 1.20€ bounty)
+Seat 3: Zyglox (19525, 1€ bounty)
+Seat 4: Spinnerbait (9718, 1€ bounty)
+Seat 5: ProsperEf (50865, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (40857, 1.20€ bounty)
+*** ANTE/BLINDS ***
+VVicky posts ante 25
+donbuster posts ante 25
+Zyglox posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+VVicky posts small blind 100
+donbuster posts big blind 200
+Dealt to Zyglox [Jc 9d]
+*** PRE-FLOP *** 
+Zyglox folds
+Spinnerbait folds
+ProsperEf raises 300 to 500
+DUB4I_Tick3t folds
+VVicky folds
+donbuster calls 300
+*** FLOP *** [Tc 2d 9h]
+donbuster checks
+ProsperEf bets 438
+donbuster folds
+ProsperEf collected 1688 from pot
+*** SUMMARY ***
+Total pot 1688 | No rake
+Board: [Tc 2d 9h]
+Seat 5: ProsperEf won 1688
+
+
+Winamax Poker - Tournament "ROTATION" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4194168171659264024-25-1757680988 - Holdem no limit (25/100/200) - 2025/09/12 12:43:08 UTC
+Table: 'ROTATION(976530875)#023' 6-max (real money) Seat #1 is the button
+Seat 1: VVicky (14618, 1€ bounty)
+Seat 2: donbuster (44767, 1.20€ bounty)
+Seat 3: Zyglox (19500, 1€ bounty)
+Seat 4: Spinnerbait (9693, 1€ bounty)
+Seat 5: ProsperEf (51590, 1.20€ bounty)
+Seat 6: DUB4I_Tick3t (40832, 1.20€ bounty)
+*** ANTE/BLINDS ***
+donbuster posts ante 25
+Zyglox posts ante 25
+VVicky posts ante 25
+Spinnerbait posts ante 25
+ProsperEf posts ante 25
+DUB4I_Tick3t posts ante 25
+donbuster posts small blind 100
+Zyglox posts big blind 200
+Dealt to Zyglox [Js Jh]
+*** PRE-FLOP *** 
+Spinnerbait raises 400 to 600
+ProsperEf folds
+DUB4I_Tick3t raises 1100 to 1700
+VVicky folds
+donbuster folds
+Zyglox calls 1500
+Spinnerbait calls 1100
+*** FLOP *** [4s Tc 4c]
+Zyglox checks
+Spinnerbait checks
+DUB4I_Tick3t bets 1873
+Zyglox raises 15902 to 17775 and is all-in
+Spinnerbait calls 7968 and is all-in
+DUB4I_Tick3t raises 15902 to 33677
+*** TURN *** [4s Tc 4c][8h]
+*** RIVER *** [4s Tc 4c 8h][2h]
+*** SHOW DOWN ***
+Zyglox shows [Js Jh] (Two pairs : Jacks and 4)
+Spinnerbait shows [Ac Jc] (One pair : 4)
+DUB4I_Tick3t shows [Kd Kh] (Two pairs : Kings and 4)
+DUB4I_Tick3t collected 64770 from pot
+*** SUMMARY ***
+Total pot 64770 | No rake
+Board: [4s Tc 4c 8h 2h]
+Seat 3: Zyglox (big blind) showed [Js Jh] and lost with Two pairs : Jacks and 4
+Seat 4: Spinnerbait showed [Ac Jc] and lost with One pair : 4
+Seat 6: DUB4I_Tick3t showed [Kd Kh] and won 64770 with Two pairs : Kings and 4
+
+

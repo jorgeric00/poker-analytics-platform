@@ -23,13 +23,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Real import-layer code — see {@code docs/decisions/ADR-005-early-import-parser.md}.
  *
- * Validates {@link PokerStarsParser} against real PokerStars Zoom cash hands dropped in
- * {@code docs/hand-history/poker-stars/} — supersedes the earlier feasibility spike
- * (com.pokeranalytics.spike.handhistory), now retired.
+ * Validates {@link PokerStarsParser} against real PokerStars Zoom cash hands kept in
+ * {@code backend/src/main/resources/hand-history/poker-stars/cash/} — supersedes the earlier
+ * feasibility spike (com.pokeranalytics.spike.handhistory), now retired.
  */
 class PokerStarsParserRealDataTest {
 
-    private static final Path SAMPLES_DIR = Paths.get("..", "docs", "hand-history", "poker-stars");
+    private static final Path SAMPLES_DIR =
+            Paths.get("src", "main", "resources", "hand-history", "poker-stars", "cash");
 
     private static List<ParsedHand> parseAllSampleHands() throws IOException {
         assertTrue(Files.isDirectory(SAMPLES_DIR),
