@@ -31,15 +31,17 @@ import java.util.regex.Pattern;
  * it: blind/ante amounts are bare chip counts with no currency symbol, seats can carry a
  * real-money knockout bounty, and — unlike cash — the turn/river street markers have no space
  * between the "already dealt" and "new card" bracket groups (e.g. {@code [Kc 5h 5c][Ks]}).
- * Behavior is based on real 2025 Winamax hand histories (Expresso, and the "TRIDENT SPACE KO",
- * "ROTATION" and "SPACE KO" tournaments) kept in
- * {@code backend/src/main/resources/hand-history/winamax-expresso/} — this format isn't covered
- * by the MIT-licensed {@code HHSmithy/PokerHandHistoryParser} reference the cash parsers are
- * ported from (see {@code THIRD-PARTY-NOTICES.md}), which has no Expresso/Spin&Go handling at
- * all and only untested tournament-parsing code.
+ * Behavior is based on real Winamax hand histories (Expresso, and the "TRIDENT SPACE KO",
+ * "ROTATION", "SPACE KO" and "QUARK" tournaments — the last one a complete 925-entrant knockout
+ * played start to finish, including the winning heads-up hand) kept in
+ * {@code backend/src/main/resources/hand-history/winamax/expresso/} and {@code .../winamax/mtt/}
+ * — this format isn't covered by the MIT-licensed {@code HHSmithy/PokerHandHistoryParser}
+ * reference the cash parsers are ported from (see {@code THIRD-PARTY-NOTICES.md}), which has no
+ * Expresso/Spin&Go handling at all and only untested tournament-parsing code.
  *
- * Scope: no sample hand exhibited a bounty-collected-on-elimination announcement line, so that
- * isn't recognized here — it would surface as an unparsed line if it appears in future data.
+ * Scope: no sample hand — including a full tournament played through to the win — exhibited a
+ * bounty-collected-on-elimination or tournament-finish announcement line, so neither is
+ * recognized here; either would surface as an unparsed line if it appears in future data.
  */
 public final class WinamaxTournamentParser {
 

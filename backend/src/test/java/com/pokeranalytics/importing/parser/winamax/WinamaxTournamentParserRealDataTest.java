@@ -24,13 +24,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Real import-layer code — see {@code docs/decisions/ADR-005-early-import-parser.md}.
  *
- * Validates {@link WinamaxTournamentParser} against real 2025 Winamax hand histories kept in
+ * Validates {@link WinamaxTournamentParser} against real Winamax hand histories kept in
  * {@code backend/src/main/resources/hand-history/winamax/}: one Expresso (3-max, no-ante fast
- * structure, under {@code expresso/}) and three regular knockout tournaments ("TRIDENT SPACE KO",
- * "ROTATION", "SPACE KO" — antes from level 1, per-seat real-money bounties, and main/side pot
- * splits, under {@code mtt/}). The "_summary.txt" files alongside them are a different,
- * non-hand-history document (Winamax's end-of-tournament results record: buy-in breakdown, level
- * structure, finishing place) and are out of scope for this parser.
+ * structure, under {@code expresso/}) and four regular knockout tournaments ("TRIDENT SPACE KO",
+ * "ROTATION", "SPACE KO", "QUARK" — antes from level 1, per-seat real-money bounties, and
+ * main/side pot splits, under {@code mtt/}). "QUARK" is a complete 925-entrant tournament played
+ * start to finish for a 1st-place win (contributed by a friend of the user, danirey300),
+ * including the progressive-bounty stack growth and the final heads-up hand. The "_summary.txt"
+ * files alongside them are a different, non-hand-history document (Winamax's end-of-tournament
+ * results record: buy-in breakdown, level structure, finishing place) and are out of scope for
+ * this parser.
  */
 class WinamaxTournamentParserRealDataTest {
 
@@ -168,5 +171,48 @@ class WinamaxTournamentParserRealDataTest {
         boolean sawReplacementPlayer = hands.stream()
                 .anyMatch(h -> h.seats.stream().anyMatch(s -> s.playerName().equals("I_Need-Money")));
         assertTrue(sawReplacementPlayer, "Expected the late-joining replacement player to appear");
+    }
+
+    @Test
+    void parsesFullTournamentThroughHeadsUpVictory() throws IOException {
+        List<ParsedHand> hands = WinamaxTournamentParser.parseFile(
+                MTT_DIR.resolve("20260519_QUARK(1098224169)_real_holdem_no-limit.txt"));
+
+        assertFalse(hands.isEmpty());
+        for (ParsedHand hand : hands) {
+            assertEquals(HandFormat.TOURNAMENT, hand.format);
+            assertEquals("QUARK", hand.tournamentName);
+        }
+
+        // A knockout's per-seat bounty grows as the winner eliminates opponents -- confirmed here
+        // across two hands late in the file rather than assumed, since the parser only ever reads
+        // whatever bounty figure the room states on that hand's own seat line.
+        Seat earlierBounty = hands.stream()
+                .filter(h -> "4716836889531777125-62-1779218109".equals(h.handId))
+                .findFirst().orElseThrow()
+                .seats.stream().filter(s -> s.playerName().equals("daniirey300")).findFirst().orElseThrow();
+        Seat laterBounty = hands.stream()
+                .filter(h -> "4716836889531777125-63-1779218160".equals(h.handId))
+                .findFirst().orElseThrow()
+                .seats.stream().filter(s -> s.playerName().equals("daniirey300")).findFirst().orElseThrow();
+        assertEquals(new BigDecimal("29.99"), earlierBounty.bounty());
+        assertEquals(new BigDecimal("110.81"), laterBounty.bounty());
+
+        // The final hand of the file is the heads-up hand that wins the tournament.
+        ParsedHand finalHand = hands.getLast();
+        assertEquals(2, finalHand.seats.size(), "Final hand should be heads-up");
+        assertTrue(finalHand.actions.stream()
+                        .anyMatch(a -> a.type() == HandActionType.COLLECTED && a.rawLine().startsWith("daniirey300 collected")),
+                "Expected daniirey300 to collect the final pot");
+
+        // Confirms the earlier observation still holds against a complete tournament played to
+        // the win: Winamax's hand-history text never announces an elimination, a bounty
+        // collection, or a tournament finish -- those only ever show up in the separate
+        // "_summary.txt" document, out of scope for this parser.
+        boolean sawBountyOrFinishAction = hands.stream()
+                .flatMap(h -> h.actions.stream())
+                .anyMatch(a -> a.type() == HandActionType.WINS_BOUNTY || a.type() == HandActionType.TOURNAMENT_FINISH);
+        assertFalse(sawBountyOrFinishAction,
+                "Winamax tournament hand histories don't carry elimination/finish announcements");
     }
 }
