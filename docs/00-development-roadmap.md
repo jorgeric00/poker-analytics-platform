@@ -191,7 +191,7 @@ This phase defines **how statistics work**, not how they are stored.
 
 Output:
 
-`docs/05-analytics-engine.md`
+`docs/07-analytics-engine.md`
 
 ---
 

@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Local dev database files (docs/09-data-model.md) ###
+/data/
+
 ### STS ###
 .apt_generated
 .classpath

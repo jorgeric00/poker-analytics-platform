@@ -69,7 +69,7 @@ Described as a trigger, not a call-volume number — this is a single-user local
 **Description**: Compute a chosen set of stats over a filtered, optionally grouped population of hands.
 **Module (ADR-002)**: `analytics`
 **Data Source**: DuckDB
-**Scope**: `Hero | Opponent(playerId) | CurrentSession | AllOpponents`
+**Scope**: `Hero | Opponent(playerId) | CurrentSession | Session(sessionId) | AllOpponents` — `Session(sessionId)` (a specific, already-closed session) was added during `10-api-design.md` (Phase 8) to make QF-7's own composite definition below well-formed; not present in this family's original Phase 4 draft.
 **Parameters**:
 - `statSet` — one or more stat identifiers from `13-statistics-module.md`'s catalog (fixed for Overview/Live Session, user-chosen for Statistics, a fixed "vs Hero" set for Players).
 - `breakdown` — zero or more grouping dimensions: *none* (one summary row), *date bucket*, *PlayerId*, or any dimension from `13-statistics-module.md`'s MVP breakdown categories (Game Details, Hand Details).

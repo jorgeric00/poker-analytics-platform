@@ -4,3 +4,11 @@ spring:
 
 server:
   port: 8080
+
+# docs/08-storage-strategy.md / docs/09-data-model.md.
+# Relative paths for local dev; Phase 9 packaging overrides these (env vars below) to the
+# OS-appropriate per-user app-data directory once the Tauri sidecar wiring exists.
+app:
+  storage:
+    duckdb-path: ${POKERANALYTICS_DUCKDB_PATH:./data/poker-analytics.duckdb}
+    sqlite-path: ${POKERANALYTICS_SQLITE_PATH:./data/poker-analytics.sqlite}

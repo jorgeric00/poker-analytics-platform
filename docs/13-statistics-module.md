@@ -61,7 +61,7 @@ Per `03-product-vision.md` and `11-development-tracking.md` (Phase 5 note), tour
 | ROI% | Tournament only |
 | Bubble Factor | Tournament only |
 
-ICM itself is a computation (feeds ROI, Bubble Factor, and potentially future stats — see Future Expansion), not a stat displayed on its own.
+ICM itself is a computation, not a stat displayed on its own. It feeds Bubble Factor (and potentially future stats — see Future Expansion) — ROI% turned out **not** to need it: it's a direct cash-flow figure (cash + bounty won − buy-in), all Hero-only and room-stated. See `07-analytics-engine.md` for the formal definitions, including a resolved, documented approximation for Bubble Factor's ICM input (`decisions/ADR-009-icm-bubble-factor-approximation.md`) — no available source states other players' stacks or the tournament's real payout structure.
 
 ### 3. Standard poker-tracking convention — not yet confirmed against a PT4 page
 

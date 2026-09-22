@@ -58,6 +58,7 @@ ADR-005-early-import-parser.md
 ADR-006-java-25.md
 ADR-007-port-tournament-formats-without-fixtures.md
 ADR-008-tournament-summary-parser.md
+ADR-009-icm-bubble-factor-approximation.md
 ```
 
 ---
