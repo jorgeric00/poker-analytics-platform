@@ -227,13 +227,17 @@ public final class PokerStarsParser {
                     hand.seats.add(new Seat(Integer.parseInt(m.group(1)), m.group(2).trim(),
                             stack.amount(), stack.currency(), null));
                 } else if ((m = POST_ANTE.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_ANTE, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_ANTE, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if ((m = POST_SB_BB.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_AND_BIG_BLIND, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_AND_BIG_BLIND, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if ((m = POST_SB.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_BLIND, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_BLIND, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if ((m = POST_BB.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_BIG_BLIND, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_BIG_BLIND, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if (HOLE_CARDS_MARKER.matcher(line).matches()) {
                     // section marker only, nothing to extract
                 } else if ((m = DEALT.matcher(line)).matches()) {
@@ -257,42 +261,58 @@ public final class PokerStarsParser {
                     hand.runItTwice = true;
                 } else if (SUMMARY_MARKER.matcher(line).matches()) {
                     inSummary = true;
-                } else if (ACTION_FOLD.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.FOLD, line));
-                } else if (ACTION_CHECK.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.CHECK, line));
-                } else if (ACTION_CALL.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.CALL, line));
-                } else if (ACTION_BET.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.BET, line));
-                } else if (ACTION_RAISE.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.RAISE, line));
-                } else if (UNCALLED.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.UNCALLED_RETURN, line));
-                } else if (COLLECTED_SIDE_NUMBERED.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_SIDE_POT, line));
-                } else if (COLLECTED_SIDE.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_SIDE_POT, line));
-                } else if (COLLECTED_MAIN.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_MAIN_POT, line));
-                } else if (COLLECTED.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED, line));
-                } else if (DOESNT_SHOW.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.DOESNT_SHOW, line));
-                } else if (MUCKS.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.MUCKS, line));
-                } else if (SHOWS.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line));
-                } else if (SHOWS_NO_DESCRIPTION.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line));
+                } else if ((m = ACTION_FOLD.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.FOLD, line, m.group(1).trim(), null));
+                } else if ((m = ACTION_CHECK.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.CHECK, line, m.group(1).trim(), null));
+                } else if ((m = ACTION_CALL.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.CALL, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = ACTION_BET.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.BET, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = ACTION_RAISE.matcher(line)).matches()) {
+                    // group(2) is the raise increment ("raises X to Y"); the recorded amount is the
+                    // resulting total (group 3), the player's actual commitment after this action.
+                    hand.actions.add(new HandAction(street, HandActionType.RAISE, line,
+                            m.group(1).trim(), parseMoney(m.group(3)).amount()));
+                } else if ((m = UNCALLED.matcher(line)).matches()) {
+                    // "Uncalled bet ($X) returned to Player" — groups are amount-then-player, the
+                    // reverse of every other pattern here.
+                    hand.actions.add(new HandAction(street, HandActionType.UNCALLED_RETURN, line,
+                            m.group(2).trim(), parseMoney(m.group(1)).amount()));
+                } else if ((m = COLLECTED_SIDE_NUMBERED.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_SIDE_POT, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = COLLECTED_SIDE.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_SIDE_POT, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = COLLECTED_MAIN.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED_MAIN_POT, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = COLLECTED.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = DOESNT_SHOW.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.DOESNT_SHOW, line, m.group(1).trim(), null));
+                } else if ((m = MUCKS.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.MUCKS, line, m.group(1).trim(), null));
+                } else if ((m = SHOWS.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line, m.group(1).trim(), null));
+                } else if ((m = SHOWS_NO_DESCRIPTION.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line, m.group(1).trim(), null));
                 } else if (NO_LOW_HAND_QUALIFIED.matcher(line).matches()) {
                     // informational only, no player/action to record
-                } else if (CONNECTION_STATUS.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.CONNECTION_STATUS, line));
-                } else if (WINS_BOUNTY.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.WINS_BOUNTY, line));
-                } else if (TOURNAMENT_FINISH.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.TOURNAMENT_FINISH, line));
+                } else if ((m = CONNECTION_STATUS.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.CONNECTION_STATUS, line, m.group(1).trim(), null));
+                } else if ((m = WINS_BOUNTY.matcher(line)).matches()) {
+                    // "PlayerX wins $Y for eliminating Z ..." — the acting/receiving player is the
+                    // winner (group 1), amount is the bounty won (group 2); the bounty-increase
+                    // clause (groups 4/5) isn't modeled as a separate amount, no MVP stat needs it.
+                    hand.actions.add(new HandAction(street, HandActionType.WINS_BOUNTY, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = TOURNAMENT_FINISH.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.TOURNAMENT_FINISH, line, m.group(1).trim(), null));
                 } else if (SITS_OUT.matcher(line).matches()
                         || LEAVES_TABLE.matcher(line).matches()
                         || JOINS_TABLE.matcher(line).matches()

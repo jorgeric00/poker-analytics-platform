@@ -1,5 +1,6 @@
 package com.pokeranalytics.importing.parser.pokerstars;
 
+import com.pokeranalytics.importing.model.HandAction;
 import com.pokeranalytics.importing.model.HandActionType;
 import com.pokeranalytics.importing.model.ParsedHand;
 import com.pokeranalytics.importing.model.SummarySeat;
@@ -132,5 +133,51 @@ class PokerStarsParserRealDataTest {
 
         assertEquals("iurii machushak", multiWordNameSeat.playerName());
         assertTrue(multiWordNameSeat.outcome().startsWith("folded"), multiWordNameSeat.outcome());
+    }
+
+    /**
+     * Structured {@code player}/{@code amount} on {@link HandAction} (added for the Import
+     * Engine, docs/09-data-model.md's {@code actions} table) against every action type this hand
+     * actually exercises: blinds, a fold with no amount, a raise (recorded as the resulting total,
+     * not the increment), an uncalled-bet return (whose raw text states amount before player,
+     * the reverse of every other pattern), and an uncontested pot collection.
+     */
+    @Test
+    void extractsStructuredPlayerAndAmountPerAction() throws IOException {
+        List<ParsedHand> hands = parseAllSampleHands();
+        ParsedHand hand = findHand(hands, "262026561348");
+
+        HandAction smallBlind = actionOfType(hand, HandActionType.POST_SMALL_BLIND);
+        assertEquals("manuelolo15", smallBlind.player());
+        assertEquals(new BigDecimal("0.05"), smallBlind.amount());
+
+        HandAction bigBlind = actionOfType(hand, HandActionType.POST_BIG_BLIND);
+        assertEquals("jorgericoo", bigBlind.player());
+        assertEquals(new BigDecimal("0.10"), bigBlind.amount());
+
+        HandAction fold = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.FOLD && "magiamonty".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(null, fold.amount());
+
+        // "manuelolo15: raises €0.20 to €0.30" — the recorded amount is the resulting total (€0.30).
+        HandAction raise = actionOfType(hand, HandActionType.RAISE);
+        assertEquals("manuelolo15", raise.player());
+        assertEquals(new BigDecimal("0.30"), raise.amount());
+
+        // "Uncalled bet (€0.20) returned to manuelolo15"
+        HandAction uncalled = actionOfType(hand, HandActionType.UNCALLED_RETURN);
+        assertEquals("manuelolo15", uncalled.player());
+        assertEquals(new BigDecimal("0.20"), uncalled.amount());
+
+        // "manuelolo15 collected €0.20 from pot"
+        HandAction collected = actionOfType(hand, HandActionType.COLLECTED);
+        assertEquals("manuelolo15", collected.player());
+        assertEquals(new BigDecimal("0.20"), collected.amount());
+    }
+
+    private static HandAction actionOfType(ParsedHand hand, HandActionType type) {
+        return hand.actions.stream().filter(a -> a.type() == type).findFirst()
+                .orElseThrow(() -> new AssertionError("No action of type " + type + " in hand #" + hand.handId));
     }
 }

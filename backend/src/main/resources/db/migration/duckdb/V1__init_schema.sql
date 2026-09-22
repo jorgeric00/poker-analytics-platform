@@ -69,9 +69,12 @@ CREATE TABLE hands (
 );
 
 -- === seats =========================================================================
+-- hand_id deliberately has no REFERENCES hands(hand_id) here (nor in actions/boards/results/
+-- hand_side_pots/session_hands below) — see the note after session_hands at the bottom of this
+-- file for why.
 
 CREATE TABLE seats (
-    hand_id        BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id        BIGINT NOT NULL,
     seat_number    SMALLINT NOT NULL,
     player_id      BIGINT NOT NULL REFERENCES players(player_id),
     starting_stack DECIMAL(18,4) NOT NULL,
@@ -88,7 +91,7 @@ CREATE TABLE seats (
 
 CREATE TABLE actions (
     action_id   BIGINT PRIMARY KEY DEFAULT nextval('seq_action_id'),
-    hand_id     BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id     BIGINT NOT NULL,
     player_id   BIGINT NOT NULL REFERENCES players(player_id),
     street      street_t NOT NULL,
     action_type action_type_t NOT NULL,
@@ -101,7 +104,7 @@ CREATE TABLE actions (
 -- === boards ========================================================================
 
 CREATE TABLE boards (
-    hand_id   BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id   BIGINT NOT NULL,
     run_index SMALLINT NOT NULL,
     street    street_t NOT NULL,
     cards     TEXT NOT NULL,
@@ -111,7 +114,7 @@ CREATE TABLE boards (
 -- === results =======================================================================
 
 CREATE TABLE results (
-    hand_id          BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id          BIGINT NOT NULL,
     player_id        BIGINT NOT NULL REFERENCES players(player_id),
     went_to_showdown BOOLEAN NOT NULL,
     cards_shown      TEXT,
@@ -126,7 +129,7 @@ CREATE TABLE results (
 -- hands) — no MVP query family reads this directly.
 
 CREATE TABLE hand_side_pots (
-    hand_id        BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id        BIGINT NOT NULL,
     side_pot_index SMALLINT NOT NULL,
     amount         DECIMAL(18,4) NOT NULL,
     PRIMARY KEY (hand_id, side_pot_index)
@@ -173,7 +176,22 @@ CREATE TABLE sessions (
 
 CREATE TABLE session_hands (
     session_id BIGINT NOT NULL REFERENCES sessions(session_id),
-    hand_id    BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id    BIGINT NOT NULL,
     PRIMARY KEY (session_id, hand_id),
     UNIQUE (hand_id)
 );
+
+-- Why seats/actions/boards/results/hand_side_pots/session_hands.hand_id has no REFERENCES
+-- hands(hand_id): empirically hit a real DuckDB engine bug reprocessing hands (delete every child
+-- row for a hand, then delete the hand row itself — docs/08-storage-strategy.md's Update
+-- Strategy) — DuckDB incorrectly rejects the parent delete with "Violates foreign key constraint
+-- because key is still referenced," even with the referencing rows already gone and the delete
+-- split across two separate, already-committed transactions. Matches known upstream reports
+-- (github.com/duckdb/duckdb issues #4309, #25388) about FK enforcement misbehaving specifically
+-- when one parent column is referenced by several different child-table FK constraints at once —
+-- exactly this table's shape. player_id -> players and session_id -> sessions stay real FK
+-- constraints (never deleted this way, not affected). hand_id referential integrity is instead
+-- enforced by the Import Engine alone: hands is always inserted before its children, and children
+-- are always deleted before their hands row — the same category of application-enforced,
+-- unenforced-by-the-database relationship this document's Relationships section already uses for
+-- hands.tournament_id.

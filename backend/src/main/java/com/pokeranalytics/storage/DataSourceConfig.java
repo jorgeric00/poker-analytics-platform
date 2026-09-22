@@ -12,7 +12,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.PlatformTransactionManager;
 
 /**
  * The two embedded databases (docs/04-architecture.md, decisions/ADR-003-local-analytics-storage.md),
@@ -58,6 +60,18 @@ public class DataSourceConfig {
     @Qualifier("sqlite")
     public JdbcTemplate sqliteJdbcTemplate(@Qualifier("sqlite") DataSource sqliteDataSource) {
         return new JdbcTemplate(sqliteDataSource);
+    }
+
+    /**
+     * Named (not just qualified) because {@code @Transactional}'s {@code transactionManager}
+     * attribute takes a bean name, not a qualifier — used by the Import Engine so a hand's
+     * delete-then-reinsert (docs/08-storage-strategy.md's Update Strategy) commits or rolls back
+     * as one unit.
+     */
+    @Bean("duckDbTransactionManager")
+    @Qualifier("duckdb")
+    public PlatformTransactionManager duckDbTransactionManager(@Qualifier("duckdb") DataSource duckDbDataSource) {
+        return new DataSourceTransactionManager(duckDbDataSource);
     }
 
     private static Path ensureParentDirectory(String configuredPath) {

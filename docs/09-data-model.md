@@ -98,7 +98,7 @@ CREATE TABLE hands (
 
 ```sql
 CREATE TABLE seats (
-    hand_id        BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id        BIGINT NOT NULL,
     seat_number    SMALLINT NOT NULL,
     player_id      BIGINT NOT NULL REFERENCES players(player_id),
     starting_stack DECIMAL(18,4) NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE seats (
 ```sql
 CREATE TABLE actions (
     action_id   BIGINT PRIMARY KEY DEFAULT nextval('seq_action_id'),
-    hand_id     BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id     BIGINT NOT NULL,
     player_id   BIGINT NOT NULL REFERENCES players(player_id),
     street      street_t NOT NULL,
     action_type action_type_t NOT NULL,
@@ -132,7 +132,7 @@ Per-action `player_id` and `amount` as real columns are the concrete fix for the
 
 ```sql
 CREATE TABLE boards (
-    hand_id   BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id   BIGINT NOT NULL,
     run_index SMALLINT NOT NULL,   -- 0 = only/first run; 1 = second run when run_it_twice
     street    street_t NOT NULL,   -- FLOP, TURN or RIVER only
     cards     TEXT NOT NULL,       -- e.g. "Ah Kd 2c" — small fixed-shape text, not worth a card-per-row table
@@ -144,7 +144,7 @@ CREATE TABLE boards (
 
 ```sql
 CREATE TABLE results (
-    hand_id          BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id          BIGINT NOT NULL,
     player_id        BIGINT NOT NULL REFERENCES players(player_id),
     went_to_showdown BOOLEAN NOT NULL,
     cards_shown      TEXT,                       -- NULL if mucked / never shown
@@ -159,7 +159,7 @@ CREATE TABLE results (
 
 ```sql
 CREATE TABLE hand_side_pots (
-    hand_id       BIGINT NOT NULL REFERENCES hands(hand_id),
+    hand_id       BIGINT NOT NULL,
     side_pot_index SMALLINT NOT NULL,  -- 1-based, room's own listed order (ParsedHand.sidePots)
     amount        DECIMAL(18,4) NOT NULL,
     PRIMARY KEY (hand_id, side_pot_index)
@@ -207,10 +207,12 @@ CREATE TABLE sessions (
 
 CREATE TABLE session_hands (
     session_id BIGINT NOT NULL REFERENCES sessions(session_id),
-    hand_id    BIGINT NOT NULL REFERENCES hands(hand_id) UNIQUE,  -- a hand belongs to at most one session
+    hand_id    BIGINT NOT NULL UNIQUE,  -- a hand belongs to at most one session
     PRIMARY KEY (session_id, hand_id)
 );
 ```
+
+**`hand_id` has no `REFERENCES hands(hand_id)` on `seats`/`actions`/`boards`/`results`/`hand_side_pots`/`session_hands`, unlike every other FK in this schema.** Discovered empirically during Phase 9's Import Engine implementation, not designed this way originally: DuckDB has a real engine bug reprocessing a hand (delete every child row, then delete the hand row itself — the Update Strategy below) — it rejects the parent delete with "Violates foreign key constraint because key is still referenced," even with the referencing rows already gone and the two deletes split across separate, already-committed transactions. Matches known upstream reports (`github.com/duckdb/duckdb` issues #4309, #25388) about FK enforcement misbehaving specifically when one parent column is referenced by several different child-table FK constraints at once — exactly this table's shape. `player_id → players` and `session_id → sessions` stay real, enforced FK constraints (never deleted this way). `hand_id` referential integrity is instead enforced by the Import Engine alone — the same category of application-enforced, unenforced-by-the-database relationship already used below for `hands.tournament_id`.
 
 `session_hands` records exact membership explicitly rather than implying it from a time range — more robust against `08-storage-strategy.md`'s incremental re-detection on out-of-order/backfilled imports, and it's what QF-7 (Session Detail) joins against. Room(s) played and hand count are deliberately **not** stored on `sessions` — both are one join/count away via `session_hands` → `hands`, and duplicating them here would be exactly the kind of derived-value drift `08-storage-strategy.md`'s Denormalization Rules argue against (unlike `position`/`effective_bb`, this isn't a value read by nearly every query, so the join cost doesn't justify it).
 
@@ -224,19 +226,22 @@ players ─┬─< seats
          ├─< results
          └─< tournament_results
 
-hands ─┬─< seats
+hands ─┬─< seats            (all five, plus session_hands, logical only — see note below)
        ├─< actions
        ├─< boards
        ├─< results
-       ├─< hand_side_pots
-       └─< session_hands >─ sessions
+       └─< hand_side_pots
+
+session_hands >─ sessions   (real FK)
 
 hands.tournament_id ···· tournament_results.tournament_id   (loose, see below)
 ```
 
 **`hands.tournament_id` is a value reference, not an enforced foreign key.** `tournament_results`' natural primary key is `(tournament_id, player_id)` — composite, and `hands` doesn't carry a `player_id` of its own (a hand has many seats/players). DuckDB foreign keys must reference a full unique/primary key on the target, so this link can't be declared as a real `FOREIGN KEY` constraint; it's enforced by the Import Engine instead (same category of trust as the cross-database `players.player_id` ↔ SQLite contract below, just within one database this time).
 
-**No `ON DELETE CASCADE`.** DuckDB does not support cascading deletes on foreign keys. `08-storage-strategy.md`'s delete-then-reinsert reprocessing strategy must delete child rows explicitly, in dependency order, inside one transaction: `actions`, `boards`, `results`, `hand_side_pots`, `session_hands` (or re-run session detection for the affected range) before `seats`, before `hands`.
+**`hand_id` on `seats`/`actions`/`boards`/`results`/`hand_side_pots`/`session_hands` is likewise a value reference, not an enforced foreign key — but for a different reason than `tournament_id` above.** This one *could* be declared as a real FK (`hands.hand_id` is a clean single-column primary key); it was, in the first version of this schema, until Phase 9's Import Engine implementation hit a real DuckDB bug reprocessing a hand — deleting a hand's child rows and then the hand row itself, even across two already-committed transactions, still fails with "Violates foreign key constraint because key is still referenced." This matches known upstream reports (`github.com/duckdb/duckdb` issues #4309, #25388) about FK enforcement misbehaving specifically when one parent column is referenced by several different child-table FK constraints at once, which is exactly this table's shape. Dropped in favor of application-enforced integrity (the Import Engine always inserts `hands` before its children, and always deletes children before `hands`) rather than working around a third-party engine bug indefinitely. `player_id → players` and `session_id → sessions` are unaffected and stay real, DB-enforced constraints.
+
+**No `ON DELETE CASCADE`.** DuckDB does not support cascading deletes on foreign keys, regardless of the point above — relevant to the `player_id`/`session_id` FKs that are still real. `08-storage-strategy.md`'s delete-then-reinsert reprocessing strategy must delete child rows explicitly, in dependency order, inside one transaction: `actions`, `boards`, `results`, `hand_side_pots`, `session_hands` (or re-run session detection for the affected range) before `seats`, before `hands` — and, per the point above, the hand-children delete and the `hands` row delete itself should be two separate transactions, not one.
 
 ---
 
