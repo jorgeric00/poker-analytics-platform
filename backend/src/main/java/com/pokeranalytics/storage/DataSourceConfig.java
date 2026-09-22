@@ -12,6 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -60,6 +61,20 @@ public class DataSourceConfig {
     @Qualifier("sqlite")
     public JdbcTemplate sqliteJdbcTemplate(@Qualifier("sqlite") DataSource sqliteDataSource) {
         return new JdbcTemplate(sqliteDataSource);
+    }
+
+    /**
+     * Named-parameter variant for queries that reference the same bind value (typically
+     * {@code playerId}) more than once — e.g. the Analytics Engine's breakdown-dimension queries
+     * (docs/06-query-catalog.md's QF-1), which join a per-hand "breakdown key" CTE that itself
+     * filters by player into a stat query that also filters by player. Positional {@code ?}
+     * placeholders would require passing the same value multiple times in the right order by hand;
+     * {@code :playerId} lets the CTE and the outer query both bind it once.
+     */
+    @Bean
+    @Qualifier("duckdb")
+    public NamedParameterJdbcTemplate duckDbNamedParameterJdbcTemplate(@Qualifier("duckdb") DataSource duckDbDataSource) {
+        return new NamedParameterJdbcTemplate(duckDbDataSource);
     }
 
     /**

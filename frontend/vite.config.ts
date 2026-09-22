@@ -28,5 +28,16 @@ export default defineConfig(() => ({
       // 3. tell Vite to ignore watching `src-tauri`
       ignored: ["**/src-tauri/**"],
     },
+    // Proxies to the backend (docs/decisions/ADR-004-backend-packaging.md: local HTTP, port 8080
+    // in dev per CLAUDE.md) instead of calling it cross-origin — avoids needing CORS configuration
+    // on the backend for `npm run dev` / `tauri dev`. The packaged app talks to the sidecar's
+    // OS-assigned port instead (docs/10-api-design.md's Base URL & Discovery) — this proxy is a
+    // dev-only convenience, not how the shipped app finds the backend.
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
+    },
   },
 }));

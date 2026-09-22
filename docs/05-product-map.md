@@ -221,7 +221,7 @@ It should answer the following question:
 A table listing hands, one row per hand, with:
 
 - Basic data: date/time, poker room, format, stakes, result (won/lost), amount won/lost
-- Game context: hero position, hero cards, number of players in the hand, hand type (e.g. 3-bet pot, limped pot)
+- Game context: hero position, hero cards, number of players in the hand, hand type (e.g. 3-bet pot, limped pot) — implemented taxonomy (`10-api-design.md`): `WALKED_POT`, `LIMPED_POT`, `RAISED_POT`, `THREE_BET_POT`, `FOUR_BET_PLUS_POT`, classified from the count of PREFLOP raises
 
 #### Row Actions
 

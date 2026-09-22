@@ -132,13 +132,18 @@ public class HandImportService {
             playerIdByName.put(seat.playerName(), playerId);
 
             BigDecimal effectiveBb = seat.stack().divide(hand.bigBlind, 2, RoundingMode.HALF_UP);
+            // hole_cards: only Hero's own hand is known here (opponents' cards are only knowable at
+            // showdown — results.cards_shown, not yet extracted, see docs/09-data-model.md's note).
+            String holeCards = seat.playerName().equals(hand.heroName) && hand.heroHoleCards != null
+                    ? String.join(" ", hand.heroHoleCards)
+                    : null;
             duckDb.update("""
                     INSERT INTO seats (hand_id, seat_number, player_id, starting_stack, stack_currency,
-                        bounty, position, effective_bb)
-                    VALUES (?, ?, ?, ?, ?, ?, CAST(? AS position_t), ?)
+                        bounty, position, effective_bb, hole_cards)
+                    VALUES (?, ?, ?, ?, ?, ?, CAST(? AS position_t), ?, ?)
                     """,
                     handId, seat.seatNumber(), playerId, seat.stack(), seat.currency(),
-                    seat.bounty(), positions.get(seat.seatNumber()), effectiveBb);
+                    seat.bounty(), positions.get(seat.seatNumber()), effectiveBb, holeCards);
         }
 
         for (int i = 0; i < hand.actions.size(); i++) {

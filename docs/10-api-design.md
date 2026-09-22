@@ -143,11 +143,19 @@ Response:
 ```
 **Used by**: Hands (table), Players Profile ("Hands vs this player" — adds `opponentPlayerId`), Statistics (drill-down destination). Per `06-query-catalog.md`'s note, this endpoint's filter vocabulary is a superset of QF-1's breakdown vocabulary by design, so a clicked breakdown cell (e.g. "3-Bet% from the Button") maps directly onto `?position=BTN`.
 
+**Implemented so far** (`backend/src/main/java/com/pokeranalytics/hands/HandsQueryService.java`, scoped to Hero/cash like every other query family): `wonLost`, `position` (comma-separated, OR within the field), `handType` (comma-separated; see below), `endedOnStreet` (comma-separated), `showdownOnly`, `page`/`pageSize`/`sortDir` (`hand_id` order only — see next paragraph). Not yet implemented: `room`/`stakes`/`dateFrom`/`dateTo` (blocked on `hand_timestamp` normalization, though the filter param and DB column both exist for `room`), `allIn` (no room's parser records a structured all-in flag yet), `minPot`/`minWonLost`, `opponentPlayerId` (Players module).
+
+Two additive response fields beyond the shape shown above, both because `hands.hand_timestamp` isn't normalized yet: `handTimestamp` stays `null` on every row today, and `handTimestampRaw` (the room's own unparsed text) is included so the screen isn't blank while that's true — sorting is by `hand_id` (import order), not real chronological order, for the same reason. Also added: `handType` (see below) and `endedOnStreet` (`PREFLOP`/`FLOP`/`TURN`/`RIVER`, from the furthest street a board was dealt to).
+
+**Hand type taxonomy** (docs/05-product-map.md's Hands section: "hand type (e.g. 3-bet pot, limped pot)" didn't specify the full set) — classified from the count of PREFLOP raises, not stored: `WALKED_POT` (no raise, no call), `LIMPED_POT` (no raise, ≥1 call), `RAISED_POT` (exactly one raise), `THREE_BET_POT` (exactly two), `FOUR_BET_PLUS_POT` (three or more).
+
 ---
 
 ### `GET /api/v1/hands/{handId}` — QF-3, Hand Detail Query
 
 Response: the hand's full normalized payload — every street, action (with resolved player nickname, not just id), board (per run, if `runItTwice`), and every seat's known result. One payload renders both the Hands module's **Replay** (street-by-street) and **Detail** (action summary) views, per `06-query-catalog.md`'s note that they're the same query rendered two ways.
+
+**Implemented so far**: everything except Replay itself (that's a separate, later Phase 9 item — see `11-development-tracking.md`) and revealed cards at showdown (`results.cards_shown` is always `null` today, a separate not-yet-done extraction from `SHOWS` actions' `raw_line` — showdown participation is still shown, just without cards). `startingStack` per seat is what it says — not a live/current stack, which isn't tracked. `previousHandId`/`nextHandId` walk Hero's hands in `hand_id` order, not the caller's active list filter — a known simplification.
 
 ---
 

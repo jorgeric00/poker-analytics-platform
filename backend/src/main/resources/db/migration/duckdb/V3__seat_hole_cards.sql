@@ -1,0 +1,13 @@
+-- Fixes a real gap found while building the Hands module (docs/06-query-catalog.md's QF-2/QF-3):
+-- ParsedHand.heroHoleCards was already parsed out of the source text (it's how the room's hand
+-- history states what Hero was dealt) but had nowhere to land in docs/09-data-model.md's seats
+-- table, so the Import Engine silently dropped it. The Hands Table's "hero cards" column
+-- (docs/05-product-map.md) can't be honest without it.
+--
+-- Space-joined text, same convention as boards.cards (e.g. "Ah Kd") rather than a card-per-row
+-- table, for the same reason boards chose that shape: small, fixed cardinality, never queried
+-- card-by-card. Populated for Hero's seat only for now (always known, straight from the parsed
+-- hand) — an opponent's cards are only knowable when they're shown at showdown, which needs
+-- results.cards_shown (today always NULL, a separate, not-yet-done extraction from SHOWS actions'
+-- raw_line) rather than this column. Tracked as a follow-up in docs/11-development-tracking.md.
+ALTER TABLE seats ADD COLUMN hole_cards TEXT;

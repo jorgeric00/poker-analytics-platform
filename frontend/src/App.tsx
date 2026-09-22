@@ -1,50 +1,35 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import { Sidebar } from "./components/Sidebar";
+import { OverviewPage } from "./pages/OverviewPage";
+import { HandsPage } from "./pages/HandsPage";
+import { ImportPage } from "./pages/ImportPage";
+import { PlaceholderPage } from "./pages/PlaceholderPage";
+import "./theme.css";
 import "./App.css";
 
+// HashRouter, not BrowserRouter: this app is served from a file:// origin inside the packaged
+// Tauri app (docs/decisions/ADR-004-backend-packaging.md), where a path-based router can't resolve
+// a real server-side route on refresh/deep-link the way it can on a normal web host.
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
-
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <HashRouter>
+      <div className="app-shell">
+        <Sidebar />
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<OverviewPage />} />
+            <Route path="/live-session" element={<PlaceholderPage title="Live Session" />} />
+            <Route path="/hands" element={<HandsPage />} />
+            <Route path="/players" element={<PlaceholderPage title="Players" />} />
+            <Route path="/statistics" element={<PlaceholderPage title="Statistics" />} />
+            <Route path="/session-history" element={<PlaceholderPage title="Session History" />} />
+            <Route path="/reports" element={<PlaceholderPage title="Reports" />} />
+            <Route path="/import" element={<ImportPage />} />
+            <Route path="/settings" element={<PlaceholderPage title="Settings" />} />
+          </Routes>
+        </main>
       </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+    </HashRouter>
   );
 }
 

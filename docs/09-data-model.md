@@ -106,9 +106,12 @@ CREATE TABLE seats (
     bounty         DECIMAL(18,4),       -- Seat.bounty, knockout tournaments only
     position       position_t NOT NULL, -- denormalized per 08-storage-strategy.md
     effective_bb   DECIMAL(18,2) NOT NULL, -- starting_stack ÷ hands.big_blind, denormalized
+    hole_cards     TEXT,                -- added V3, space-joined e.g. "Ah Kd" (boards.cards' convention)
     PRIMARY KEY (hand_id, seat_number)
 );
 ```
+
+`hole_cards` (added by `V3__seat_hole_cards.sql`, Phase 9's Hands module work): `ParsedHand.heroHoleCards` was already parsed but had nowhere to persist — a real gap found building the Hands Table's "hero cards" column (`05-product-map.md`). Populated for Hero's seat only; an opponent's cards are only knowable when shown at showdown, which needs `results.cards_shown` (still always `NULL` — a separate, not-yet-done extraction from `SHOWS` actions' `raw_line`, tracked in `11-development-tracking.md`), not this column.
 
 ### `actions`
 
