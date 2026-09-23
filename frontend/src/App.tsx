@@ -2,6 +2,8 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar";
 import { OverviewPage } from "./pages/OverviewPage";
 import { HandsPage } from "./pages/HandsPage";
+import { PlayersPage } from "./pages/PlayersPage";
+import { LiveSessionPage } from "./pages/LiveSessionPage";
 import { ImportPage } from "./pages/ImportPage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import "./theme.css";
@@ -18,9 +20,9 @@ function App() {
         <main className="app-content">
           <Routes>
             <Route path="/" element={<OverviewPage />} />
-            <Route path="/live-session" element={<PlaceholderPage title="Live Session" />} />
+            <Route path="/live-session" element={<LiveSessionPage />} />
             <Route path="/hands" element={<HandsPage />} />
-            <Route path="/players" element={<PlaceholderPage title="Players" />} />
+            <Route path="/players" element={<PlayersPage />} />
             <Route path="/statistics" element={<PlaceholderPage title="Statistics" />} />
             <Route path="/session-history" element={<PlaceholderPage title="Session History" />} />
             <Route path="/reports" element={<PlaceholderPage title="Reports" />} />

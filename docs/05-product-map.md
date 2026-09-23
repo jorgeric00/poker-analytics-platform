@@ -175,20 +175,31 @@ Unlike the Overview (historical, read in under 30 seconds), this module is only 
 - PFR % (hands opened)
 - 3-Bet %
 
-> Further breakdowns (e.g. profit/loss by position) are being considered for a later iteration of this module — not part of its initial definition.
+> Further breakdowns (e.g. profit/loss by position) are being considered for a later iteration of this module — not part of its initial definition. Implemented this pass (`10-api-design.md`): P&L, Hands played, VPIP, PFR, 3-Bet. Not yet real: All-in Adjusted P&L (EV) — needs the hand-equity engine `07-analytics-engine.md` already flags as a separate, undesigned component, shown as an honest "—" — and the per-table breakdown/filter/P&L-over-time chart the original design canvas (`12-ui-designs.md`) shows, deliberately cut from this pass, see `decisions/ADR-010-live-session-detection.md`'s Context.
+
+---
+
+### Session Lifecycle
+
+> Resolved directly with the user (2026-09-23) — the open question that had blocked this module since early Phase 9. Full rationale in `decisions/ADR-010-live-session-detection.md`.
+
+- **Start** / **End session** buttons control the session explicitly.
+- A session **auto-starts** the moment a new hand is detected while none is currently open.
+- A session **auto-ends after an idle timeout** (no new hand for a configurable number of minutes, default 30) if not ended manually first.
+- "Detecting a new hand" means watching the hand-history file(s) the poker client is actively writing to, in real time (currently PokerStars cash only, `app.live-session.watched-directory` config) — not waiting for a manual import.
 
 ---
 
 ### Filters
 
-- **Active table filter** — when the player is running multiple tables at once, the view can be filtered down to a single active table.
+- **Active table filter** — when the player is running multiple tables at once, the view can be filtered down to a single active table. Not implemented this pass — see `decisions/ADR-010-live-session-detection.md`'s Context for the scope cut.
 
 ---
 
 ### Navigation
 
-- Reachable from the sidebar menu.
-- On session end, the session is saved into the session history for later review — see Reports → Session History.
+- Reachable from the sidebar menu; the sidebar shows a live pulsing indicator next to this entry while a session is active.
+- On session end, the session is saved into the session history for later review — see Reports → Session History. **Not yet true**: Session History itself isn't built yet (`11-development-tracking.md`), so ended sessions aren't visible anywhere yet beyond this screen's own history while it was open.
 
 ---
 
@@ -299,7 +310,7 @@ Opening a player from the list shows their full profile:
 - **Hands** — the list of hands played against this player, linking into the Hands module (Replay/Detail).
 - **Notes** — predefined quick tags (e.g. Nit, Maniac, Calling Station, Regular) plus free-text notes.
 
-  > The exact predefined tag set will be refined later — not part of this initial definition.
+  > Implemented predefined set (`10-api-design.md`, sourced from the approved Players.dc.html mockup since this doc deferred the exact list): Regular, Nit, Maniac, Calling station, Folds to 3-bet, Aggressive river — plus free-form custom tags via the same `player_tags` mechanism, no predefined/custom distinction in the data.
 
 ---
 

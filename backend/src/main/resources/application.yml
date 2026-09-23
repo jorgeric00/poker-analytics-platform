@@ -12,3 +12,8 @@ app:
   storage:
     duckdb-path: ${POKERANALYTICS_DUCKDB_PATH:./data/poker-analytics.duckdb}
     sqlite-path: ${POKERANALYTICS_SQLITE_PATH:./data/poker-analytics.sqlite}
+  # docs/decisions/ADR-010-live-session-detection.md. Blank watched-directory (the default) means
+  # the live-detection feature is entirely off — no Settings UI exists yet to configure this.
+  live-session:
+    watched-directory: ${POKERANALYTICS_LIVE_SESSION_DIR:}
+    idle-timeout-minutes: ${POKERANALYTICS_LIVE_SESSION_IDLE_MINUTES:30}

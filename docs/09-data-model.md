@@ -205,17 +205,19 @@ Straight translation of `TournamentSummary` (per `decisions/ADR-008-tournament-s
 CREATE TABLE sessions (
     session_id BIGINT PRIMARY KEY DEFAULT nextval('seq_session_id'),
     started_at TIMESTAMP NOT NULL,
-    ended_at   TIMESTAMP NOT NULL
+    ended_at   TIMESTAMP -- nullable since V4 (docs/decisions/ADR-010-live-session-detection.md): NULL = still open
 );
 
 CREATE TABLE session_hands (
-    session_id BIGINT NOT NULL REFERENCES sessions(session_id),
+    session_id BIGINT NOT NULL,  -- no REFERENCES sessions(session_id) since V4, see below
     hand_id    BIGINT NOT NULL UNIQUE,  -- a hand belongs to at most one session
     PRIMARY KEY (session_id, hand_id)
 );
 ```
 
-**`hand_id` has no `REFERENCES hands(hand_id)` on `seats`/`actions`/`boards`/`results`/`hand_side_pots`/`session_hands`, unlike every other FK in this schema.** Discovered empirically during Phase 9's Import Engine implementation, not designed this way originally: DuckDB has a real engine bug reprocessing a hand (delete every child row, then delete the hand row itself — the Update Strategy below) — it rejects the parent delete with "Violates foreign key constraint because key is still referenced," even with the referencing rows already gone and the two deletes split across separate, already-committed transactions. Matches known upstream reports (`github.com/duckdb/duckdb` issues #4309, #25388) about FK enforcement misbehaving specifically when one parent column is referenced by several different child-table FK constraints at once — exactly this table's shape. `player_id → players` and `session_id → sessions` stay real, enforced FK constraints (never deleted this way). `hand_id` referential integrity is instead enforced by the Import Engine alone — the same category of application-enforced, unenforced-by-the-database relationship already used below for `hands.tournament_id`.
+**`hand_id` has no `REFERENCES hands(hand_id)` on `seats`/`actions`/`boards`/`results`/`hand_side_pots`/`session_hands`, unlike every other FK in this schema.** Discovered empirically during Phase 9's Import Engine implementation, not designed this way originally: DuckDB has a real engine bug reprocessing a hand (delete every child row, then delete the hand row itself — the Update Strategy below) — it rejects the parent delete with "Violates foreign key constraint because key is still referenced," even with the referencing rows already gone and the two deletes split across separate, already-committed transactions. Matches known upstream reports (`github.com/duckdb/duckdb` issues #4309, #25388) about FK enforcement misbehaving specifically when one parent column is referenced by several different child-table FK constraints at once — exactly this table's shape. `player_id → players` stays a real, enforced FK. `hand_id` referential integrity is instead enforced by the Import Engine alone — the same category of application-enforced, unenforced-by-the-database relationship already used below for `hands.tournament_id`.
+
+**`session_id → sessions` also lost its FK, in `V4` (`docs/decisions/ADR-010-live-session-detection.md`).** It was a real, enforced FK through `V3`, but making `sessions.ended_at` nullable (same migration, needed for the Live Session module's "still open" state) hit a related DuckDB catalog limitation: a plain `ALTER TABLE sessions ALTER COLUMN ended_at DROP NOT NULL` fails with "Dependency Error: Cannot alter entry sessions because there are entries that depend on it" — this FK is exactly that dependency. Since neither table had ever had a row inserted before `V4` (Live Session is the first thing that ever writes to them), `V4` drops and recreates both without it rather than fighting the same class of DuckDB limitation already documented above — a safe, zero-data-loss fix, not a workaround taken lightly. `session_id` referential integrity is now enforced by `LiveSessionService` alone.
 
 `session_hands` records exact membership explicitly rather than implying it from a time range — more robust against `08-storage-strategy.md`'s incremental re-detection on out-of-order/backfilled imports, and it's what QF-7 (Session Detail) joins against. Room(s) played and hand count are deliberately **not** stored on `sessions` — both are one join/count away via `session_hands` → `hands`, and duplicating them here would be exactly the kind of derived-value drift `08-storage-strategy.md`'s Denormalization Rules argue against (unlike `position`/`effective_bb`, this isn't a value read by nearly every query, so the join cost doesn't justify it).
 

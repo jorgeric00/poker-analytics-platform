@@ -37,10 +37,12 @@ public class HandsController {
             @RequestParam(required = false) List<String> handType,
             @RequestParam(required = false) List<String> endedOnStreet,
             @RequestParam(required = false) Boolean showdownOnly,
+            @RequestParam(required = false) Long opponentPlayerId,
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "50") int pageSize,
             @RequestParam(required = false) String sortDir) {
-        HandListFilter filter = new HandListFilter(room, wonLost, position, handType, endedOnStreet, showdownOnly);
+        HandListFilter filter = new HandListFilter(
+                room, wonLost, position, handType, endedOnStreet, showdownOnly, opponentPlayerId);
         return service.list(filter, page, pageSize, sortDir);
     }
 

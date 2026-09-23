@@ -111,6 +111,8 @@ Response:
 
 **Used by**: Overview (Career Summary, Performance Trends), Live Session, Statistics, Players List (quick stat) and Profile (stats vs. Hero) — exactly as mapped in `06-query-catalog.md`'s Screen → Queries Used table. Each screen is a different `scope`/`statSet`/`breakdown` combination against this one endpoint, not a different endpoint.
 
+**Implemented so far**: `scope.type = "HERO"` and `"OPPONENT"` (`scope.playerId` required, validated to be a real, non-Hero `players` row), a single (or no) breakdown dimension, and `VPIP`/`PFR`/`THREE_BET`/`FLOP_CBET`/`FOLD_VS_FLOP_CBET`/`HANDS`/`STACK_SIZE_BB`/`BB_100` (see `CashStatsCalculator`'s own class doc for what's not: `CURRENT_SESSION`/`ALL_OPPONENTS` scope, `ROI`/`BUBBLE_FACTOR` stats, `STAKES`/`DATE_BUCKET` breakdown, the `filters` object). The Players module's quick-stat list does **not** use this endpoint per-row despite what "one grouped query" above implies — see `PlayersQueryService`'s class doc for that documented deviation.
+
 ---
 
 ### `GET /api/v1/hands` — QF-2, Hand List Query
@@ -143,7 +145,7 @@ Response:
 ```
 **Used by**: Hands (table), Players Profile ("Hands vs this player" — adds `opponentPlayerId`), Statistics (drill-down destination). Per `06-query-catalog.md`'s note, this endpoint's filter vocabulary is a superset of QF-1's breakdown vocabulary by design, so a clicked breakdown cell (e.g. "3-Bet% from the Button") maps directly onto `?position=BTN`.
 
-**Implemented so far** (`backend/src/main/java/com/pokeranalytics/hands/HandsQueryService.java`, scoped to Hero/cash like every other query family): `wonLost`, `position` (comma-separated, OR within the field), `handType` (comma-separated; see below), `endedOnStreet` (comma-separated), `showdownOnly`, `page`/`pageSize`/`sortDir` (`hand_id` order only — see next paragraph). Not yet implemented: `room`/`stakes`/`dateFrom`/`dateTo` (blocked on `hand_timestamp` normalization, though the filter param and DB column both exist for `room`), `allIn` (no room's parser records a structured all-in flag yet), `minPot`/`minWonLost`, `opponentPlayerId` (Players module).
+**Implemented so far** (`backend/src/main/java/com/pokeranalytics/hands/HandsQueryService.java`, scoped to Hero/cash like every other query family): `wonLost`, `position` (comma-separated, OR within the field), `handType` (comma-separated; see below), `endedOnStreet` (comma-separated), `showdownOnly`, `opponentPlayerId` (added for the Players module's "Hands vs X" panel and "Open all hands vs X" drill-down — any hand where the given player id was also dealt in), `page`/`pageSize`/`sortDir` (`hand_id` order only — see next paragraph). Not yet implemented: `room`/`stakes`/`dateFrom`/`dateTo` (blocked on `hand_timestamp` normalization, though the filter param and DB column both exist for `room`), `allIn` (no room's parser records a structured all-in flag yet), `minPot`/`minWonLost`.
 
 Two additive response fields beyond the shape shown above, both because `hands.hand_timestamp` isn't normalized yet: `handTimestamp` stays `null` on every row today, and `handTimestampRaw` (the room's own unparsed text) is included so the screen isn't blank while that's true — sorting is by `hand_id` (import order), not real chronological order, for the same reason. Also added: `handType` (see below) and `endedOnStreet` (`PREFLOP`/`FLOP`/`TURN`/`RIVER`, from the furthest street a board was dealt to).
 
@@ -165,13 +167,15 @@ Query params: `search` (nickname substring), Global Filters, `page`, `pageSize`,
 
 Response: `{ "items": [{ "playerId": 42, "nickname": "villain123", "handsVsHero": 318, "quickStat": {"stat": "VPIP", "value": 27.4} }], "total": 891, "page": 1, "pageSize": 50 }`. `quickStat`'s underlying computation is QF-1 (breakdown=`PLAYER_ID`) joined server-side into this list, per `06-query-catalog.md`'s note that it's one grouped query, not one call per row — the frontend never calls `/stats/query` once per visible row.
 
+**Implemented** (`backend/src/main/java/com/pokeranalytics/players/PlayersQueryService.java`): `search`, `minHands` (this document's `06-query-catalog.md`-level "minimum sample size" filter), `page`/`pageSize`, sorted by `handsVsHero` descending only (no `sort`/`sortDir` param yet). `handsVsHero` is real co-occurrence (hands where this opponent and Hero were both dealt in), computed as one grouped query as the shape above implies. `quickStat` is the one deliberate deviation from that shape: there's no `PLAYER_ID` breakdown dimension in `CashStatsCalculator` (every dimension there groups one already-chosen player's own hands by some facet of *their* hands — the opposite of "one stat per different player" this needs), so it's computed via one `CashStatsCalculator.compute(playerId)` call per row instead. Acceptable at this app's real scale (a local single user's opponent pool is realistically dozens to a few hundred, not millions — 38 for the actual 81-hand sample data this was verified against) but a real shortcut, not this endpoint's intended shape; tracked as a follow-up in `11-development-tracking.md`. Global Filters aren't wired to this endpoint yet (same gap as everywhere else — blocked on filter infrastructure this project hasn't built).
+
 ---
 
 ### `GET /api/v1/players/{playerId}` — QF-5, Player Detail Query
 
-Response: `{ "playerId": 42, "nickname": "villain123", "roomsPlayed": ["POKERSTARS","WINAMAX"], "firstSeenAt": "...", "lastSeenAt": "...", "notes": "...", "tags": ["Nit"] }`.
+Response: `{ "playerId": 42, "nickname": "villain123", "roomsPlayed": ["POKERSTARS","WINAMAX"], "firstSeenAt": "...", "lastSeenAt": "...", "notes": "...", "tags": ["Nit"] }`, plus one additive field: `handsVsHero` (same co-occurrence count as the list, for the Profile header — same additive-field pattern as the Hands endpoints' `handTimestampRaw`). `firstSeenAt`/`lastSeenAt` are exactly what `players.first_seen_at`/`last_seen_at` mean (`09-data-model.md`) — when this nickname was first/last seen **by an import run**, not the first/last real hand played chronologically (that needs `hand_timestamp` normalization, still open).
 
-**Composition, not a composed endpoint.** Per `06-query-catalog.md`'s explicit "worked example of composition" for this same query family, the Players Profile screen calls **three** endpoints — this one, `POST /stats/query` (`scope: {type:"OPPONENT", playerId}`), and `GET /hands?opponentPlayerId=...` — rather than one bespoke `/players/{id}/profile` endpoint that bundles all three server-side. Orchestrating three read calls for one screen is view composition (`04-architecture.md`: frontend responsibilities include "data visualization," not business logic), not business logic living in the frontend — and keeps every one of these three endpoints reusable elsewhere (QF-1 and QF-2 are each used by several other screens already). The same pattern applies to Reports → Session History's row click-through (QF-7 composes with QF-1 the same way).
+**Composition, not a composed endpoint.** Per `06-query-catalog.md`'s explicit "worked example of composition" for this same query family, the Players Profile screen calls **three** endpoints — this one, `POST /stats/query` (`scope: {type:"OPPONENT", playerId}`), and `GET /hands?opponentPlayerId=...` — rather than one bespoke `/players/{id}/profile` endpoint that bundles all three server-side. Orchestrating three read calls for one screen is view composition (`04-architecture.md`: frontend responsibilities include "data visualization," not business logic), not business logic living in the frontend — and keeps every one of these three endpoints reusable elsewhere (QF-1 and QF-2 are each used by several other screens already). The same pattern applies to Reports → Session History's row click-through (QF-7 composes with QF-1 the same way). All three are now real (`10-api-design.md`'s own `scope.type = "OPPONENT"` and `opponentPlayerId` notes above), so the Player Profile screen is the first full worked example of this pattern actually built, not just designed.
 
 ---
 
@@ -197,6 +201,24 @@ Response: `{ "databaseSizeBytes": 812345600, "lastImportAt": "...", "lastImportR
 
 ---
 
+## Live Session
+
+Not a query family — the Live Session module needs both a status read and two commands (Start/End session), and per `decisions/ADR-010-live-session-detection.md` point 5, deliberately does **not** reuse `POST /stats/query`'s `scope: {type: "CURRENT_SESSION"}` (which `06-query-catalog.md`'s Screen → Queries Used table originally envisioned for this screen) — that would mean threading a hand-id-set restriction through `CashStatsCalculator`'s existing query blocks for four stats this screen alone needs. Grouped here as its own small surface instead.
+
+### `GET /api/v1/live-session`
+
+Response: `{ "active": true, "sessionId": 2, "startedAt": "2026-09-23 02:35:36.150905", "hands": 1, "vpip": 100.0, "pfr": 0.0, "threeBet": null, "pnl": {"amount":"0.3000","currency":"€"}, "evPnl": null }`. `active: false` means every other field is `null`/zero. `vpip`/`pfr`/`threeBet` are `null` on zero sample (same convention as `POST /stats/query`'s rate stats), not zero. `evPnl` is always `null` today — All-in Adjusted P&L needs the hand-equity engine `07-analytics-engine.md` already flags as undesigned. `startedAt` is DuckDB's own timestamp text, not strict ISO-8601 (a deviation from this document's own Data Types rule, consistent with every other endpoint's `*Raw`/passthrough timestamp fields until `hand_timestamp` normalization lands project-wide).
+
+### `POST /api/v1/live-session/start`
+
+No body. Starts a session if none is open (idempotent — returns the already-open session's status if one exists). Same response shape as the `GET`.
+
+### `POST /api/v1/live-session/stop`
+
+No body. Ends the open session if one exists (idempotent — a no-op returning `active: false` if none is open). Same response shape as the `GET`.
+
+---
+
 ## Write Endpoints (Commands)
 
 Not covered by any query family — `06-query-catalog.md` explicitly scoped those out ("writes/commands... left out on purpose"). Enumerated here from each module's Navigation/Actions section in `05-product-map.md`.
@@ -214,7 +236,9 @@ Not covered by any query family — `06-query-catalog.md` explicitly scoped thos
 ### Player Notes & Tags
 
 - `PUT /api/v1/players/{playerId}/notes` — body `{ "freeText": "..." }` (replace, matching `player_notes`' one-row-per-player shape in `09-data-model.md`).
-- `POST /api/v1/players/{playerId}/tags` — body `{ "tag": "Nit" }`; `DELETE /api/v1/players/{playerId}/tags/{tag}`.
+- `POST /api/v1/players/{playerId}/tags` — body `{ "tag": "Nit" }`, `201`; `DELETE /api/v1/players/{playerId}/tags/{tag}`.
+
+**Implemented** (`backend/src/main/java/com/pokeranalytics/api/PlayersController.java`) — all three, `404 PLAYER_NOT_FOUND` if `playerId` isn't a real opponent. The predefined tag palette shown in the Players Profile's Notes panel (Regular/Nit/Maniac/Calling station/Folds to 3-bet/Aggressive river) is sourced from the approved `Players.dc.html` mockup itself — `05-product-map.md` explicitly left "the exact predefined tag set" for later, and this is that later decision, made in the same change as the frontend that needed it. A custom tag typed into that panel's "+ New tag" field hits this same endpoint with no special casing — `player_tags` has no predefined-vs-custom distinction.
 
 ### Saved Views
 

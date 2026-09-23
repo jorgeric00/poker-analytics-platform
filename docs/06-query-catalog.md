@@ -235,7 +235,7 @@ Reports → Report Generation (predefined templates, or exporting a saved Statis
 | Screen | Query Families Used | Notes |
 |---|---|---|
 | Overview | QF-1 (no breakdown; breakdown=date for trends), QF-6 (degenerate, limit=1), QF-10 | Career Summary, Performance Trends, and Recent Activity are three different families on one screen |
-| Live Session | QF-1 (scope=CurrentSession) | Same family as everywhere else; only the *trigger* (on every imported hand) is different |
+| Live Session | Not QF-1 — its own small endpoint, `GET /api/v1/live-session` | Originally planned as QF-1 (scope=CurrentSession); implemented instead as a dedicated query outside `CashStatsCalculator`, see `10-api-design.md`'s Live Session section and `decisions/ADR-010-live-session-detection.md` point 5 for why |
 | Hands | QF-2, QF-3 | Table = QF-2; Replay/Detail row actions = QF-3 |
 | Players | QF-4, QF-5, QF-1 (scope=Opponent, breakdown=PlayerId for the list), QF-2 (opponent-filtered) | List uses QF-4 + QF-1; Profile composes QF-5 + QF-1 + QF-2 |
 | Statistics | QF-1 (user-chosen breakdown), QF-2 (drill-down), QF-9 | The screen itself is thin — it's a UI over QF-1's full parameter space, plus QF-9 for Saved Views |

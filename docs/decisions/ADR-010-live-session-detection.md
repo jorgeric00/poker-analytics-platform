@@ -1,0 +1,36 @@
+# ADR-010: Live Session Detection via Real-Time File Watching
+
+## Status
+
+Accepted
+
+## Context
+
+The Live Session module (`05-product-map.md`) has been blocked since early Phase 9 on one open question: how are "sessions" detected at all? `08-storage-strategy.md` originally assumed sessions would be derived by scanning `hands.hand_timestamp` for idle gaps in a player's whole hand history — a purely historical, batch-oriented model. That column is never populated today (`hands.hand_timestamp` stays `NULL`; UTC normalization per room is still an open Import Engine follow-up), so that approach can't work, and even once it can, it answers a different question than "how is my session going right now" — it can only tell you about sessions after the fact.
+
+Raised and resolved directly with the user: sessions are controlled by explicit **Start**/**Stop** actions, a session **auto-starts** the moment a new hand is detected with none currently open, and a session **auto-ends after an idle timeout** if no new hand arrives (resolving `07-analytics-engine.md`'s already-flagged "session idle-threshold default, 30 min, unvalidated" note into a real, working, configurable value). The user also confirmed, when asked directly, that "detecting a new hand" has to mean watching the hand-history file(s) the poker client is actively writing to, in real time — a batch/manual-import-triggered model would not actually be "live," which defeats the module's whole purpose ("how is my current session going while I am still playing," per `05-product-map.md`'s Purpose section).
+
+This is new architecture: nothing in this codebase watches the filesystem in real time or runs a background subsystem today. It needs its own decision record rather than folding into `HandImportService`'s existing (deliberately synchronous, on-demand) import flow.
+
+## Decision
+
+1. **Re-parse the whole file on every detected change, not byte-offset tailing.** On a file-change event, re-parse the entire file with the existing room parser (`PokerStarsParser`) and call the existing `HandImportService.importHands(...)` unmodified — it already deletes-and-reinserts by the natural key `(room, external_hand_id)`, so re-importing hands it has already seen is a safe no-op in effect. At realistic live-session file sizes (one day, low hundreds to low thousands of hands) this is fast. It trades some redundant work for avoiding an entire second class of complexity (tracking byte offsets, handling a hand that's only partially written when read mid-append) that a true `tail -f`-style incremental parser would need.
+
+2. **"New hand" detection is an in-memory baseline, per watched file, seeded when watching starts.** The watcher parses each currently-matched file once at startup and records every `external_hand_id` already present as a baseline — none of these trigger session logic. Every subsequent file-change event re-parses, diffs the resulting id set against the baseline, and only the genuinely new ids are reported to the session-lifecycle logic before being folded into the baseline. Two alternatives were rejected: (a) treating any DB row in `hands` with no matching `session_hands` row as "new" — this would wrongly sweep in every hand imported before this feature existed (81 real hands, in this project's own history) the first time the watcher ever ran; (b) persisting a read offset/cursor across restarts — unnecessary complexity, since a restart re-seeding its baseline from the file's current contents is already the *correct* behavior (nothing that existed before this process started should count as "just happened").
+
+3. **Only the watcher's own detection path feeds session assignment.** The existing manual endpoint, `POST /api/v1/imports`, is untouched and never calls into the Live Session logic, even if a session happens to be open when it runs. This keeps the historical/batch path (Hands module) and the live path (Live Session module) cleanly separated — matching `05-product-map.md`'s own existing boundary that the Hands module must not include hands from the session currently in progress.
+
+4. **`sessions.ended_at` becomes nullable** (`V4__session_open_ended.sql`) — `NULL` means "still open." This is the one real schema change this decision requires; `session_hands` and everything else in `09-data-model.md` is untouched.
+
+5. **Live Session's own stats are a small, separate query path, not a `CashStatsCalculator` scope.** `06-query-catalog.md`'s Screen → Queries Used table maps this screen to "QF-1, scope=CURRENT_SESSION." Implementing that literally would mean threading a hand-id-set restriction through all six of `CashStatsCalculator`'s existing, already-tested query blocks for the sake of the four stats this screen actually shows (Hands, VPIP, PFR, 3-Bet). Instead, a small dedicated class computes just those four (plus a real P&L figure via `SUM(hand_net_results.net_result)`) directly against `session_hands` for the currently open session. This is a deliberate, scoped deviation from that document's original framing — revisit it if the Statistics module ever needs a general `CURRENT_SESSION` scope too, at which point generalizing `CashStatsCalculator` properly would be worth the refactor.
+
+6. **The watched directory is `application.yml` configuration, not an in-app setting.** `05-product-map.md` has no defined Settings module (it is an undefined placeholder nav item today) — building a folder-picker UI would mean speccing that module first, which is a separate, unrelated piece of work. `app.live-session.watched-directory` (unset/empty = the feature is entirely disabled, a no-op bean — every existing `@SpringBootTest` is unaffected) and `app.live-session.idle-timeout-minutes` (default 30) follow the same `@ConfigurationProperties` pattern `StorageProperties` already established.
+
+7. **Scope stays PokerStars cash**, the same one-room-at-a-time rollout every other Phase 9 piece (parser, Import Engine, Hands, Players) has followed — the watcher can only re-parse what `HandImportService` can actually import today.
+
+## Consequences
+
+- Live Session can ship as a real, working screen instead of staying blocked indefinitely on the historical idle-gap-over-`hand_timestamp` model, which remains a *separate*, still-open question (`08-storage-strategy.md`'s "session re-detection on out-of-order/backfilled imports" follow-up) for retroactively grouping already-imported historical hands into sessions for Session History/Reports — this decision does not resolve that one, it solves live detection only.
+- A real, necessary background subsystem now exists in the backend process (a filesystem watcher + a scheduled idle-timeout sweep), the first of its kind in this codebase — `PokerAnalyticsApplication` gains `@EnableScheduling`.
+- Whole-file re-parsing means CPU/IO work scales with total file size on every change, not just the appended delta — acceptable at realistic single-session file sizes; revisit (true incremental tailing) only if a real multi-thousand-hand single-file session is shown to make this slow.
+- `CashStatsCalculator` is left completely unmodified by this decision — lower risk to already-shipped, tested code, at the cost of some duplicated Opportunity/Event SQL shape between it and the new session-scoped stats class.

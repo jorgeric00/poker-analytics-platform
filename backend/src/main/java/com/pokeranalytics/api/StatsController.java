@@ -26,8 +26,11 @@ import com.pokeranalytics.api.dto.StatsQueryResponse.WarningDto;
 
 /**
  * docs/06-query-catalog.md's QF-1 Aggregate Stat Query, docs/10-api-design.md's {@code POST
- * /api/v1/stats/query}. Only {@code scope.type = "HERO"} and a single (or no) breakdown dimension
- * are implemented so far — see {@link CashStatsCalculator}'s own class doc for what's not.
+ * /api/v1/stats/query}. {@code scope.type = "HERO"} and {@code "OPPONENT"} (added for the Players
+ * module's "Tendencies vs Hero" panel — {@link CashStatsCalculator#computeBreakdown} already took
+ * any player id, only this controller had HERO hardcoded) plus a single (or no) breakdown
+ * dimension are implemented so far — see {@link CashStatsCalculator}'s own class doc for what's
+ * not. {@code ALL_OPPONENTS}/{@code CURRENT_SESSION}/{@code SESSION(sessionId)} remain unimplemented.
  */
 @RestController
 @RequestMapping("/api/v1/stats")
@@ -43,12 +46,12 @@ public class StatsController {
 
     @PostMapping("/query")
     public StatsQueryResponse query(@RequestBody StatsQueryRequest request) {
-        long heroId = resolveHeroScope(request.scope());
+        long playerId = resolveScope(request.scope());
         BreakdownDimension dimension = resolveDimension(request.breakdown());
         int minSampleSize = request.minSampleSize() == null ? 0 : request.minSampleSize();
         List<String> statSet = request.statSet() == null ? List.of() : request.statSet();
 
-        List<CashStatsRow> rows = calculator.computeBreakdown(heroId, dimension, minSampleSize);
+        List<CashStatsRow> rows = calculator.computeBreakdown(playerId, dimension, minSampleSize);
 
         List<StatRowDto> dtoRows = new ArrayList<>();
         List<WarningDto> warnings = new ArrayList<>();
@@ -72,16 +75,37 @@ public class StatsController {
         return new StatsQueryResponse(dtoRows, warnings);
     }
 
-    private long resolveHeroScope(ScopeDto scope) {
-        if (scope == null || !"HERO".equals(scope.type())) {
+    private long resolveScope(ScopeDto scope) {
+        if (scope == null || scope.type() == null) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "UNSUPPORTED_SCOPE",
-                    "Only scope.type = \"HERO\" is implemented so far");
+                    "Only scope.type = \"HERO\" or \"OPPONENT\" is implemented so far");
         }
-        List<Long> heroIds = duckDb.queryForList("SELECT player_id FROM players WHERE is_hero = TRUE", Long.class);
-        if (heroIds.isEmpty()) {
-            throw new ApiException(HttpStatus.NOT_FOUND, "NO_HERO_DATA", "No hands have been imported yet");
-        }
-        return heroIds.get(0);
+        return switch (scope.type()) {
+            case "HERO" -> {
+                List<Long> heroIds = duckDb.queryForList(
+                        "SELECT player_id FROM players WHERE is_hero = TRUE", Long.class);
+                if (heroIds.isEmpty()) {
+                    throw new ApiException(HttpStatus.NOT_FOUND, "NO_HERO_DATA", "No hands have been imported yet");
+                }
+                yield heroIds.get(0);
+            }
+            case "OPPONENT" -> {
+                if (scope.playerId() == null) {
+                    throw new ApiException(HttpStatus.BAD_REQUEST, "MISSING_PLAYER_ID",
+                            "scope.playerId is required when scope.type = \"OPPONENT\"");
+                }
+                List<Long> opponentIds = duckDb.queryForList(
+                        "SELECT player_id FROM players WHERE player_id = ? AND is_hero = FALSE",
+                        Long.class, scope.playerId());
+                if (opponentIds.isEmpty()) {
+                    throw new ApiException(HttpStatus.NOT_FOUND, "PLAYER_NOT_FOUND",
+                            "No opponent with id " + scope.playerId());
+                }
+                yield opponentIds.get(0);
+            }
+            default -> throw new ApiException(HttpStatus.BAD_REQUEST, "UNSUPPORTED_SCOPE",
+                    "Only scope.type = \"HERO\" or \"OPPONENT\" is implemented so far");
+        };
     }
 
     private BreakdownDimension resolveDimension(List<String> breakdown) {

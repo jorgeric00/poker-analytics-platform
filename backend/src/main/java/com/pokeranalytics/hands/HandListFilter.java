@@ -19,5 +19,6 @@ public record HandListFilter(
         List<String> positions,
         List<String> handTypes,
         List<String> endedOnStreets,
-        Boolean showdownOnly) {
+        Boolean showdownOnly,
+        Long opponentPlayerId) {
 }

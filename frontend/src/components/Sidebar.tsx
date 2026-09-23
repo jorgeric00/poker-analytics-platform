@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Broadcast,
@@ -10,6 +11,9 @@ import {
   GearSix,
   UsersThree,
 } from "@phosphor-icons/react";
+import { fetchLiveSessionStatus } from "../api/client";
+
+const LIVE_STATUS_POLL_MS = 5000;
 
 // Matches the approved Nocturne mockups' sidebar exactly (claude.ai/design project "Poker
 // analytics UI mockups", Overview.dc.html / Reports.dc.html — docs/12-ui-designs.md), including
@@ -32,6 +36,27 @@ const FOOTER_ITEMS = [
 ];
 
 export function Sidebar() {
+  const [liveSessionActive, setLiveSessionActive] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    function poll() {
+      fetchLiveSessionStatus()
+        .then((s) => {
+          if (!cancelled) setLiveSessionActive(s.active);
+        })
+        .catch(() => {
+          // best-effort indicator only — a failed poll just leaves the dot as it was
+        });
+    }
+    poll();
+    const interval = setInterval(poll, LIVE_STATUS_POLL_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <nav className="sidebar">
       <div className="sidebar-brand">
@@ -49,6 +74,7 @@ export function Sidebar() {
             >
               <module.icon size={15} weight="regular" />
               {module.label}
+              {module.path === "/live-session" && liveSessionActive && <span className="live-dot" />}
             </NavLink>
           </li>
         ))}

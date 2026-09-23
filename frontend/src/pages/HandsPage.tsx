@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   BookmarkSimple,
   CalendarBlank,
@@ -9,6 +10,7 @@ import {
   MagnifyingGlass,
   Play,
   Spade,
+  X,
 } from "@phosphor-icons/react";
 import { ApiError, fetchHands } from "../api/client";
 import type { HandListItemDto, HandListResponse } from "../api/types";
@@ -48,6 +50,11 @@ function stakesLabel(row: HandListItemDto): string {
 }
 
 export function HandsPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const opponentPlayerIdParam = searchParams.get("opponentPlayerId");
+  const opponentPlayerId = opponentPlayerIdParam ? Number(opponentPlayerIdParam) : undefined;
+  const opponentNickname = searchParams.get("opponentNickname");
+
   const [wonLost, setWonLost] = useState<"ALL" | "WON" | "LOST">("ALL");
   const [positions, setPositions] = useState<string[]>([]);
   const [handTypes, setHandTypes] = useState<string[]>([]);
@@ -61,7 +68,7 @@ export function HandsPage() {
 
   useEffect(() => {
     setPage(1);
-  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly]);
+  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -73,6 +80,7 @@ export function HandsPage() {
       handType: handTypes.length ? handTypes : undefined,
       endedOnStreet: endedOnStreets.length ? endedOnStreets : undefined,
       showdownOnly: showdownOnly || undefined,
+      opponentPlayerId,
       page,
       pageSize: PAGE_SIZE,
     })
@@ -88,7 +96,7 @@ export function HandsPage() {
     return () => {
       cancelled = true;
     };
-  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, page]);
+  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId, page]);
 
   const totalPages = data ? Math.max(1, Math.ceil(data.total / PAGE_SIZE)) : 1;
 
@@ -218,6 +226,15 @@ export function HandsPage() {
             </div>
 
             {error && <div className="banner banner-error">{error}</div>}
+
+            {opponentPlayerId != null && (
+              <div className="banner opponent-filter-banner">
+                Showing hands vs {opponentNickname ?? `player #${opponentPlayerId}`}
+                <button className="icon-button" onClick={() => setSearchParams({})} title="Clear opponent filter">
+                  <X size={12} />
+                </button>
+              </div>
+            )}
 
             <table className="data-table hands-table">
               <thead>

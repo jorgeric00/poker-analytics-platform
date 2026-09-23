@@ -23,7 +23,7 @@ export interface SystemMetaResponse {
 }
 
 export interface ScopeDto {
-  type: "HERO";
+  type: "HERO" | "OPPONENT";
   playerId?: number | null;
 }
 
@@ -99,6 +99,7 @@ export interface HandListQuery {
   handType?: string[];
   endedOnStreet?: string[];
   showdownOnly?: boolean;
+  opponentPlayerId?: number;
   page?: number;
   pageSize?: number;
   sortDir?: string;
@@ -163,4 +164,54 @@ export interface HandDetailDto {
   results: HandResultDto[];
   previousHandId: number | null;
   nextHandId: number | null;
+}
+
+export interface QuickStatDto {
+  stat: string;
+  value: number;
+}
+
+export interface PlayerListItemDto {
+  playerId: number;
+  nickname: string;
+  handsVsHero: number;
+  quickStat: QuickStatDto | null;
+  tags: string[];
+}
+
+export interface PlayerListResponse {
+  items: PlayerListItemDto[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+export interface PlayerListQuery {
+  search?: string;
+  minHands?: number;
+  page?: number;
+  pageSize?: number;
+}
+
+export interface PlayerDetailDto {
+  playerId: number;
+  nickname: string;
+  roomsPlayed: string[];
+  firstSeenAt: string;
+  lastSeenAt: string;
+  handsVsHero: number;
+  notes: string;
+  tags: string[];
+}
+
+export interface LiveSessionStatusDto {
+  active: boolean;
+  sessionId: number | null;
+  startedAt: string | null;
+  hands: number;
+  vpip: number | null;
+  pfr: number | null;
+  threeBet: number | null;
+  pnl: MoneyDto | null;
+  evPnl: MoneyDto | null;
 }
