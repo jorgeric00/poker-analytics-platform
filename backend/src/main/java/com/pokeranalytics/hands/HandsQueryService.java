@@ -126,6 +126,10 @@ public class HandsQueryService {
             where.append(" AND EXISTS (SELECT 1 FROM seats opp WHERE opp.hand_id = h.hand_id AND opp.player_id = :opponentPlayerId) ");
             params.addValue("opponentPlayerId", filter.opponentPlayerId());
         }
+        if (filter.sessionId() != null) {
+            where.append(" AND EXISTS (SELECT 1 FROM session_hands sesh WHERE sesh.hand_id = h.hand_id AND sesh.session_id = :sessionId) ");
+            params.addValue("sessionId", filter.sessionId());
+        }
 
         long total = duckDb.queryForList("SELECT count(*) AS c " + from + where, params)
                 .stream().findFirst().map(r -> ((Number) r.get("c")).longValue()).orElse(0L);

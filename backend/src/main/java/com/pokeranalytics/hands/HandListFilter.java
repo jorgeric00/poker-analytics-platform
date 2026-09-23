@@ -20,5 +20,6 @@ public record HandListFilter(
         List<String> handTypes,
         List<String> endedOnStreets,
         Boolean showdownOnly,
-        Long opponentPlayerId) {
+        Long opponentPlayerId,
+        Long sessionId) {
 }

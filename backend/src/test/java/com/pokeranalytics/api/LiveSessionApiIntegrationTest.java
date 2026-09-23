@@ -116,6 +116,19 @@ class LiveSessionApiIntegrationTest {
                 || line.startsWith("PokerStars Game #");
     }
 
+    private LiveSessionStatusDto pollUntilHandsAtLeast(long minHands) throws InterruptedException {
+        long deadline = System.currentTimeMillis() + POLL_TIMEOUT_MS;
+        LiveSessionStatusDto last = null;
+        while (System.currentTimeMillis() < deadline) {
+            last = rest.getForEntity("/api/v1/live-session", LiveSessionStatusDto.class).getBody();
+            if (last != null && last.active() && last.hands() >= minHands) {
+                return last;
+            }
+            Thread.sleep(300);
+        }
+        return last;
+    }
+
     private LiveSessionStatusDto pollUntil(boolean expectedActive) throws InterruptedException {
         long deadline = System.currentTimeMillis() + POLL_TIMEOUT_MS;
         LiveSessionStatusDto last = null;
@@ -162,10 +175,14 @@ class LiveSessionApiIntegrationTest {
     @Order(3)
     void stopEndsItAndTheNextDetectedHandOpensANewSession() throws IOException, InterruptedException {
         // continues the session test 2 already left open (this class's tests run in declared
-        // order against one shared app instance) — appending here just adds a 2nd hand to it
+        // order against one shared app instance) — appending here just adds a 2nd hand to it. Poll
+        // for the hand count to actually reach 2 (not just "still active", which was already true
+        // before this append) so the watcher has genuinely settled before stop() runs below —
+        // otherwise this append and the next one can race and land in the same processFile() call.
         Files.writeString(watchedFile, handBlocks.get(BASELINE_HAND_COUNT + 1), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
-        LiveSessionStatusDto firstSession = pollUntil(true);
+        LiveSessionStatusDto firstSession = pollUntilHandsAtLeast(2);
         assertThat(firstSession.active()).isTrue();
+        assertThat(firstSession.hands()).isEqualTo(2);
         Long firstSessionId = firstSession.sessionId();
 
         ResponseEntity<LiveSessionStatusDto> stopResponse =

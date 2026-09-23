@@ -100,6 +100,7 @@ export interface HandListQuery {
   endedOnStreet?: string[];
   showdownOnly?: boolean;
   opponentPlayerId?: number;
+  sessionId?: number;
   page?: number;
   pageSize?: number;
   sortDir?: string;
@@ -214,4 +215,54 @@ export interface LiveSessionStatusDto {
   threeBet: number | null;
   pnl: MoneyDto | null;
   evPnl: MoneyDto | null;
+}
+
+export interface SessionListItemDto {
+  sessionId: number;
+  startedAt: string;
+  endedAt: string | null;
+  active: boolean;
+  rooms: string;
+  stakes: StakesDto;
+  tables: number;
+  durationMinutes: number | null;
+  hands: number;
+  pnl: MoneyDto | null;
+  bb100: number | null;
+}
+
+export interface SessionsSummaryDto {
+  totalSessions: number;
+  totalPnl: MoneyDto | null;
+  totalHands: number;
+  totalDurationMinutes: number;
+}
+
+export interface SessionListResponse {
+  items: SessionListItemDto[];
+  total: number;
+  page: number;
+  pageSize: number;
+  summary: SessionsSummaryDto;
+}
+
+export interface SessionDetailDto {
+  sessionId: number;
+  startedAt: string;
+  endedAt: string | null;
+  active: boolean;
+  rooms: string;
+  stakes: StakesDto;
+  tables: number;
+  durationMinutes: number | null;
+  hands: number;
+  handsPerHour: number | null;
+  pnl: MoneyDto | null;
+  bb100: number | null;
+  evPnl: MoneyDto | null;
+  vpip: number | null;
+  pfr: number | null;
+  threeBet: number | null;
+  biggestPotWon: MoneyDto | null;
+  rakePaid: MoneyDto | null;
 }

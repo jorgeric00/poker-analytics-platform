@@ -164,7 +164,6 @@ public class LiveSessionWatcherService implements ApplicationRunner {
             log.warn("Failed to parse live-watched file {}", file, e);
             return;
         }
-        handImportService.importHands(parsedHands, ROOM, file.toString());
 
         Set<String> currentExternalIds = new HashSet<>();
         for (ParsedHand hand : parsedHands) {
@@ -175,7 +174,22 @@ public class LiveSessionWatcherService implements ApplicationRunner {
         newExternalIds.removeAll(baseline);
         baselineExternalIdsByFile.put(file, currentExternalIds);
 
-        if (!isBaselineSeed && !newExternalIds.isEmpty()) {
+        if (newExternalIds.isEmpty()) {
+            return; // nothing new since last time this file was touched — nothing to import
+        }
+        // Import ONLY the genuinely new hands, not the whole re-parsed file: HandImportService's
+        // reprocessing (docs/08-storage-strategy.md's Update Strategy) deletes and reinserts a hand
+        // under a brand-new hand_id every time it sees that external_hand_id again, even if nothing
+        // about the hand changed — including deleting its session_hands row. Re-importing every hand
+        // on every file change would silently orphan every previously-detected hand's session
+        // membership the moment one more hand appeared in the same file. Filtering to the delta
+        // avoids ever touching a hand this watcher has already imported.
+        List<ParsedHand> newHands = parsedHands.stream()
+                .filter(hand -> newExternalIds.contains(hand.handId))
+                .toList();
+        handImportService.importHands(newHands, ROOM, file.toString());
+
+        if (!isBaselineSeed) {
             liveSessionService.onNewHandsDetected(resolveHandIds(newExternalIds));
         }
     }

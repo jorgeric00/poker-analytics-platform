@@ -54,6 +54,8 @@ export function HandsPage() {
   const opponentPlayerIdParam = searchParams.get("opponentPlayerId");
   const opponentPlayerId = opponentPlayerIdParam ? Number(opponentPlayerIdParam) : undefined;
   const opponentNickname = searchParams.get("opponentNickname");
+  const sessionIdParam = searchParams.get("sessionId");
+  const sessionId = sessionIdParam ? Number(sessionIdParam) : undefined;
 
   const [wonLost, setWonLost] = useState<"ALL" | "WON" | "LOST">("ALL");
   const [positions, setPositions] = useState<string[]>([]);
@@ -68,7 +70,7 @@ export function HandsPage() {
 
   useEffect(() => {
     setPage(1);
-  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId]);
+  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId, sessionId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -81,6 +83,7 @@ export function HandsPage() {
       endedOnStreet: endedOnStreets.length ? endedOnStreets : undefined,
       showdownOnly: showdownOnly || undefined,
       opponentPlayerId,
+      sessionId,
       page,
       pageSize: PAGE_SIZE,
     })
@@ -96,7 +99,7 @@ export function HandsPage() {
     return () => {
       cancelled = true;
     };
-  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId, page]);
+  }, [wonLost, positions, handTypes, endedOnStreets, showdownOnly, opponentPlayerId, sessionId, page]);
 
   const totalPages = data ? Math.max(1, Math.ceil(data.total / PAGE_SIZE)) : 1;
 
@@ -231,6 +234,15 @@ export function HandsPage() {
               <div className="banner opponent-filter-banner">
                 Showing hands vs {opponentNickname ?? `player #${opponentPlayerId}`}
                 <button className="icon-button" onClick={() => setSearchParams({})} title="Clear opponent filter">
+                  <X size={12} />
+                </button>
+              </div>
+            )}
+
+            {sessionId != null && (
+              <div className="banner opponent-filter-banner">
+                Showing hands from session #{sessionId}
+                <button className="icon-button" onClick={() => setSearchParams({})} title="Clear session filter">
                   <X size={12} />
                 </button>
               </div>

@@ -417,6 +417,8 @@ A table/log of past sessions — the destination of the "session history" that t
 
 Clicking a row opens that session's detail (P&L, duration, hands played, etc.).
 
+> Implemented (`10-api-design.md`'s `GET /api/v1/sessions`/`{sessionId}`): real for every session `sessions`/`session_hands` actually has a row for, which today means live-detected sessions only (`decisions/ADR-010-live-session-detection.md`) — hands imported by a plain historical/bulk import are never assigned to a session (that retroactive grouping algorithm is a separate, still-open question, `08-storage-strategy.md`), so Session History is empty until at least one Live Session has been started and ended. Not built this pass: the P&L-over-time curve, All-in Adjusted (EV — needs the still-undesigned hand-equity engine), Rake paid (needs `hero_rake_share`, deferred since the Import Engine), per-table "best table" breakdown, and Report export from a session row (belongs to Report Generation below).
+
 #### Report Generation
 
 Creating and exporting a formal report. Content is defined in two combined ways:

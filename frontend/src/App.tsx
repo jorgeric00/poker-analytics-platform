@@ -4,6 +4,7 @@ import { OverviewPage } from "./pages/OverviewPage";
 import { HandsPage } from "./pages/HandsPage";
 import { PlayersPage } from "./pages/PlayersPage";
 import { LiveSessionPage } from "./pages/LiveSessionPage";
+import { SessionHistoryPage } from "./pages/SessionHistoryPage";
 import { ImportPage } from "./pages/ImportPage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import "./theme.css";
@@ -24,7 +25,7 @@ function App() {
             <Route path="/hands" element={<HandsPage />} />
             <Route path="/players" element={<PlayersPage />} />
             <Route path="/statistics" element={<PlaceholderPage title="Statistics" />} />
-            <Route path="/session-history" element={<PlaceholderPage title="Session History" />} />
+            <Route path="/session-history" element={<SessionHistoryPage />} />
             <Route path="/reports" element={<PlaceholderPage title="Reports" />} />
             <Route path="/import" element={<ImportPage />} />
             <Route path="/settings" element={<PlaceholderPage title="Settings" />} />

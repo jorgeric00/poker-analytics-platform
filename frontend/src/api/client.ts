@@ -8,6 +8,8 @@ import type {
   PlayerDetailDto,
   PlayerListQuery,
   PlayerListResponse,
+  SessionDetailDto,
+  SessionListResponse,
   StatsQueryRequest,
   StatsQueryResponse,
   SystemMetaResponse,
@@ -71,6 +73,7 @@ export function fetchHands(query: HandListQuery): Promise<HandListResponse> {
   if (query.endedOnStreet?.length) params.set("endedOnStreet", query.endedOnStreet.join(","));
   if (query.showdownOnly != null) params.set("showdownOnly", String(query.showdownOnly));
   if (query.opponentPlayerId != null) params.set("opponentPlayerId", String(query.opponentPlayerId));
+  if (query.sessionId != null) params.set("sessionId", String(query.sessionId));
   params.set("page", String(query.page ?? 1));
   params.set("pageSize", String(query.pageSize ?? 50));
   if (query.sortDir) params.set("sortDir", query.sortDir);
@@ -124,4 +127,13 @@ export function startLiveSession(): Promise<LiveSessionStatusDto> {
 
 export function stopLiveSession(): Promise<LiveSessionStatusDto> {
   return request<LiveSessionStatusDto>("/api/v1/live-session/stop", { method: "POST" });
+}
+
+export function fetchSessions(page = 1, pageSize = 50): Promise<SessionListResponse> {
+  const params = new URLSearchParams({ page: String(page), pageSize: String(pageSize) });
+  return request<SessionListResponse>(`/api/v1/sessions?${params.toString()}`);
+}
+
+export function fetchSessionDetail(sessionId: number): Promise<SessionDetailDto> {
+  return request<SessionDetailDto>(`/api/v1/sessions/${sessionId}`);
 }

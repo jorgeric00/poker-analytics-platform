@@ -239,5 +239,5 @@ Reports → Report Generation (predefined templates, or exporting a saved Statis
 | Hands | QF-2, QF-3 | Table = QF-2; Replay/Detail row actions = QF-3 |
 | Players | QF-4, QF-5, QF-1 (scope=Opponent, breakdown=PlayerId for the list), QF-2 (opponent-filtered) | List uses QF-4 + QF-1; Profile composes QF-5 + QF-1 + QF-2 |
 | Statistics | QF-1 (user-chosen breakdown), QF-2 (drill-down), QF-9 | The screen itself is thin — it's a UI over QF-1's full parameter space, plus QF-9 for Saved Views |
-| Reports — Session History | QF-6, QF-7 | List = QF-6; row click-through = QF-7 (composite with QF-1) |
+| Reports — Session History | QF-6, QF-7 | List = QF-6; row click-through = QF-7. Implemented QF-7 does **not** compose with QF-1 as originally planned — reuses the Live Session module's own dedicated stats query instead, see `10-api-design.md`'s QF-7 section and `decisions/ADR-010-live-session-detection.md` point 5 |
 | Reports — Report Generation | QF-1, QF-2, QF-6, QF-9 (orchestrated, not a new family) | See "Not a family" note above |
