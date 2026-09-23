@@ -128,6 +128,36 @@ class Poker888ParserReferenceFixturesTest {
     }
 
     @Test
+    void parsesExactPlayerAndAmountOnKeyActions() throws IOException {
+        ParsedHand hand = Poker888Parser.parseFile(
+                FIXTURES_DIR.resolve("GameTypeTests/PotLimitOmahaHiLo.txt")).getFirst();
+
+        var smallBlind = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.POST_SMALL_BLIND).findFirst().orElseThrow();
+        assertEquals("vallemos50", smallBlind.player());
+        assertEquals(new BigDecimal("0.50"), smallBlind.amount());
+
+        var fold = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.FOLD).findFirst().orElseThrow();
+        assertEquals("vallemos50", fold.player());
+        assertEquals(null, fold.amount());
+
+        // hank1967 raises [$2] — already the cumulative total for the street, not an increment
+        // (verified against selkoe's own subsequent "calls [$1]": selkoe had posted the $1 big
+        // blind, so a $1 call means hank1967's total commitment is $1 + $1 = $2, matching the
+        // raise's stated amount exactly).
+        var raise = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.RAISE).findFirst().orElseThrow();
+        assertEquals("hank1967", raise.player());
+        assertEquals(new BigDecimal("2"), raise.amount());
+
+        var collected = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.COLLECTED).findFirst().orElseThrow();
+        assertEquals("selkoe", collected.player());
+        assertEquals(new BigDecimal("8.08"), collected.amount());
+    }
+
+    @Test
     void parsesAnIncompleteHandWithNoSummarySectionAtAll() throws IOException {
         ParsedHand hand = Poker888Parser.parseFile(
                 FIXTURES_DIR.resolve("ValidHandTests/InValidHand.txt")).getFirst();

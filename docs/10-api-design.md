@@ -229,8 +229,9 @@ Not covered by any query family — `06-query-catalog.md` explicitly scoped thos
 
 ### Imports
 
-- `POST /api/v1/imports` — body `{ "filePaths": ["C:\\...\\hand-history.txt"] }`. The frontend uses Tauri's native file-picker to get local paths and sends **paths, not file contents** — both processes run on the same machine with full filesystem access, so there's no reason to stream file bytes over the loopback socket.
+- `POST /api/v1/imports` — body `{ "filePaths": ["C:\\...\\hand-history.txt"] }`. The frontend uses Tauri's native file-picker to get local paths and sends **paths, not file contents** — both processes run on the same machine with full filesystem access, so there's no reason to stream file bytes over the loopback socket. No `room` field: each file's room is auto-detected from its own content (`com.pokeranalytics.importing.parser.RoomDetector`, sniffing the distinctive header/structure shape every room's hand-history text has), not requested from the caller — a deliberate choice so the frontend's import UX never needs a room picker.
 - **Asynchronous by design**: returns `202 Accepted` with `{ "importId": 501, "status": "PENDING" }` immediately, rather than blocking until parsing finishes. A bulk historical import (years of hands, per the architecture goal of supporting millions of hands) can run well past any of `06-query-catalog.md`'s latency tiers, all of which assume a bounded interactive action — an import is not one. The frontend polls (or a future version subscribes to) `GET /api/v1/imports/{importId}` for `{ status: "PENDING"|"RUNNING"|"SUCCESS"|"PARTIAL"|"FAILED", handCount, unparsedLineCount }`, mirroring `09-data-model.md`'s `import_history` table directly.
+- **Implemented so far**: synchronous, not async (see `ImportResponse`'s own doc for that deviation). Cash games only, but now every room the Import Engine's parsers cover — PokerStars, Winamax, PartyPoker, 888, iPoker, Winning Poker Network — not PokerStars-only as this endpoint originally shipped; tournament/Expresso formats stay unimported regardless of room (recognized and counted as skipped, not a room-detection gap).
 
 ### Hand Tags
 

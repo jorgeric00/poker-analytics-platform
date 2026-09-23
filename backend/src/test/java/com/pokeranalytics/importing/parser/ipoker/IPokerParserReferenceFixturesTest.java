@@ -117,4 +117,34 @@ class IPokerParserReferenceFixturesTest {
         // Board <cards> are suit-then-rank too: "C9 H10 H9" on the flop must flip to rank-then-suit.
         assertEquals(List.of("9c", "10h", "9h"), hand.board(0).subList(0, 3));
     }
+
+    @Test
+    void populatesExactPlayerAndAmountOnKeyActions() throws IOException {
+        ParsedHand hand = IPokerParser.parseFile(
+                FIXTURES_DIR.resolve("GameTypeTests/PotLimitOmaha.txt")).getFirst();
+
+        var smallBlind = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.POST_SMALL_BLIND).findFirst().orElseThrow();
+        assertEquals("Fishkopp55", smallBlind.player());
+        assertEquals(new BigDecimal("0.50"), smallBlind.amount());
+
+        var fold = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.FOLD && "Shoebomber89".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(null, fold.amount());
+
+        // Fishkopp55 raises to a cumulative €3 (sum="€3" IS the street total, not an increment —
+        // confirmed by whatyearisthis's own following call of exactly €2 on top of their €1 BB).
+        var raise = hand.actions.stream().filter(a -> a.type() == HandActionType.RAISE).findFirst().orElseThrow();
+        assertEquals("Fishkopp55", raise.player());
+        assertEquals(new BigDecimal("3"), raise.amount());
+
+        var call = hand.actions.stream().filter(a -> a.type() == HandActionType.CALL).findFirst().orElseThrow();
+        assertEquals("whatyearisthis", call.player());
+        assertEquals(new BigDecimal("2"), call.amount());
+
+        var collected = hand.actions.stream().filter(a -> a.type() == HandActionType.COLLECTED).findFirst().orElseThrow();
+        assertEquals("Fishkopp55", collected.player());
+        assertEquals(new BigDecimal("9.90"), collected.amount());
+    }
 }

@@ -48,8 +48,9 @@ export function ImportPage() {
 
       <div className="panel">
         <p className="placeholder-note" style={{ margin: 0 }}>
-          PokerStars cash only, for now — one absolute file path per line (see
-          docs/11-development-tracking.md for the Import Engine's current room coverage).
+          Cash games only, for now — PokerStars, Winamax, PartyPoker, 888, iPoker, Winning Poker
+          Network. The room is auto-detected from each file's own content, one absolute file path
+          per line (see docs/11-development-tracking.md for the Import Engine's current coverage).
         </p>
         <form onSubmit={handleImport} className="import-form">
           <textarea

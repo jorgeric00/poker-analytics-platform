@@ -122,4 +122,39 @@ class WinamaxParserReferenceFixturesTest {
         SummarySeat untaggedWinner = noTagHand.summarySeats.getFirst();
         assertNull(untaggedWinner.positionTag());
     }
+
+    @Test
+    void actionsCarryExactPlayerAndAmount() throws IOException {
+        // HandActionTests/3BetHand.txt: totti6720 posts SB 0.25, titi250 posts BB 0.50, sined20
+        // folds, fanf4K UR0 raises to 1.25, totti6720 3-bets to 3.25, titi250 folds, fanf4K UR0
+        // calls 2 (the incremental top-up to 3.25, not a second cumulative total), totti6720 bets
+        // 4.70 on the flop, fanf4K UR0 folds, totti6720 collects 11.24 from pot.
+        ParsedHand hand = WinamaxParser.parseFile(FIXTURES_DIR.resolve("HandActionTests/3BetHand.txt")).getFirst();
+
+        var smallBlind = hand.actions.stream().filter(a -> a.type() == HandActionType.POST_SMALL_BLIND)
+                .findFirst().orElseThrow();
+        assertEquals("totti6720", smallBlind.player());
+        assertEquals(new BigDecimal("0.25"), smallBlind.amount());
+
+        var fold = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.FOLD && "sined20".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertNull(fold.amount());
+
+        // The second raise ("totti6720 raises 2€ to 3.25€") — the recorded amount must be the
+        // cumulative total (3.25), not the 2€ increment.
+        var raise = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.RAISE && "totti6720".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("3.25"), raise.amount());
+
+        var call = hand.actions.stream().filter(a -> a.type() == HandActionType.CALL).findFirst().orElseThrow();
+        assertEquals("fanf4K UR0", call.player());
+        assertEquals(new BigDecimal("2"), call.amount());
+
+        var collected = hand.actions.stream().filter(a -> a.type() == HandActionType.COLLECTED)
+                .findFirst().orElseThrow();
+        assertEquals("totti6720", collected.player());
+        assertEquals(new BigDecimal("11.24"), collected.amount());
+    }
 }

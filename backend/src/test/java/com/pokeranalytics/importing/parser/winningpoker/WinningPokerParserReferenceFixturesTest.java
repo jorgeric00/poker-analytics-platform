@@ -1,7 +1,9 @@
 package com.pokeranalytics.importing.parser.winningpoker;
 
+import com.pokeranalytics.importing.model.HandAction;
 import com.pokeranalytics.importing.model.HandActionType;
 import com.pokeranalytics.importing.model.ParsedHand;
+import com.pokeranalytics.importing.model.Street;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -129,5 +131,50 @@ class WinningPokerParserReferenceFixturesTest {
 
         assertTrue(hand.unparsedLines.isEmpty());
         assertNotNull(hand.smallBlind);
+    }
+
+    @Test
+    void raiseAndAllInAmountsAreConvertedFromIncrementToCumulativeStreetTotal() throws IOException {
+        // Unlike every other room ported so far, this room's "raises (X)"/"allin (X)" wording
+        // states the increment on top of the player's own prior contribution that street, not a
+        // cumulative "to Y" total — this fixture (2/4 blinds, three preflop raises then a flop
+        // bet/all-in/call) is exactly the multi-raise, multi-street case that distinguishes the
+        // two interpretations, cross-checked by hand against the following calls and the summary's
+        // own final "Bets:" totals.
+        ParsedHand hand = WinningPokerParser.parseFile(
+                FIXTURES_DIR.resolve("HandActionTests/AllInHandWithShowdown.txt")).getFirst();
+
+        HandAction firstRaise = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.RAISE && "do not-call".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("12"), firstRaise.amount(), "SB(2) + raises(10) should be cumulative 12");
+
+        HandAction secondRaise = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.RAISE && "digbick30".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("36"), secondRaise.amount(), "BB(4) + raises(32) should be cumulative 36");
+
+        HandAction call = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.CALL && "do not-call".equals(a.player())
+                        && a.street() == Street.PREFLOP)
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("24"), call.amount(), "36 (raiser's total) - 12 (caller's own prior) = 24");
+
+        HandAction allIn = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.ALL_IN)
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("124"), allIn.amount(), "fresh flop street: 0 + allin(124) is cumulative 124");
+
+        HandAction flopCall = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.CALL && a.street() == Street.FLOP)
+                .findFirst().orElseThrow();
+        assertEquals(new BigDecimal("53"), flopCall.amount(), "124 (all-in total) - 71 (caller's own bet) = 53");
+
+        HandAction collected = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.COLLECTED)
+                .findFirst().orElseThrow();
+        assertEquals("do not-call", collected.player());
+        assertEquals(new BigDecimal("319"), collected.amount(), "summary's own Collects: value, synthesized here"
+                + " since this room never states a plain collected-from-pot action line");
     }
 }

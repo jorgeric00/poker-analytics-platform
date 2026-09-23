@@ -142,9 +142,11 @@ public final class WinamaxParser {
                 } else if (PRE_FLOP_MARKER.matcher(line).matches()) {
                     // section marker only, nothing to extract
                 } else if ((m = POST_SB.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_BLIND, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_SMALL_BLIND, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if ((m = POST_BB.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.POST_BIG_BLIND, line));
+                    hand.actions.add(new HandAction(street, HandActionType.POST_BIG_BLIND, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
                 } else if ((m = DEALT.matcher(line)).matches()) {
                     hand.heroName = m.group(1).trim();
                     hand.heroHoleCards = List.of(m.group(2).trim().split("\\s+"));
@@ -161,20 +163,26 @@ public final class WinamaxParser {
                     street = Street.SHOWDOWN;
                 } else if (SUMMARY_MARKER.matcher(line).matches()) {
                     inSummary = true;
-                } else if (ACTION_FOLD.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.FOLD, line));
-                } else if (ACTION_CHECK.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.CHECK, line));
-                } else if (ACTION_CALL.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.CALL, line));
-                } else if (ACTION_BET.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.BET, line));
-                } else if (ACTION_RAISE.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.RAISE, line));
-                } else if (COLLECTED.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED, line));
-                } else if (SHOWS.matcher(line).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line));
+                } else if ((m = ACTION_FOLD.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.FOLD, line, m.group(1).trim(), null));
+                } else if ((m = ACTION_CHECK.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.CHECK, line, m.group(1).trim(), null));
+                } else if ((m = ACTION_CALL.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.CALL, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = ACTION_BET.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.BET, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = ACTION_RAISE.matcher(line)).matches()) {
+                    // group(2) is the raise increment ("raises X to Y"); the recorded amount is the
+                    // resulting cumulative total (group 3), matching PokerStarsParser's convention.
+                    hand.actions.add(new HandAction(street, HandActionType.RAISE, line,
+                            m.group(1).trim(), parseMoney(m.group(3)).amount()));
+                } else if ((m = COLLECTED.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.COLLECTED, line,
+                            m.group(1).trim(), parseMoney(m.group(2)).amount()));
+                } else if ((m = SHOWS.matcher(line)).matches()) {
+                    hand.actions.add(new HandAction(street, HandActionType.SHOWS, line, m.group(1).trim(), null));
                 } else {
                     hand.unparsedLines.add(line);
                 }

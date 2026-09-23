@@ -19,7 +19,13 @@ import com.pokeranalytics.api.dto.ImportResponse;
 import com.pokeranalytics.importing.engine.HandImportService;
 import com.pokeranalytics.importing.engine.ImportResult;
 import com.pokeranalytics.importing.model.ParsedHand;
+import com.pokeranalytics.importing.parser.RoomDetector;
+import com.pokeranalytics.importing.parser.ipoker.IPokerParser;
+import com.pokeranalytics.importing.parser.partypoker.PartyPokerParser;
+import com.pokeranalytics.importing.parser.poker888.Poker888Parser;
 import com.pokeranalytics.importing.parser.pokerstars.PokerStarsParser;
+import com.pokeranalytics.importing.parser.winamax.WinamaxParser;
+import com.pokeranalytics.importing.parser.winningpoker.WinningPokerParser;
 
 /** docs/10-api-design.md's Imports endpoint — see {@link ImportResponse}'s doc for the one
  *  deliberate deviation (synchronous, not async) from that document as written. */
@@ -55,16 +61,32 @@ public class ImportController {
             throw new ApiException(HttpStatus.BAD_REQUEST, "FILE_NOT_FOUND", "No such file: " + filePath);
         }
 
+        String room;
         List<ParsedHand> hands;
         try {
-            // PokerStars only — see HandImportService's own class doc (no room detection yet).
-            hands = PokerStarsParser.parseFile(path);
+            room = RoomDetector.detect(path);
+            hands = parseFile(room, path);
         } catch (IOException e) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "UNREADABLE_FILE", "Could not read " + filePath + ": " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, "UNRECOGNIZED_ROOM", e.getMessage());
         }
 
-        ImportResult result = importService.importHands(hands, "PokerStars", filePath);
+        ImportResult result = importService.importHands(hands, room, filePath);
         return new FileImportResult(filePath, result.handsImported(), result.handsSkipped(),
                 result.handsFailed(), result.unparsedLineCount(), result.status());
+    }
+
+    /** Dispatches to the room's own parser once {@link RoomDetector} has named it. */
+    private static List<ParsedHand> parseFile(String room, Path path) throws IOException {
+        return switch (room) {
+            case "PokerStars" -> PokerStarsParser.parseFile(path);
+            case "Winamax" -> WinamaxParser.parseFile(path);
+            case "PartyPoker" -> PartyPokerParser.parseFile(path);
+            case "888" -> Poker888Parser.parseFile(path);
+            case "iPoker" -> IPokerParser.parseFile(path);
+            case "WinningPoker" -> WinningPokerParser.parseFile(path);
+            default -> throw new IllegalArgumentException("No parser wired up for detected room '" + room + "'");
+        };
     }
 }

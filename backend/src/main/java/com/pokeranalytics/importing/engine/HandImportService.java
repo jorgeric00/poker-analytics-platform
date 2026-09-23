@@ -23,21 +23,31 @@ import com.pokeranalytics.importing.model.SummarySeat;
  * Persists {@link ParsedHand}s into the DuckDB schema (docs/09-data-model.md) and logs the
  * import into SQLite's {@code import_history} (docs/08-storage-strategy.md's Update Strategy).
  *
- * <p><b>PokerStars cash only, for now</b> — the same tiered, one-room-at-a-time rollout already
- * used for the parser itself (docs/11-development-tracking.md). Every other room's actions still
- * carry {@code null} {@code player}/{@code amount} (see {@link com.pokeranalytics.importing.model.HandAction}),
- * which the {@code actions} table's {@code NOT NULL} columns would reject outright — rather than
- * let that surface as an opaque constraint-violation exception, hands from an unrecognized room
- * are rejected up front with a clear message. Tournament hands are recognized but skipped (see
- * {@link ImportResult#handsSkipped()}): {@code ParsedHand} doesn't capture a tournament id today,
- * and {@code hands.currency} is never set on the tournament header branch (chip-denominated, not
- * currency) — both are follow-ups, not silent data loss (skipped hands are counted, not dropped
- * unnoticed).
+ * <p><b>Cash games, every room, now</b> — extended from the original PokerStars-only slice once
+ * every room's parser started populating {@code HandAction.player}/{@code amount} (see
+ * {@link com.pokeranalytics.importing.model.HandAction}), which the {@code actions} table's
+ * {@code NOT NULL} columns require. {@link #ROOM_ENUM_BY_SITE_NAME} maps each {@code
+ * ParsedHand.siteName} a parser already sets to the DuckDB {@code room_t} enum value — a hand from
+ * a room this map doesn't recognize is rejected up front with a clear message, rather than
+ * surfacing as an opaque constraint-violation exception. Tournament hands are recognized but
+ * skipped (see {@link ImportResult#handsSkipped()}) for every room, same as before: {@code
+ * ParsedHand} doesn't capture a tournament id today, and {@code hands.currency} is never set on
+ * the tournament header branch (chip-denominated, not currency) — both are follow-ups, not silent
+ * data loss (skipped hands are counted, not dropped unnoticed).
  */
 @Service
 public class HandImportService {
 
     private static final Logger log = LoggerFactory.getLogger(HandImportService.class);
+
+    /** {@code ParsedHand.siteName} (each parser's own display name) -> {@code room_t} enum value. */
+    private static final Map<String, String> ROOM_ENUM_BY_SITE_NAME = Map.of(
+            "PokerStars", "POKERSTARS",
+            "Winamax", "WINAMAX",
+            "PartyPoker", "PARTYPOKER",
+            "888", "POKER888",
+            "iPoker", "IPOKER",
+            "WinningPoker", "WINNINGPOKER");
 
     private final JdbcTemplate duckDb;
     private final JdbcTemplate sqlite;
@@ -54,11 +64,6 @@ public class HandImportService {
     }
 
     public ImportResult importHands(List<ParsedHand> hands, String room, String filePath) {
-        if (!"PokerStars".equals(room)) {
-            throw new IllegalArgumentException(
-                    "Import Engine only supports PokerStars so far (got '" + room + "') — see class doc");
-        }
-
         PlayerResolver players = new PlayerResolver(duckDb);
         int imported = 0;
         int skipped = 0;
@@ -94,7 +99,11 @@ public class HandImportService {
     }
 
     private void importOneHand(ParsedHand hand, PlayerResolver players) {
-        String roomEnum = "POKERSTARS";
+        String roomEnum = ROOM_ENUM_BY_SITE_NAME.get(hand.siteName);
+        if (roomEnum == null) {
+            throw new IllegalArgumentException(
+                    "Import Engine does not recognize room '" + hand.siteName + "' — see class doc");
+        }
         // Delete and insert are deliberately two separate transactions, not one: DuckDB has a known
         // bug/limitation deleting a parent row in the same transaction as the child-row deletes that
         // clear its foreign-key references (github.com/duckdb/duckdb issues #4309/#25388 — "Violates

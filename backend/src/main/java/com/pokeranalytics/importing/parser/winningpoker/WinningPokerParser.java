@@ -158,6 +158,15 @@ public final class WinningPokerParser {
         Street street = Street.PREFLOP;
         boolean inSummary = false;
         List<String> heroCards = new ArrayList<>();
+        // This room's own raise/all-in wording states the increment added on top of the player's
+        // own prior contribution *this street*, not (unlike every other room ported so far) a
+        // cumulative "to Y" total — verified against a real 3-raise multi-street fixture
+        // (HandActionTests/AllInHandWithShowdown.txt: each raise/all-in's stated amount plus the
+        // acting player's own prior street contribution exactly matches what the next caller pays,
+        // and the hand's final per-player "Bets:" totals in the summary confirm it end to end).
+        // Tracked here and converted to the cumulative total this module's actions table requires,
+        // reset at every street change, same convention {@code hand_net_results} already relies on.
+        Map<String, BigDecimal> streetContribution = new HashMap<>();
 
         for (String rawLine : rawLines) {
             String line = rawLine.trim();
@@ -182,15 +191,20 @@ public final class WinningPokerParser {
                     // already recorded in the first pass above
                 } else if ((m = STREET_FLOP.matcher(line)).matches()) {
                     street = Street.FLOP;
+                    streetContribution.clear();
                     hand.board(0).addAll(List.of(m.group(1).trim().split("\\s+")));
                 } else if ((m = STREET_TURN.matcher(line)).matches()) {
                     street = Street.TURN;
+                    streetContribution.clear();
                     hand.board(0).add(m.group(1).trim());
                 } else if ((m = STREET_RIVER.matcher(line)).matches()) {
                     street = Street.RIVER;
+                    streetContribution.clear();
                     hand.board(0).add(m.group(1).trim());
                 } else if ((m = UNCALLED.matcher(line)).matches()) {
-                    hand.actions.add(new HandAction(street, HandActionType.UNCALLED_RETURN, line));
+                    // amount-then-player, the reverse of every other pattern here.
+                    hand.actions.add(new HandAction(street, HandActionType.UNCALLED_RETURN, line,
+                            m.group(2).trim(), new BigDecimal(m.group(1))));
                 } else if (EMPTY_NAME_TIMED_OUT.matcher(line).matches()
                         || EMPTY_NAME_SITTING_OUT.matcher(line).matches()) {
                     // anonymized/system placeholder — recognized, not tied to any seated player
@@ -203,39 +217,64 @@ public final class WinningPokerParser {
                         continue;
                     }
                     String suffix = nameMatch.suffix;
+                    String name = nameMatch.name;
+                    Matcher sm;
                     if (SUFFIX_FOLD.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.FOLD, line));
+                        hand.actions.add(new HandAction(street, HandActionType.FOLD, line, name, null));
                     } else if (SUFFIX_CHECK.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.CHECK, line));
-                    } else if (SUFFIX_CALL.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.CALL, line));
-                    } else if (SUFFIX_RAISE.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.RAISE, line));
-                    } else if (SUFFIX_BET.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.BET, line));
-                    } else if (SUFFIX_ALL_IN.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.ALL_IN, line));
-                    } else if (SUFFIX_POST_SB.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_SMALL_BLIND, line));
-                    } else if (SUFFIX_POST_BB.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_BIG_BLIND, line));
-                    } else if (SUFFIX_POST_DEAD.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_DEAD_BLIND, line));
-                    } else if (SUFFIX_POSTS.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POSTS, line));
-                    } else if (SUFFIX_STRADDLE.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.STRADDLE, line));
+                        hand.actions.add(new HandAction(street, HandActionType.CHECK, line, name, null));
+                    } else if ((sm = SUFFIX_CALL.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(street, HandActionType.CALL, line, name, amount));
+                    } else if ((sm = SUFFIX_RAISE.matcher(suffix)).matches()) {
+                        BigDecimal cumulative = streetContribution.getOrDefault(name, BigDecimal.ZERO)
+                                .add(new BigDecimal(sm.group(1)));
+                        streetContribution.put(name, cumulative);
+                        hand.actions.add(new HandAction(street, HandActionType.RAISE, line, name, cumulative));
+                    } else if ((sm = SUFFIX_BET.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(street, HandActionType.BET, line, name, amount));
+                    } else if ((sm = SUFFIX_ALL_IN.matcher(suffix)).matches()) {
+                        // Same cumulative-conversion rule as RAISE above — an all-in shove over an
+                        // existing bet is a raise in substance, and when there's no prior street
+                        // contribution the formula still reduces to the plain shove amount.
+                        BigDecimal cumulative = streetContribution.getOrDefault(name, BigDecimal.ZERO)
+                                .add(new BigDecimal(sm.group(1)));
+                        streetContribution.put(name, cumulative);
+                        hand.actions.add(new HandAction(street, HandActionType.ALL_IN, line, name, cumulative));
+                    } else if ((sm = SUFFIX_POST_SB.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_SMALL_BLIND, line, name, amount));
+                    } else if ((sm = SUFFIX_POST_BB.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_BIG_BLIND, line, name, amount));
+                    } else if ((sm = SUFFIX_POST_DEAD.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_DEAD_BLIND, line, name, amount));
+                    } else if ((sm = SUFFIX_POSTS.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POSTS, line, name, amount));
+                    } else if ((sm = SUFFIX_STRADDLE.matcher(suffix)).matches()) {
+                        BigDecimal amount = new BigDecimal(sm.group(1));
+                        streetContribution.merge(name, amount, BigDecimal::add);
+                        hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.STRADDLE, line, name, amount));
                     } else if (SUFFIX_SITTING_OUT.matcher(suffix).matches()
                             || SUFFIX_WAIT_BB.matcher(suffix).matches()
                             || SUFFIX_RECEIVED_BLANK.matcher(suffix).matches()) {
                         // table/session noise — recognized, intentionally not recorded as a hand action
                     } else if (SUFFIX_TIMED_OUT.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.CONNECTION_STATUS, line));
+                        hand.actions.add(new HandAction(street, HandActionType.CONNECTION_STATUS, line, name, null));
                     } else if ((m = SUFFIX_RECEIVED_KNOWN.matcher(suffix)).matches()) {
                         hand.heroName = nameMatch.name;
                         heroCards.add(m.group(1));
                     } else if (SUFFIX_MUCKS.matcher(suffix).matches()) {
-                        hand.actions.add(new HandAction(street, HandActionType.MUCKS, line));
+                        hand.actions.add(new HandAction(street, HandActionType.MUCKS, line, name, null));
                     } else {
                         hand.unparsedLines.add(line);
                     }
@@ -251,13 +290,13 @@ public final class WinningPokerParser {
                     board.clear();
                     board.addAll(List.of(m.group(1).trim().split("\\s+")));
                 } else if ((m = SUMMARY_MUCKS.matcher(line)).matches()) {
-                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.MUCKS, line);
+                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.MUCKS, line, new BigDecimal(m.group(4)));
                 } else if ((m = SUMMARY_MUCKS_WITH_CARDS.matcher(line)).matches()) {
-                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.MUCKS, line);
+                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.MUCKS, line, new BigDecimal(m.group(5)));
                 } else if ((m = SUMMARY_SHOWS.matcher(line)).matches()) {
-                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.SHOWS, line);
+                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.SHOWS, line, new BigDecimal(m.group(6)));
                 } else if ((m = SUMMARY_DOESNT_SHOW.matcher(line)).matches()) {
-                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.DOESNT_SHOW, line);
+                    addSummaryOutcome(hand, seatByName, m.group(2), HandActionType.DOESNT_SHOW, line, new BigDecimal(m.group(4)));
                 } else if (GAME_ENDED.matcher(line).matches()) {
                     // end-of-hand marker only, nothing to extract
                 } else {
@@ -273,8 +312,21 @@ public final class WinningPokerParser {
     }
 
     private static void addSummaryOutcome(ParsedHand hand, Map<String, Integer> seatByName, String playerName,
-            HandActionType type, String rawLine) {
-        hand.actions.add(new HandAction(Street.SHOWDOWN, type, rawLine));
+            HandActionType type, String rawLine, BigDecimal collects) {
+        if (playerName.isBlank()) {
+            // The same anonymized/system placeholder EMPTY_NAME_TIMED_OUT/EMPTY_NAME_SITTING_OUT
+            // already exclude from in-hand actions — its summary-section echo isn't a real seated
+            // player either, so it gets the same treatment: recognized, not recorded.
+            return;
+        }
+        hand.actions.add(new HandAction(Street.SHOWDOWN, type, rawLine, playerName, null));
+        // This room never states a "collected"/"wins from pot" action line anywhere else in the
+        // text (see class doc) — the summary's own "Collects: N" is the only place the actual
+        // amount a player took from the pot appears, so it becomes its own COLLECTED action here,
+        // the same fact every other room's parser records directly from an in-hand action line.
+        if (collects.compareTo(BigDecimal.ZERO) > 0) {
+            hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.COLLECTED, rawLine, playerName, collects));
+        }
         Integer seatNumber = seatByName.get(playerName);
         if (seatNumber != null) {
             hand.summarySeats.add(new SummarySeat(seatNumber, playerName, null, rawLine));

@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -136,6 +138,15 @@ public final class Poker888Parser {
         hand.currency = "USD";
         Street street = Street.PREFLOP;
         BigDecimal totalPot = BigDecimal.ZERO;
+        // Unlike PokerStars/Winamax's explicit "raises X to Y", this room's "raises [$X]" states
+        // only the increment added on top of the player's own prior contribution that street, not
+        // a cumulative total — verified against a real fixture with a nonzero prior (GameTypeTests/
+        // FixedLimitHoldem.txt: jou888369jou's SB(0.5) + raises[1.40] must reach 1.90 for
+        // DieZizi10's following calls[0.90] — its own BB(1) + 0.90 — to correctly match; reading
+        // 1.40 as a cumulative total instead would leave the two callers' amounts inconsistent).
+        // Converted here to the cumulative total this module's actions table requires, reset at
+        // every street change, same convention hand_net_results already relies on.
+        Map<String, BigDecimal> streetContribution = new HashMap<>();
 
         for (String rawLine : rawLines) {
             String line = rawLine.trim();
@@ -165,12 +176,18 @@ public final class Poker888Parser {
                 hand.seats.add(new Seat(Integer.parseInt(m.group(1)), m.group(2).trim(),
                         parseAmount(m.group(3)), "USD", null));
             } else if ((m = POST_DEAD_BLIND.matcher(line)).matches()) {
-                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_DEAD_BLIND, line));
+                BigDecimal deadBlindAmount = parseAmount(m.group(2)).add(parseAmount(m.group(3)));
+                streetContribution.merge(m.group(1).trim(), deadBlindAmount, BigDecimal::add);
+                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_DEAD_BLIND, line,
+                        m.group(1).trim(), deadBlindAmount));
             } else if ((m = POST_SB.matcher(line)).matches()) {
                 if (hand.smallBlind == null) {
                     hand.smallBlind = parseAmount(m.group(2));
                 }
-                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_SMALL_BLIND, line));
+                BigDecimal sbAmount = parseAmount(m.group(2));
+                streetContribution.merge(m.group(1).trim(), sbAmount, BigDecimal::add);
+                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_SMALL_BLIND, line,
+                        m.group(1).trim(), sbAmount));
             } else if ((m = POST_BB.matcher(line)).matches()) {
                 // First "posts big blind" in a hand is always the real one; a late/re-entering
                 // player's own catch-up post (worded identically, not as "posts dead blind") comes
@@ -178,7 +195,10 @@ public final class Poker888Parser {
                 if (hand.bigBlind == null) {
                     hand.bigBlind = parseAmount(m.group(2));
                 }
-                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_BIG_BLIND, line));
+                BigDecimal bbAmount = parseAmount(m.group(2));
+                streetContribution.merge(m.group(1).trim(), bbAmount, BigDecimal::add);
+                hand.actions.add(new HandAction(Street.PREFLOP, HandActionType.POST_BIG_BLIND, line,
+                        m.group(1).trim(), bbAmount));
             } else if (DEALING_DOWN_MARKER.matcher(line).matches()) {
                 // section marker only, nothing to extract
             } else if ((m = DEALT.matcher(line)).matches()) {
@@ -186,36 +206,49 @@ public final class Poker888Parser {
                 hand.heroHoleCards = List.of(m.group(2).replace(",", "").trim().split("\\s+"));
             } else if ((m = FLOP.matcher(line)).matches()) {
                 street = Street.FLOP;
+                streetContribution.clear();
                 hand.board(0).addAll(List.of(m.group(1).replace(",", "").trim().split("\\s+")));
             } else if ((m = TURN.matcher(line)).matches()) {
                 street = Street.TURN;
+                streetContribution.clear();
                 hand.board(0).add(m.group(1).replace(",", "").trim());
             } else if ((m = RIVER.matcher(line)).matches()) {
                 street = Street.RIVER;
+                streetContribution.clear();
                 hand.board(0).add(m.group(1).replace(",", "").trim());
             } else if (SUMMARY_MARKER.matcher(line).matches()) {
                 street = Street.SHOWDOWN;
-            } else if (ACTION_FOLD.matcher(line).matches()) {
-                hand.actions.add(new HandAction(street, HandActionType.FOLD, line));
-            } else if (ACTION_CHECK.matcher(line).matches()) {
-                hand.actions.add(new HandAction(street, HandActionType.CHECK, line));
-            } else if (ACTION_CALL.matcher(line).matches()) {
-                hand.actions.add(new HandAction(street, HandActionType.CALL, line));
-            } else if (ACTION_BET.matcher(line).matches()) {
-                hand.actions.add(new HandAction(street, HandActionType.BET, line));
-            } else if (ACTION_RAISE.matcher(line).matches()) {
-                hand.actions.add(new HandAction(street, HandActionType.RAISE, line));
-            } else if (DOESNT_SHOW.matcher(line).matches()) {
-                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.DOESNT_SHOW, line));
-            } else if (MUCKS.matcher(line).matches()) {
-                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.MUCKS, line));
-            } else if (SHOWS.matcher(line).matches()) {
-                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.SHOWS, line));
+            } else if ((m = ACTION_FOLD.matcher(line)).matches()) {
+                hand.actions.add(new HandAction(street, HandActionType.FOLD, line, m.group(1).trim(), null));
+            } else if ((m = ACTION_CHECK.matcher(line)).matches()) {
+                hand.actions.add(new HandAction(street, HandActionType.CHECK, line, m.group(1).trim(), null));
+            } else if ((m = ACTION_CALL.matcher(line)).matches()) {
+                BigDecimal callAmount = parseAmount(m.group(2));
+                streetContribution.merge(m.group(1).trim(), callAmount, BigDecimal::add);
+                hand.actions.add(new HandAction(street, HandActionType.CALL, line,
+                        m.group(1).trim(), callAmount));
+            } else if ((m = ACTION_BET.matcher(line)).matches()) {
+                BigDecimal betAmount = parseAmount(m.group(2));
+                streetContribution.merge(m.group(1).trim(), betAmount, BigDecimal::add);
+                hand.actions.add(new HandAction(street, HandActionType.BET, line,
+                        m.group(1).trim(), betAmount));
+            } else if ((m = ACTION_RAISE.matcher(line)).matches()) {
+                String raiser = m.group(1).trim();
+                BigDecimal cumulative = streetContribution.getOrDefault(raiser, BigDecimal.ZERO).add(parseAmount(m.group(2)));
+                streetContribution.put(raiser, cumulative);
+                hand.actions.add(new HandAction(street, HandActionType.RAISE, line, raiser, cumulative));
+            } else if ((m = DOESNT_SHOW.matcher(line)).matches()) {
+                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.DOESNT_SHOW, line, m.group(1).trim(), null));
+            } else if ((m = MUCKS.matcher(line)).matches()) {
+                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.MUCKS, line, m.group(1).trim(), null));
+            } else if ((m = SHOWS.matcher(line)).matches()) {
+                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.SHOWS, line, m.group(1).trim(), null));
             } else if (HI_LO_DESCRIPTION.matcher(line).matches()) {
                 // Omaha Hi/Lo hand-description line following a "shows" — informational only
             } else if ((m = COLLECTED.matcher(line)).matches()) {
-                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.COLLECTED, line));
-                totalPot = totalPot.add(parseAmount(m.group(2)));
+                BigDecimal collected = parseAmount(m.group(2));
+                hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.COLLECTED, line, m.group(1).trim(), collected));
+                totalPot = totalPot.add(collected);
             } else {
                 hand.unparsedLines.add(line);
             }

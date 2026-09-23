@@ -132,7 +132,13 @@ public final class IPokerParser {
         Element sessionGeneral = (Element) doc.getElementsByTagName("general").item(0);
         hand.tableName = childText(sessionGeneral, "tablename");
         hand.gameType = childText(sessionGeneral, "gametype");
-        hand.currency = childText(sessionGeneral, "tablecurrency");
+        // Usually tablecurrency (currency is often left blank alongside a real tablecurrency, see
+        // the class doc's Pocket-cards note for the same "some fields just aren't populated" shape)
+        // — but at least one real-world export shape has it the other way around: tablecurrency
+        // absent entirely, currency populated. Prefer tablecurrency, fall back to currency.
+        String tableCurrency = childText(sessionGeneral, "tablecurrency");
+        hand.currency = (tableCurrency != null && !tableCurrency.isBlank())
+                ? tableCurrency : childText(sessionGeneral, "currency");
         String nickname = childText(sessionGeneral, "nickname");
         if (nickname != null && !nickname.isBlank() && !nickname.equals("N/A")) {
             hand.heroName = nickname;
@@ -159,6 +165,11 @@ public final class IPokerParser {
                 winByName.put(name, win);
             }
         }
+        // This room's XML never states the table's true seat capacity anywhere (no "seats"/"max"
+        // attribute on <general> or <tablename> across any sample seen) — the number of players
+        // actually dealt into this hand is the best available proxy, same honest-degradation
+        // pattern as 888's own "0 when the table line omits it" (docs/11-development-tracking.md).
+        hand.maxSeats = hand.seats.size();
 
         List<RawAction> rawActions = new ArrayList<>();
         NodeList roundNodes = game.getElementsByTagName("round");
@@ -175,7 +186,25 @@ public final class IPokerParser {
         }
         rawActions.sort(Comparator.comparingInt(RawAction::no));
 
+        // type=23 (RAISE) states the player's cumulative total for the street (verified: Fishkopp55
+        // raises to sum=3 after posting a 0.50 SB, and whatyearisthis's own following call of
+        // exactly 2 on top of their 1 BB only works out if 3 is Fishkopp's full total, not an
+        // increment). type=6/7 (ALL_IN) is genuinely different — an increment, same as CALL/BET:
+        // verified against a real 3-bet fixture (HandActionTests/3BetHand.txt) where killAA007
+        // posts a 0.10 BB, raises to sum=1.20, then goes all-in for sum=5.88 — only reading 5.88 as
+        // an increment on top of the 1.20 (reaching 7.08, plus the 0.02 ante = exactly their whole
+        // €7.10 stack) is consistent with "all-in"; reading it as a new cumulative total of 5.88
+        // would leave them with €1.20 still behind, contradicting the action's own name. Converted
+        // here to the cumulative total this module's actions table requires, reset at every street
+        // change, same convention hand_net_results already relies on.
+        Map<String, BigDecimal> streetContribution = new HashMap<>();
+        Street trackedStreet = null;
+
         for (RawAction raw : rawActions) {
+            if (raw.street != trackedStreet) {
+                streetContribution.clear();
+                trackedStreet = raw.street;
+            }
             String rawLine = "<action no=\"" + raw.no + "\" player=\"" + raw.player + "\" type=\"" + raw.typeCode
                     + "\" sum=\"" + raw.sum + "\" />";
             HandActionType type = switch (raw.typeCode) {
@@ -197,7 +226,20 @@ public final class IPokerParser {
                 }
                 continue;
             }
-            hand.actions.add(new HandAction(raw.street, type, rawLine));
+            BigDecimal amount;
+            if (type == HandActionType.FOLD || type == HandActionType.CHECK) {
+                amount = null;
+            } else if (type == HandActionType.RAISE) {
+                amount = parseAmount(raw.sum); // already cumulative, see comment above
+                streetContribution.put(raw.player, amount);
+            } else if (type == HandActionType.ALL_IN) {
+                amount = streetContribution.getOrDefault(raw.player, BigDecimal.ZERO).add(parseAmount(raw.sum));
+                streetContribution.put(raw.player, amount);
+            } else {
+                amount = parseAmount(raw.sum);
+                streetContribution.merge(raw.player, amount, BigDecimal::add);
+            }
+            hand.actions.add(new HandAction(raw.street, type, rawLine, raw.player, amount));
         }
 
         reclassifyLateBigBlindPosts(hand);
@@ -226,7 +268,8 @@ public final class IPokerParser {
                         String player = cards.getAttribute("player");
                         List<String> shownCards = flipCards(text);
                         hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.SHOWS,
-                                "<cards type=\"Pocket\" player=\"" + player + "\">" + text + "</cards>"));
+                                "<cards type=\"Pocket\" player=\"" + player + "\">" + text + "</cards>",
+                                player, null));
                         if (player.equals(hand.heroName)) {
                             hand.heroHoleCards = shownCards;
                         }
@@ -238,7 +281,8 @@ public final class IPokerParser {
 
         for (Map.Entry<String, BigDecimal> win : winByName.entrySet()) {
             hand.actions.add(new HandAction(Street.SHOWDOWN, HandActionType.COLLECTED,
-                    "player=\"" + win.getKey() + "\" win=\"" + win.getValue() + "\""));
+                    "player=\"" + win.getKey() + "\" win=\"" + win.getValue() + "\"",
+                    win.getKey(), win.getValue()));
         }
         hand.totalPot = winByName.values().stream().reduce(BigDecimal.ZERO, BigDecimal::add);
 
@@ -262,7 +306,8 @@ public final class IPokerParser {
             if (realBigBlind == null) {
                 realBigBlind = amount;
             } else if (amount.compareTo(realBigBlind) > 0) {
-                hand.actions.set(i, new HandAction(action.street(), HandActionType.POSTS, action.rawLine()));
+                hand.actions.set(i, new HandAction(action.street(), HandActionType.POSTS, action.rawLine(),
+                        action.player(), action.amount()));
             }
         }
     }

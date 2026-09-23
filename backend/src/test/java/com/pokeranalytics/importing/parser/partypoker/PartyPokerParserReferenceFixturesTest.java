@@ -109,6 +109,40 @@ class PartyPokerParserReferenceFixturesTest {
     }
 
     @Test
+    void parsesExactPlayerAndAmountOnKeyActions() throws IOException {
+        ParsedHand hand = PartyPokerParser.parseFile(
+                FIXTURES_DIR.resolve("GameTypeTests/PotLimitOmaha.txt")).getFirst();
+
+        var smallBlind = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.POST_SMALL_BLIND).findFirst().orElseThrow();
+        assertEquals("SooooLastYr", smallBlind.player());
+        assertEquals(new BigDecimal("5"), smallBlind.amount());
+
+        var bigBlind = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.POST_BIG_BLIND).findFirst().orElseThrow();
+        assertEquals("PINOLAXXL", bigBlind.player());
+        assertEquals(new BigDecimal("10"), bigBlind.amount());
+
+        var fold = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.FOLD && "GOLFPRO566".equals(a.player()))
+                .findFirst().orElseThrow();
+        assertEquals(null, fold.amount());
+
+        // Already the cumulative total for the street (uncontested, no call ever follows it) —
+        // "raises [$30 USD]" is neohacks' whole preflop commitment, matching "wins $45 USD"
+        // (5 + 10 + 30) exactly.
+        var raise = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.RAISE).findFirst().orElseThrow();
+        assertEquals("neohacks", raise.player());
+        assertEquals(new BigDecimal("30"), raise.amount());
+
+        var collected = hand.actions.stream()
+                .filter(a -> a.type() == HandActionType.COLLECTED).findFirst().orElseThrow();
+        assertEquals("neohacks", collected.player());
+        assertEquals(new BigDecimal("45"), collected.amount());
+    }
+
+    @Test
     void parsesMultiHandExportBookkeepingWithoutLeftoverLines() throws IOException {
         List<ParsedHand> hands = PartyPokerParser.parseFile(
                 FIXTURES_DIR.resolve("MultipleHandsTests/5MultipleHands.txt"));
