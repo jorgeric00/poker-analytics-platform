@@ -1038,3 +1038,136 @@ a:hover {
 .dl-row span:first-child {
   color: var(--color-neutral-500);
 }
+
+/* — Hand Replay modal — */
+.replay-dialog {
+  width: 960px;
+}
+
+.replay-table-wrap {
+  padding: var(--space-6);
+  padding-bottom: 0;
+}
+
+.replay-table {
+  position: relative;
+  height: 420px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, var(--color-neutral-900) 0%, var(--color-bg) 100%);
+  border: 1px solid var(--color-neutral-800);
+  box-shadow: inset var(--shadow-sm);
+}
+
+.replay-center {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.replay-board {
+  min-height: 24px;
+}
+
+.replay-pot {
+  font: 500 12px var(--font-heading);
+  color: var(--color-accent-200);
+  font-variant-numeric: tabular-nums;
+}
+
+.replay-seat {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-neutral-800);
+  min-width: 108px;
+  font-size: 11px;
+}
+
+.replay-seat-hero {
+  background: var(--color-accent-900);
+  border-color: var(--color-accent-700);
+}
+
+.replay-seat-active {
+  border-color: var(--color-accent-400);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent-400) 45%, transparent);
+}
+
+.replay-seat-folded {
+  opacity: 0.45;
+}
+
+.replay-seat-name {
+  font: 500 11px var(--font-heading);
+  color: var(--color-neutral-300);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.replay-seat-hero .replay-seat-name {
+  color: var(--color-accent-100);
+}
+
+.replay-btn-chip {
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--color-accent-500);
+  color: var(--color-bg);
+}
+
+.replay-seat-cards {
+  min-height: 20px;
+}
+
+.replay-seat-stack {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-neutral-400);
+}
+
+.replay-card-back {
+  display: inline-block;
+  width: 22px;
+  height: 16px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-neutral-800),
+    var(--color-neutral-800) 3px,
+    var(--color-neutral-900) 3px,
+    var(--color-neutral-900) 6px
+  );
+  border: 1px solid var(--color-neutral-700);
+}
+
+.replay-action-banner {
+  margin: var(--space-4) var(--space-6) 0;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-900);
+  font-size: 12.5px;
+  color: var(--color-neutral-200);
+  text-align: center;
+}
+
+.replay-result-banner {
+  background: var(--color-accent-900);
+  color: var(--color-accent-100);
+  font: 500 13px var(--font-heading);
+}
+
+.replay-controls {
+  margin-top: var(--space-4);
+}

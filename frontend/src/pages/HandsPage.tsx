@@ -18,6 +18,7 @@ import { GlobalFilters } from "../components/GlobalFilters";
 import { CardBadges } from "../components/CardBadge";
 import { formatMoney, HAND_TYPE_LABELS, STREET_LABELS } from "./format";
 import { HandDetailModal } from "./HandDetailModal";
+import { HandReplayModal } from "./HandReplayModal";
 
 // Matches Hands.dc.html (docs/12-ui-designs.md) — left filter rail + hand table, read via the
 // Claude Design MCP. Only the filters backed by real, already-stored data are wired to
@@ -67,6 +68,7 @@ export function HandsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedHandId, setSelectedHandId] = useState<number | null>(null);
+  const [replayHandId, setReplayHandId] = useState<number | null>(null);
 
   useEffect(() => {
     setPage(1);
@@ -303,7 +305,7 @@ export function HandsPage() {
                       </td>
                       <td style={{ textAlign: "right" }}>
                         <span className="icon-button-group">
-                          <button className="icon-button" disabled title="Replay isn't built yet">
+                          <button className="icon-button" onClick={() => setReplayHandId(row.handId)} title="Replay">
                             <Play size={13} />
                           </button>
                           <button className="icon-button" onClick={() => setSelectedHandId(row.handId)} title="Detail">
@@ -346,6 +348,7 @@ export function HandsPage() {
       {selectedHandId != null && (
         <HandDetailModal handId={selectedHandId} onClose={() => setSelectedHandId(null)} onNavigate={setSelectedHandId} />
       )}
+      {replayHandId != null && <HandReplayModal handId={replayHandId} onClose={() => setReplayHandId(null)} />}
     </>
   );
 }

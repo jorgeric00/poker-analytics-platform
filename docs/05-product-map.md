@@ -238,7 +238,7 @@ A table listing hands, one row per hand, with:
 
 Each row has two buttons:
 
-- **Replay** — opens the hand replayed visually, street by street
+- **Replay** — opens the hand replayed visually, street by street. Implemented directly from this text spec, without its own Claude Design canvas (`12-ui-designs.md` only covers Hand Detail) — a deliberate exception to this module's usual mockup-first pattern, chosen by the user when this was built. A table oval with seats positioned around it shows each player's stack, position, and (Hero only) hole cards, replaying the real stored actions/board/results one step at a time (auto-play or manual step) with money-conservation-accurate stack/pot tracking. Opponent hole cards aren't shown even at showdown — same `results.cards_shown`/`seats.hole_cards` gap already noted elsewhere in this doc; run-it-twice hands only replay the first run's board. No new backend endpoint — reuses `GET /api/v1/hands/{handId}` (`10-api-design.md`), which already carries every fact this view needs.
 - **Detail** — opens a more detailed view of the hand (e.g. the street-by-street action summary and other data that doesn't fit the table)
 
 > The exact contents of the Detail view will be refined later — not part of this initial definition.

@@ -4,6 +4,7 @@ import { ApiError, fetchHandDetail } from "../api/client";
 import type { HandActionDto, HandBoardDto, HandDetailDto } from "../api/types";
 import { CardBadges } from "../components/CardBadge";
 import { formatMoney, HAND_TYPE_LABELS, STREET_LABELS } from "./format";
+import { HandReplayModal } from "./HandReplayModal";
 
 interface HandDetailModalProps {
   handId: number;
@@ -82,6 +83,7 @@ export function HandDetailModal({ handId, onClose, onNavigate }: HandDetailModal
   const [detail, setDetail] = useState<HandDetailDto | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [replaying, setReplaying] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -117,8 +119,9 @@ export function HandDetailModal({ handId, onClose, onNavigate }: HandDetailModal
     : [];
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
+    <>
+      <div className="modal-backdrop" onClick={onClose}>
+        <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
         {loading && <div className="modal-body-loading">Loading…</div>}
         {error && <div className="banner banner-error">{error}</div>}
 
@@ -256,13 +259,15 @@ export function HandDetailModal({ handId, onClose, onNavigate }: HandDetailModal
                   <CaretRight size={13} />
                 </button>
               </div>
-              <button className="btn-outline" disabled title="Replay isn't built yet">
+              <button className="btn-outline" onClick={() => setReplaying(true)}>
                 <Play size={13} /> Replay hand
               </button>
             </div>
           </>
         )}
       </div>
-    </div>
+      </div>
+      {replaying && detail && <HandReplayModal handId={detail.handId} onClose={() => setReplaying(false)} />}
+    </>
   );
 }
